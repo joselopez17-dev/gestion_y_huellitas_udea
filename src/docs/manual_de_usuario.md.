@@ -1,0 +1,7 @@
+# Manual de Usuario - Gestión y Huellitas UdeA
+# Instrucciones para ejecutar el programa
+1. Clonar o descargar este repositorio en su equipo local.
+2. Abrir una terminal o consola de comandos en la carpeta del proyecto.
+3. Ejecutar el comando:
+   ```bash
+   python main.py

@@ -12,12 +12,12 @@ usando archivos planos.
 | Integrante | Programa académico | Habilidades y fortalezas |
 |---|---|---|
 | José Miguel López Doria | Ingeniería Industrial, UdeA | [habilidades] |
-| Juliana Rivero | [programa] | [habilidades] |
-| Víctor José Salgado Romero | [programa] | [habilidades] |
-| Juan Pablo Quintero Gómez | [programa] | [habilidades] |
-| Sebastián [apellido] | [programa] | [habilidades] |
+| Juliana Rivero 
+| Víctor José Salgado Romero 
+| Juan Pablo Quintero Gómez 
+| Sebastián 
 
-## 📋 Descripción
+##  Descripción
 
 El programa permite al administrador:
 

@@ -11,7 +11,7 @@ usando archivos planos.
 
 | Integrante | Programa académico | Habilidades y fortalezas |
 |---|---|---|
-| José Miguel López Doria | Ingeniería Industrial, UdeA | [habilidades] |
+| José Miguel López Doria 
 | Juliana Rivero 
 | Víctor José Salgado Romero 
 | Juan Pablo Quintero Gómez 

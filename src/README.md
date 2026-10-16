@@ -9,8 +9,8 @@ usando archivos planos.
 
 ##  Integrantes
 
-| Integrante | Programa académico | Habilidades y fortalezas |
-|---|---|---|
+| Integrante |
+|---|
 | José Miguel López Doria 
 | Juliana Rivero 
 | Víctor José Salgado Romero 

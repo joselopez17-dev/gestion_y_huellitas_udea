@@ -7,7 +7,7 @@ hecho en Python, para apoyar la atención veterinaria de perros y gatos en la
 Universidad de Antioquia. Registra, consulta, actualiza y analiza las PQRS
 usando archivos planos.
 
-## 👥 Integrantes
+##  Integrantes
 
 | Integrante | Programa académico | Habilidades y fortalezas |
 | José Miguel López Doria | Ingeniería Industrial, UdeA | [habilidades] |

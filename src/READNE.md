@@ -27,7 +27,6 @@ consultarlas e imprimir su radicado, cambiar su estado
 
 - `src/`: código fuente en Python
 - `docs/`: documentación y manual de usuario
-- `images/`: logo y diagramas
 - `data/`: archivos planos de las PQRS
 
 ## Documentos de la Entrega 1

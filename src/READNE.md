@@ -7,7 +7,7 @@ en Python, para apoyar la atención veterinaria de perros y gatos en la
 Universidad de Antioquia. Registra, consulta, actualiza y analiza las PQRS
 usando archivos planos.
 
-## 👥 Integrantes y vínculos académicos
+##  Integrantes y vínculos académicos
 
 | Integrante | Programa académico | Habilidades y fortalezas |
 |---|---|---|

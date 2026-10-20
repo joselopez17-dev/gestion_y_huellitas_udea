@@ -9,13 +9,13 @@ usando archivos planos.
 
 ##  Integrantes y vínculos académicos
 
-| Integrante | Programa académico | Habilidades y fortalezas |
+| Integrante | Programa académico | Cargo |
 |---|---|---|
-| José Miguel López Doria | Ingeniería Industrial, UdeA | [escribir] |
-| Juliana Rivero | [escribir] | [escribir] |
-| Víctor José Salgado Romero | [escribir] | [escribir] |
-| Juan Pablo Quintero Gómez | [escribir] | [escribir] |
-| Sebastián [apellido] | [escribir] | [escribir] |
+| José Miguel López Doria | Ingeniería Industrial, UdeA | Programador |
+| Juliana Rivero | Ingeniería Industrial, UdeA | Diseñadora|
+| Víctor José Salgado Romero | Ingeniería Industrial, UdeA |  Diseñador |
+| Juan Pablo Quintero Gómez | Ingeniería Industrial, UdeA | Programador |
+| Sebastián [apellido] | Ingeniería Industrial, UdeA | Progrmador |
 
 ## 📋 Descripción
 

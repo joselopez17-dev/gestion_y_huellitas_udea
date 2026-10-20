@@ -1,6 +1,5 @@
 # 🐾 Gestión y Huellitas UdeA
 
-![Logo de Gestión y Huellitas UdeA](images/logo.png)
 
 Gestor de PQRS (Peticiones, Quejas, Reclamos y Sugerencias) en consola, hecho
 en Python, para apoyar la atención veterinaria de perros y gatos en la

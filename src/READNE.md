@@ -12,10 +12,10 @@ usando archivos planos.
 | Integrante | Programa académico | Cargo |
 |---|---|---|
 | José Miguel López Doria | Ingeniería Industrial, UdeA | Programador |
-| Juliana Rivero | Ingeniería Industrial, UdeA | Diseñadora|
+| Juliana Rivera Sarge | Ingeniería Industrial, UdeA | Diseñadora|
 | Víctor José Salgado Romero | Ingeniería Industrial, UdeA |  Diseñador |
 | Juan Pablo Quintero Gómez | Ingeniería Industrial, UdeA | Programador |
-| Sebastián [apellido] | Ingeniería Industrial, UdeA | Progrmador |
+| Sebastián Cardona | Ingeniería Industrial, UdeA | Progrmador |
 
 ## 📋 Descripción
 

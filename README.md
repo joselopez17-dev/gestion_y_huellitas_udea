@@ -16,11 +16,9 @@ Proyecto integrador del curso Algoritmia y Programación, período 2026-2, desar
 |---|---|---|
 | José Miguel López Doria | Ingeniería Industrial — UdeA | Programador 1 |
 | Juliana Rivera Sarge | Ingeniería Industrial — UdeA | Diseñadora 1 |
-| Víctor José Salgado Romero* | Ingeniería Industrial — UdeA | Diseñador |
+| Víctor Silgado | Ingeniería Industrial — UdeA | Diseñador |
 | Juan Pablo Quintero Gómez | Ingeniería Industrial — UdeA | Programador |
-| Sebastián Cardona* | Ingeniería Industrial — UdeA | Diseñador e investigador |
-
-* **Confirmar nombres completos:** en el acta recibida aparecen “Victor Silgado Romero” y “Sebastian Cardona Puerta”; en el README inicial aparecen “Víctor José Salgado Romero” y “Sebastián Cardona”. Se conservan provisionalmente los nombres del README hasta que el equipo confirme la forma oficial.
+| Sebastián Cardona | Ingeniería Industrial — UdeA | Diseñador e investigador |
 
 ## Descripción
 

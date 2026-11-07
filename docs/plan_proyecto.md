@@ -71,7 +71,7 @@ Este seguimiento diferencia los documentos y módulos que ya están incorporados
 
 | Actividad | Evidencia actual | Estado al 7 nov |
 |---|---|---|
-| A1. Acta única del equipo | Acta combinada recibida; copia pública PDF en docs/actas/Acta_de_entendimiento_publica.pdf; la copia pública omite firmas e identificaciones. Reúne entendimiento, colaboración y responsabilidades en un solo archivo | Parcial: confirmar con el docente si acepta un único documento combinado; la rúbrica enumera tres actas. También faltan plazos y criterios de evaluación detallados en la asignación de responsabilidades |
+| A1. Acta única del equipo | Acta combinada recibida; copia pública PDF en docs/actas/Acta_de_entendimiento_publica.pdf; la copia pública omite firmas e identificaciones. Reúne entendimiento, colaboración y responsabilidades en un solo archivo | Aprobada en formato único según indicación del profesor; conservar el original firmado en privado |
 | A2. Reporte de visión | docs/reporte_vision.md | Revisado y corregido; pendiente validación del equipo |
 | A3. Especificación de requisitos | docs/especificacion_requisitos.md | Revisada; alineada con el comportamiento documentado del sistema |
 | A4. Plan de proyecto y versionado | docs/plan_proyecto.md y docs/plan_versionado.md | Elaborados; horas reales pendientes de registrar |

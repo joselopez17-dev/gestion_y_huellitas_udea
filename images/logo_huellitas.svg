@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320" role="img" aria-labelledby="title desc">
+  <title id="title">Gestión y Huellitas UdeA</title>
+  <desc id="desc">Identidad gráfica verde con una huella y el nombre del gestor de PQRS de la Universidad de Antioquia.</desc>
+  <rect x="12" y="12" width="876" height="296" rx="36" fill="#F5F7EF" stroke="#1E5A3C" stroke-width="8"/>
+  <circle cx="165" cy="160" r="112" fill="#1E5A3C"/>
+  <g fill="#F5F7EF">
+    <ellipse cx="165" cy="188" rx="47" ry="38"/>
+    <ellipse cx="111" cy="130" rx="17" ry="23" transform="rotate(-28 111 130)"/>
+    <ellipse cx="148" cy="101" rx="17" ry="23" transform="rotate(-8 148 101)"/>
+    <ellipse cx="188" cy="101" rx="17" ry="23" transform="rotate(8 188 101)"/>
+    <ellipse cx="222" cy="130" rx="17" ry="23" transform="rotate(28 222 130)"/>
+  </g>
+  <path d="M315 94 H348" stroke="#D6A64B" stroke-width="8" stroke-linecap="round"/>
+  <text x="380" y="126" font-family="Arial, Helvetica, sans-serif" font-size="55" font-weight="700" fill="#164B32">Gestión y Huellitas</text>
+  <text x="382" y="184" font-family="Arial, Helvetica, sans-serif" font-size="37" font-weight="700" fill="#B27C27">UdeA</text>
+  <text x="382" y="230" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#355947">Sistema de gestión de PQRS</text>
+  <text x="382" y="266" font-family="Arial, Helvetica, sans-serif" font-size="19" fill="#52645A">Porque cada huella cuenta</text>
+  <path d="M784 80 q25 -32 48 0 q-24 28 -48 0z" fill="none" stroke="#D6A64B" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M790 80 q18 22 36 0" fill="none" stroke="#D6A64B" stroke-width="6" stroke-linecap="round"/>
+</svg>

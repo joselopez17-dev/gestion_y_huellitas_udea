@@ -24,7 +24,7 @@ Esta matriz compara la rúbrica del proyecto integrador con los archivos y funci
 
 ## 2. Acta única del equipo
 
-El equipo decidió conservar un solo documento combinado: `docs/actas/Acta_de_entendimiento_publica.pdf`. El acta, fechada el 22/08/2026, reúne los objetivos comunes, expectativas individuales, acuerdos de colaboración y comunicación, resolución de conflictos y distribución de responsabilidades. El equipo confirmó que los nombres que deben figurar en el README son Víctor Silgado y Sebastián Cardona.
+El equipo conserva un solo documento combinado: `docs/actas/Acta_de_entendimiento_publica.pdf`. El profesor confirmó que debe entregarse una sola acta que integre entendimiento, colaboración y responsabilidad. El documento, fechado el 22/08/2026, reúne los objetivos comunes, expectativas individuales, acuerdos de trabajo y comunicación, resolución de conflictos y distribución de responsabilidades. Los nombres indicados por el equipo para el README son Víctor Silgado y Sebastián Cardona.
 
 La copia pública omite firmas manuscritas y números de identificación personal. El original firmado debe mantenerse en un medio privado y remitirse al docente por un canal privado si lo solicita.
 
@@ -32,11 +32,11 @@ La copia pública omite firmas manuscritas y números de identificación persona
 |---|---|---|
 | Entendimiento | Objetivos comunes y expectativas de los cinco integrantes | Incluido |
 | Colaboración | Canales de comunicación, normas de trabajo y resolución de conflictos | Incluido |
-| Responsabilidad | Tabla de ocupaciones y tareas asignadas a los cinco integrantes | Incluido; faltan plazos y criterios de evaluación detallados |
+| Responsabilidad | Plan de trabajo con ocupación y tarea asignada a cada uno de los cinco integrantes; acuerdos generales de cumplimiento de plazos | Incluido en el acta combinada |
 | Firmas y aceptación | Se encuentran en el original recibido, omitidas de la copia pública | Original privado; entregar al docente si lo solicita |
 | Reuniones de seguimiento | El acta registra la reunión del 22/08/2026 | Falta evidencia de reuniones posteriores si se realizaron |
 
-**Observación de cumplimiento:** la rúbrica define las tres actas como entregables distintos. El equipo decidió conservar un único documento combinado. Esta decisión debe confirmarse con el docente, ya que el archivo único puede no satisfacer literalmente la exigencia de tres entregables.
+**Confirmación del docente:** el profesor indicó que se debe presentar una sola acta que integre las tres dimensiones. Por tanto, el documento combinado es el formato acordado para esta entrega; se conserva un PDF público sin firmas ni números de identificación y el original firmado se mantiene en privado.
 
 ## 3. Funcionalidades del programa
 

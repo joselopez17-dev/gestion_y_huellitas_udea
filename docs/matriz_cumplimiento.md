@@ -43,13 +43,13 @@ La copia pública omite firmas manuscritas y números de identificación persona
 | Requisito | Implementación en `desarrollo` | Estado |
 |---|---|---|
 | Menú principal de cinco opciones | `src/main.py` | Por validar |
-| Registro con validaciones | `src/main.py` y `src/validaciones.py`; cubierto parcialmente por pruebas automatizadas | Pruebas automatizadas aprobadas; falta prueba de aceptación |
+| Registro con validaciones | `src/main.py` y `src/validaciones.py`; prueba de registro completo desde el menú | Pruebas automatizadas aprobadas; falta prueba de aceptación |
 | ID independiente por tipo | `src/archivos.py`; prueba de consecutivos independientes | Pruebas automatizadas aprobadas |
 | Cuatro archivos planos | Prueba automatizada de Petición, Queja, Reclamo y Sugerencia; verifica creación y consecutivos independientes | Pruebas automatizadas aprobadas |
 | Fecha máxima de 30 días | `src/archivos.py`; prueba de cálculo de fecha límite | Pruebas automatizadas aprobadas |
 | Estado inicial y flujo de estados | `src/archivos.py`; prueba de transiciones | Pruebas automatizadas aprobadas |
 | Consulta de PQRS y radicado | `src/main.py` y `src/archivos.py`; prueba desde el menú que genera el radicado | Pruebas automatizadas aprobadas; falta aceptación manual del equipo |
-| Cambio de estado | `src/archivos.py`; prueba de transiciones | Pruebas automatizadas aprobadas |
+| Cambio de estado | `src/archivos.py`; prueba de transición desde el menú y de persistencia si falla el TXT actualizado | Pruebas automatizadas aprobadas |
 | Radicado TXT de 120 caracteres | `src/archivos.py`; prueba de ancho, N/A y exclusión de descripción | Pruebas automatizadas aprobadas |
 | Estadística obligatoria y cinco adicionales | `src/reportes.py` y `src/main.py`; pruebas con distintos tipos, estados y fechas; promedio sin datos se presenta como “Sin datos” | Pruebas automatizadas aprobadas; falta validación de aceptación |
 
@@ -61,12 +61,12 @@ La copia pública omite firmas manuscritas y números de identificación persona
 | Comprensión de listas | Utilizada en almacenamiento y reportes | Existe |
 | Modularización | Archivos separados para menú, validaciones, persistencia y reportes | Existe |
 | Comentarios y documentación | Docstrings y comentarios de módulos y métodos | Por validar |
-| Pruebas automatizadas | `tests/test_core.py` y GitHub Actions | 15/15 aprobadas en Ubuntu y Windows, Python 3.12 |
+| Pruebas automatizadas | `tests/test_core.py` y GitHub Actions | 16/16 aprobadas en Ubuntu y Windows, Python 3.12 |
 | Protección de datos generados | `.gitignore` excluye datos y radicados locales | Existe |
 
 ## 5. Evidencia de integración continua
 
-La ejecución del 7 de noviembre de 2026 completó correctamente los quince casos de prueba en los entornos `ubuntu-latest` y `windows-latest`, utilizando Python 3.12. Esto valida los casos automatizados incluidos, pero no sustituye la prueba de aceptación ni la revisión funcional por parte de los integrantes.
+La ejecución del 7 de noviembre de 2026 completó correctamente los dieciséis casos de prueba en los entornos `ubuntu-latest` y `windows-latest`, utilizando Python 3.12. Esto valida los casos automatizados incluidos, pero no sustituye la prueba de aceptación ni la revisión funcional por parte de los integrantes.
 
 ## 6. Criterio para el cierre
 

@@ -21,7 +21,7 @@ Completar esta información durante la ejecución real. Utilizar únicamente dat
 - **Entornos:** Ubuntu y Windows (`ubuntu-latest` y `windows-latest`).
 - **Python:** 3.12.
 - **Resultado total:** 24/24 pruebas aprobadas (16 pruebas generales y 8 pruebas automatizadas de aceptación).
-- **Ejecución:** [GitHub Actions — pruebas del proyecto](https://github.com/joselopez17-dev/gestion_y_huellitas_udea/actions).
+- **Ejecución:** [GitHub Actions — 24 pruebas aprobadas](https://github.com/joselopez17-dev/gestion_y_huellitas_udea/actions/runs/42411265362).
 
 Las pruebas automatizadas utilizan entradas simuladas y una carpeta temporal; no crean ni modifican registros dentro de `data/` del proyecto. Cubren el registro de los cuatro tipos, reintento tras datos inválidos, persistencia al reabrir el gestor, consulta general, comprobantes, transiciones de estado, estadísticas y presentación de las cinco opciones del menú.
 

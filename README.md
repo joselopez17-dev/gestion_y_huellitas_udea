@@ -1,6 +1,8 @@
 # 🐾 Gestión y Huellitas UdeA
 
-![Logo de Gestión y Huellitas UdeA](images/logo_huellitas.svg)
+![Gestión y Huellitas UdeA — proyecto en VS Code](images/gestion_huellitas_vscode.jpg)
+
+[Ver logo institucional](images/logo_huellitas.svg)
 
 **Gestor de PQRS para la atención veterinaria de perros y gatos en la Universidad de Antioquia.**
 

@@ -81,9 +81,9 @@ Este seguimiento diferencia los documentos y módulos que ya están incorporados
 | A8. Archivos | src/archivos.py; prueba de los cuatro archivos y consecutivos independientes | Implementado; pruebas automatizadas aprobadas |
 | A9. Menú, registro y radicado | src/main.py; si falla la generación del TXT después de guardar, se informa que el registro quedó almacenado | Implementado; prueba de regresión aprobada; pendiente aceptación del equipo |
 | A10. Reportes | src/reportes.py y pruebas de las seis estadísticas; promedio sin datos identificado como “Sin datos” | Implementado; pruebas automatizadas aprobadas |
-| A11. Pruebas y correcciones | tests/test_core.py y GitHub Actions; 16 pruebas, incluidas regresiones de promedio sin datos y fallos al generar o actualizar el radicado | 16 pruebas aprobadas en Ubuntu y Windows, Python 3.12 |
+| A11. Pruebas y correcciones | tests/test_core.py, tests/test_aceptacion.py y GitHub Actions; 23 pruebas en total, incluidas 7 pruebas automatizadas de aceptación | 23 pruebas aprobadas en Ubuntu y Windows, Python 3.12; revisión manual del equipo pendiente |
 | A12. Manual de usuario | docs/manual_de_usuario.md | Borrador revisado; pendiente ejecutar la guía de uso paso a paso en el computador del equipo |
-| A13. Revisión final y sustentación | Checklist en docs/pruebas_aceptacion.md y guía de preguntas técnicas en docs/guia_sustentacion_tecnica.md; faltan ejecutar aceptación, corregir incidencias y ensayar respuestas sobre todo el código | Pendiente |
+| A13. Revisión final y sustentación | Siete pruebas automatizadas de aceptación aprobadas; checklist manual en docs/pruebas_aceptacion.md y guía técnica en docs/guia_sustentacion_tecnica.md | Parcial: falta recorrido manual del equipo, registrar evidencias y ensayar respuestas sobre todo el código |
 
 ### Control de horas
 

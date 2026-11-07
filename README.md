@@ -44,6 +44,7 @@ Estas funcionalidades se encuentran en proceso de prueba y revisión.
 - [Manual de usuario](docs/manual_de_usuario.md)
 - [Matriz de cumplimiento de la rúbrica](docs/matriz_cumplimiento.md)
 - [Plantillas de actas del equipo](docs/actas/plantillas_actas.md)
+- [Algoritmo y diagramas de flujo](docs/algoritmo.md)
 
 ## Estructura del repositorio
 

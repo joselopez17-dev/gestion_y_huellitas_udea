@@ -2,11 +2,13 @@
 
 import tempfile
 import unittest
+from unittest.mock import patch
 from datetime import date, timedelta
 from pathlib import Path
 
 from src.archivos import c_archivos
 from src.reportes import c_reportes
+from src.main import c_main
 from src.validaciones import c_validaciones
 
 
@@ -70,6 +72,38 @@ class TestArchivosYReportes(unittest.TestCase):
             "tipo_mascota": mascota,
             "campus_relacionado": "Campus Medellín - Ciudad Universitaria",
         }
+
+
+    def test_registro_completo_desde_el_menu(self):
+        sistema = c_main()
+        sistema.archivos = self.gestor
+        entradas = [
+            "Juan123",  # Debe rechazarse y volver a solicitar el nombre.
+            "Juan David Pérez Gómez",
+            "CC",
+            "1037654321",
+            "Celular",
+            "3001234567",
+            "usuario@correo.com",
+            "",  # Dirección opcional.
+            "Petición",
+            date.today().isoformat(),
+            "Presencial",
+            "Atención veterinaria",
+            "Solicito información sobre la atención veterinaria para mi mascota.",
+            "Perro",
+            "Campus Medellín - Ciudad Universitaria",
+        ]
+        with patch("builtins.input", side_effect=entradas), patch("builtins.print"):
+            sistema.registrar_pqrs()
+
+        registro = self.gestor.buscar_pqrs(1, "Petición")
+        self.assertIsNotNone(registro)
+        self.assertEqual(registro["nombre_completo"], "Juan David Pérez Gómez")
+        self.assertEqual(registro["estado_peticion"], "Registrada")
+        self.assertEqual(registro["direccion"], "")
+        ruta_radicado = self.gestor.carpeta_radicados / "Peticion_000001.txt"
+        self.assertTrue(ruta_radicado.exists())
 
     def test_consecutivos_independientes(self):
         primero = self.gestor.guardar_pqrs(self.datos("Petición"))

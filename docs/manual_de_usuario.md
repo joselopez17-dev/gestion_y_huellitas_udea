@@ -1,5 +1,7 @@
 # Manual de usuario — Gestión y Huellitas UdeA
 
+![Logo de Gestión y Huellitas UdeA](../images/logo_huellitas.svg)
+
 > **Versión:** borrador de la rama `desarrollo`. Debe comprobarse en el equipo antes de considerarse manual definitivo.
 
 ## 1. Propósito

@@ -1,10 +1,12 @@
 # 🐾 Gestión y Huellitas UdeA
 
+![Logo de Gestión y Huellitas UdeA](images/logo_huellitas.svg)
+
 **Gestor de PQRS para la atención veterinaria de perros y gatos en la Universidad de Antioquia.**
 
 Proyecto integrador del curso Algoritmia y Programación, período 2026-2, desarrollado en Python para apoyar el registro, consulta y seguimiento de Peticiones, Quejas, Reclamos y Sugerencias (PQRS).
 
-> **Estado: desarrollo en curso en la rama `desarrollo`.** Ya se incorporaron los módulos de validaciones, archivos, reportes y menú principal. Las 9 pruebas automatizadas pasan en Ubuntu y Windows con Python 3.12. Aún falta la prueba de aceptación del equipo, completar el logo y validar los documentos y actas antes de integrar los cambios a `main`.
+> **Estado: desarrollo en curso en la rama `desarrollo`.** Ya se incorporaron los módulos de validaciones, archivos, reportes y menú principal. Las 9 pruebas automatizadas pasan en Ubuntu y Windows con Python 3.12. Aún falta la prueba de aceptación del equipo y validar los documentos y actas antes de integrar los cambios a `main`.
 
 ## Equipo de trabajo
 

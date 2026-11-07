@@ -102,6 +102,53 @@ class TestArchivosYReportes(unittest.TestCase):
         ruta = self.gestor.generar_radicado(registro)
         self.assertTrue(ruta.exists())
 
+
+    def test_cinco_estadisticas_complementarias(self):
+        hoy = date.today()
+        fecha_peticion = (hoy - timedelta(days=6)).isoformat()
+        fecha_queja_vencida = (hoy - timedelta(days=35)).isoformat()
+        fecha_queja_proxima = (hoy - timedelta(days=27)).isoformat()
+        fecha_reclamo_antiguo = (hoy - timedelta(days=50)).isoformat()
+
+        id_peticion = self.gestor.guardar_pqrs(
+            self.datos("Petición", fecha_peticion)
+        )
+        self.gestor.cambiar_estado("Petición", id_peticion, "En proceso")
+        self.gestor.cambiar_estado("Petición", id_peticion, "Solucionada")
+
+        self.gestor.guardar_pqrs(self.datos("Queja", fecha_queja_vencida))
+        self.gestor.guardar_pqrs(self.datos("Queja", fecha_queja_proxima))
+        self.gestor.guardar_pqrs(self.datos("Reclamo", fecha_reclamo_antiguo))
+
+        # Cambiar la especie de algunos registros para revisar ambos conteos.
+        quejas = self.gestor.listar_por_tipo("Queja")
+        quejas[0]["tipo_mascota"] = "Gato"
+        self.gestor._guardar_archivo("Queja", quejas)
+        reclamos = self.gestor.listar_por_tipo("Reclamo")
+        reclamos[0]["tipo_mascota"] = "Gato"
+        self.gestor._guardar_archivo("Reclamo", reclamos)
+
+        reportes = c_reportes(self.gestor)
+
+        self.assertEqual(
+            reportes.cantidad_por_tipo_solicitud(),
+            {"Petición": 1, "Queja": 2, "Reclamo": 1, "Sugerencia": 0},
+        )
+        self.assertEqual(
+            reportes.cantidad_por_tipo_mascota(),
+            {"Perro": 2, "Gato": 2},
+        )
+        self.assertEqual(
+            reportes.cantidad_por_estado(),
+            {"Registrada": 3, "En proceso": 0, "Solucionada": 1},
+        )
+        antigua = reportes.pqrs_mas_antigua_activa()
+        self.assertEqual(antigua["tipo_solicitud"], "Reclamo")
+        vencidas = reportes.pqrs_proximas_a_vencer()
+        self.assertEqual(len(vencidas), 3)
+        self.assertEqual(vencidas[0]["tipo_solicitud"], "Reclamo")
+        self.assertLess(vencidas[0]["dias_restantes"], 0)
+
     def test_fecha_maxima_y_reporte_por_tipo(self):
         identificador = self.gestor.guardar_pqrs(self.datos("Queja"))
         registro = self.gestor.buscar_pqrs(identificador, "Queja")

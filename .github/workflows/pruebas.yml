@@ -1,0 +1,20 @@
+name: Pruebas del proyecto
+
+on:
+  push:
+    branches: [main, desarrollo]
+  pull_request:
+    branches: [main]
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener el repositorio
+        uses: actions/checkout@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Ejecutar pruebas automatizadas
+        run: python -m unittest discover -s tests -v

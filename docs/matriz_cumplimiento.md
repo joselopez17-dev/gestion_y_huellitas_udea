@@ -22,21 +22,21 @@ Esta matriz compara la rúbrica del proyecto integrador con los archivos y funci
 | 12 | Sustentación con programa ejecutable y dominio del código | Requiere ejecución final y preparación del equipo | Pendiente |
 | 13 | Fechas y documentos de las entregas | Se debe confirmar el cronograma real y conservar evidencias | Pendiente |
 
-## 2. Actas de entendimiento y compromiso
+## 2. Acta única del equipo
 
-El equipo entregó un acta combinada fechada el 22/08/2026. El documento incluye los objetivos comunes, las expectativas individuales de los cinco integrantes, los acuerdos de colaboración y comunicación, la resolución de conflictos y el plan de trabajo con responsabilidades.
+El equipo decidió conservar un solo documento combinado: `docs/actas/Acta_de_entendimiento_publica.pdf`. El acta, fechada el 22/08/2026, reúne los objetivos comunes, expectativas individuales, acuerdos de colaboración y comunicación, resolución de conflictos y plan de trabajo con responsabilidades.
 
-Se incorporó una **copia pública remaquetada en PDF de tres páginas** en `docs/actas/Acta_de_entendimiento_publica.pdf` y una transcripción en Markdown. Mantiene el contenido académico del acta original, pero no reproduce su diseño manuscrito. La copia pública omite las firmas manuscritas y los números de identificación personal. El documento original firmado debe conservarse en un medio privado y entregarse al docente por el canal indicado si se requiere verificar las firmas.
+La copia pública omite firmas manuscritas y números de identificación personal. El original firmado debe mantenerse en un medio privado y remitirse al docente por un canal privado si lo solicita.
 
-| Documento o componente | Evidencia | Estado |
+| Componente incluido | Evidencia | Estado |
 |---|---|---|
-| Acta de entendimiento | PDF público y transcripción en `docs/actas/` | Existe copia pública; firma original se conserva fuera del repositorio público |
-| Acta de colaboración | Acuerdos de comunicación, trabajo y resolución de conflictos incluidos en el acta combinada | Incluida en documento combinado; confirmar si la rúbrica exige archivo independiente |
-| Acta de responsabilidad | Plan de trabajo con ocupación y tareas para los cinco integrantes | Incluida en documento combinado; confirmar si la rúbrica exige archivo independiente |
-| Firmas y aceptación | Están en el original recibido, pero se omitieron de la copia pública | Validar entrega privada al docente |
-| Reuniones de seguimiento | El acta registra la reunión del 22/08/2026; faltan actas posteriores si hubo más reuniones | Parcial |
+| Entendimiento | Objetivos comunes y expectativas de los cinco integrantes | Incluido |
+| Colaboración | Canales de comunicación, normas de trabajo y resolución de conflictos | Incluido |
+| Responsabilidad | Tabla de ocupaciones y tareas asignadas a los cinco integrantes | Incluido; el acta no especifica plazos ni criterios de evaluación detallados |
+| Firmas y aceptación | Se encuentran en el original recibido, omitidas de la copia pública | Original privado; entregar al docente si lo solicita |
+| Reuniones de seguimiento | El acta registra la reunión del 22/08/2026 | Falta evidencia de reuniones posteriores si se realizaron |
 
-Las plantillas en `docs/actas/plantillas_actas.md` quedan como apoyo por si el docente solicita separar las actas o registrar reuniones y acuerdos posteriores.
+**Observación de cumplimiento:** la rúbrica define las tres actas como entregables distintos. El equipo decidió conservar un único documento combinado. Esta decisión debe confirmarse con el docente, ya que el archivo único puede no satisfacer literalmente la exigencia de tres entregables.
 
 ## 3. Funcionalidades del programa
 

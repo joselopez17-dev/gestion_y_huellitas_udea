@@ -17,7 +17,7 @@ Esta matriz compara la rúbrica del proyecto integrador con los archivos y funci
 | 7 | Plan, cronograma/Gantt y presupuesto | `docs/plan_proyecto.md` | Por validar |
 | 8 | Plan de versionado y avance en días | `docs/plan_versionado.md` | Por validar |
 | 9 | Código del algoritmo dentro de `src/` | `main.py`, `validaciones.py`, `archivos.py`, `reportes.py` | Por validar |
-| 10 | Manual de usuario dentro de `docs/` | `docs/manual_de_usuario.md` | Parcial; requiere prueba de uso |
+| 10 | Manual de usuario dentro de `docs/` | `docs/manual_de_usuario.md` y checklist `docs/pruebas_aceptacion.md` | Parcial; falta ejecutar la revisión paso a paso |
 | 11 | Estructura GitHub | `src/`, `docs/`, `images/`, `data/` y `tests/` | Existe |
 | 12 | Sustentación con programa ejecutable y dominio del código | Requiere ejecución final y preparación del equipo | Pendiente |
 | 13 | Fechas y documentos de las entregas | Se debe confirmar el cronograma real y conservar evidencias | Pendiente |
@@ -68,6 +68,10 @@ La copia pública omite firmas manuscritas y números de identificación persona
 
 La ejecución del 7 de noviembre de 2026 completó correctamente los dieciséis casos de prueba en los entornos `ubuntu-latest` y `windows-latest`, utilizando Python 3.12. Esto valida los casos automatizados incluidos, pero no sustituye la prueba de aceptación ni la revisión funcional por parte de los integrantes.
 
-## 6. Criterio para el cierre
+## 6. Prueba de aceptación pendiente
+
+Se creó `docs/pruebas_aceptacion.md` con una secuencia de verificación manual para registro, almacenamiento, consulta, radicado, cambio de estado y estadísticas. El checklist está preparado, pero debe ejecutarlo el equipo con datos ficticios, registrar fecha, versión y resultado, y documentar cualquier incidencia antes de marcar la aceptación como aprobada.
+
+## 7. Criterio para el cierre
 
 No se marcará como completo un requisito funcional hasta ejecutar las pruebas automatizadas y verificar manualmente el registro, consulta, actualización del estado, radicado y estadísticas con datos de prueba. Los documentos deben revisarse con el equipo antes de la entrega.

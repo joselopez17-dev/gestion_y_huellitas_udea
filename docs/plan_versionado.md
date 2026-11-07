@@ -12,7 +12,7 @@ Los nombres de versión de esta tabla identifican hitos de trabajo. La etiqueta 
 
 ## 2. Base para contar los días
 
-La versión anterior de este documento consignaba el **15 de octubre de 2026** como día 0. Esa fecha se conserva como base provisional y debe ser confirmada por el equipo, porque el historial de GitHub solo demuestra actividad del repositorio desde el **20 de octubre de 2026**, no necesariamente el inicio real del proyecto.
+El acta del equipo registra una reunión inicial el **22 de agosto de 2026**. Esta es una fecha comprobable de trabajo organizativo, pero no necesariamente coincide con el inicio del desarrollo del software. Para el conteo provisional de las versiones se conserva el **15 de octubre de 2026** como día 0, fecha consignada en la versión anterior del plan y que debe ser confirmada por el equipo. El historial de GitHub muestra actividad del repositorio desde el **20 de octubre de 2026**, lo cual tampoco demuestra por sí solo el inicio real del proyecto.
 
 Tomando provisionalmente el 15 de octubre como día 0, el 7 de noviembre corresponde al día 23.
 

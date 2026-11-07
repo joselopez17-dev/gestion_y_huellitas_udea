@@ -71,19 +71,19 @@ Este seguimiento diferencia los documentos y módulos que ya están incorporados
 
 | Actividad | Evidencia actual | Estado al 7 nov |
 |---|---|---|
-| A1. Acta única del equipo | Acta combinada recibida; copia pública PDF en docs/actas/Acta_de_entendimiento_publica.pdf; la copia pública omite firmas e identificaciones. Reúne entendimiento, colaboración y responsabilidades en un solo archivo | Parcial: confirmar con el docente si acepta un único documento combinado, pues la rúbrica enumera tres entregables |
+| A1. Acta única del equipo | Acta combinada recibida; copia pública PDF en docs/actas/Acta_de_entendimiento_publica.pdf; la copia pública omite firmas e identificaciones. Reúne entendimiento, colaboración y responsabilidades en un solo archivo | Parcial: confirmar con el docente si acepta un único documento combinado; la rúbrica enumera tres actas. También faltan plazos y criterios de evaluación detallados en la asignación de responsabilidades |
 | A2. Reporte de visión | docs/reporte_vision.md | Revisado y corregido; pendiente validación del equipo |
 | A3. Especificación de requisitos | docs/especificacion_requisitos.md | Revisada; alineada con el comportamiento documentado del sistema |
 | A4. Plan de proyecto y versionado | docs/plan_proyecto.md y docs/plan_versionado.md | Elaborados; horas reales pendientes de registrar |
-| A5. README, logo y estructura | README con roles, expectativas y aportes del acta; logo vectorial en images/logo_huellitas.svg; falta confirmar fortalezas concretas y nombres que difieren entre README y acta | Parcial |
+| A5. README, logo y estructura | README actualizado con los cinco integrantes, programas y roles; logo vectorial e imagen representativa en images/. Nombres indicados por el equipo: Víctor Silgado y Sebastián Cardona | Parcial: el equipo decidió omitir fortalezas individuales, pero la rúbrica las solicita en este apartado |
 | A6. Diseño del algoritmo y clases | docs/algoritmo.md y clases c_main, c_validaciones, c_archivos, c_reportes | Implementado; pendiente explicación y revisión del equipo |
 | A7. Validaciones | src/validaciones.py y pruebas de datos válidos e inválidos | Implementado; pruebas automatizadas aprobadas |
 | A8. Archivos | src/archivos.py; prueba de los cuatro archivos y consecutivos independientes | Implementado; pruebas automatizadas aprobadas |
 | A9. Menú, registro y radicado | src/main.py; si falla la generación del TXT después de guardar, se informa que el registro quedó almacenado | Implementado; prueba de regresión aprobada; pendiente aceptación del equipo |
 | A10. Reportes | src/reportes.py y pruebas de las seis estadísticas; promedio sin datos identificado como “Sin datos” | Implementado; pruebas automatizadas aprobadas |
 | A11. Pruebas y correcciones | tests/test_core.py y GitHub Actions; 16 pruebas, incluidas regresiones de promedio sin datos y fallos al generar o actualizar el radicado | 16 pruebas aprobadas en Ubuntu y Windows, Python 3.12 |
-| A12. Manual de usuario | docs/manual_de_usuario.md | Borrador revisado; pendiente prueba paso a paso |
-| A13. Revisión final y sustentación | Checklist de aceptación en docs/pruebas_aceptacion.md; faltan ejecución por el equipo, correcciones finales y ensayo de sustentación | Pendiente |
+| A12. Manual de usuario | docs/manual_de_usuario.md | Borrador revisado; pendiente ejecutar la guía de uso paso a paso en el computador del equipo |
+| A13. Revisión final y sustentación | Checklist en docs/pruebas_aceptacion.md y guía de preguntas técnicas en docs/guia_sustentacion_tecnica.md; faltan ejecutar aceptación, corregir incidencias y ensayar respuestas sobre todo el código | Pendiente |
 
 ### Control de horas
 
@@ -93,7 +93,7 @@ Registrar las horas reales por integrante y actividad en las reuniones del equip
 |---|---:|---:|
 | José Miguel López Doria | [Acordar] | [Registrar] |
 | Juliana Rivera Sarge | [Acordar] | [Registrar] |
-| Víctor José Salgado Romero | [Acordar] | [Registrar] |
+| Víctor Silgado | [Acordar] | [Registrar] |
 | Juan Pablo Quintero Gómez | [Acordar] | [Registrar] |
 | Sebastián Cardona | [Acordar] | [Registrar] |
 

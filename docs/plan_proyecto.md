@@ -63,7 +63,7 @@ Este seguimiento diferencia los documentos y módulos que ya están incorporados
 
 | Actividad | Evidencia actual | Estado al 7 nov |
 |---|---|---|
-| A1. Actas de entendimiento, colaboración y responsabilidad | Plantillas incorporadas en `docs/actas/plantillas_actas.md`; faltan acuerdos reales, revisión y firmas | Parcial |
+| A1. Actas de entendimiento, colaboración y responsabilidad | Acta combinada recibida; copia pública PDF y transcripción en `docs/actas/`; la copia pública omite firmas e identificaciones. Falta confirmar si el docente exige tres archivos separados y entregar el original firmado por canal privado si lo solicita | Parcial |
 | A2. Reporte de visión | `docs/reporte_vision.md` incorporado | Elaborado; pendiente revisión del equipo |
 | A3. Especificación de requisitos | `docs/especificacion_requisitos.md` incorporado y actualizado con las seis estadísticas | Elaborado; pendiente validación final |
 | A4. Plan de proyecto y versionado | `docs/plan_proyecto.md` y `docs/plan_versionado.md` presentes | Elaborado |

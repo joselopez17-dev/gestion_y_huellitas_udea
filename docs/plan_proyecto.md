@@ -73,7 +73,7 @@ Este seguimiento diferencia los documentos y módulos que ya están incorporados
 | A8. Archivos | `src/archivos.py` | Implementado; pruebas automatizadas en curso |
 | A9. Menú, registro y radicado | `src/main.py` y generación de TXT de 120 caracteres | Implementado; pendiente prueba de aceptación con el equipo |
 | A10. Reportes | `src/reportes.py` y seis indicadores | Implementado; pendiente validación con casos adicionales |
-| A11. Pruebas y correcciones | `tests/test_core.py` y flujo de GitHub Actions; 11 pruebas aprobadas en Ubuntu y Windows con Python 3.12 | En verificación multiplataforma |
+| A11. Pruebas y correcciones | `tests/test_core.py` y flujo de GitHub Actions; 13 pruebas aprobadas en Ubuntu y Windows con Python 3.12 | En verificación multiplataforma |
 | A12. Manual de usuario | `docs/manual_de_usuario.md` | Borrador actualizado; pendiente prueba paso a paso |
 | A13. Revisión final y sustentación | Aún no hay evidencia de revisión final o ensayo de sustentación | Pendiente |
 

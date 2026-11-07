@@ -12,15 +12,17 @@ Proyecto integrador del curso Algoritmia y Programación, período 2026-2, desar
 
 ## Equipo de trabajo
 
-| Integrante | Programa académico | Responsabilidad registrada |
-|---|---|---|
-| José Miguel López Doria | Ingeniería Industrial — UdeA | Programación |
-| Juliana Rivera Sarge | Ingeniería Industrial — UdeA | Diseño |
-| Víctor José Salgado Romero | Ingeniería Industrial — UdeA | Diseño |
-| Juan Pablo Quintero Gómez | Ingeniería Industrial — UdeA | Programación |
-| Sebastián Cardona | Ingeniería Industrial — UdeA | Programación |
+| Integrante | Programa académico | Rol consignado en el acta | Descripción de la responsabilidad |
+|---|---|---|---|
+| José Miguel López Doria | Ingeniería Industrial — UdeA | Programador 1 | Entregar los códigos del proyecto dentro de los tiempos acordados. |
+| Juliana Rivera Sarge | Ingeniería Industrial — UdeA | Diseñadora 1 | Organizar y diseñar los aspectos visuales, manteniendo una línea gráfica ordenada y coherente. |
+| Víctor José Salgado Romero* | Ingeniería Industrial — UdeA | Diseñador | Coordinar el apoyo para lograr una buena arquitectura del proyecto. |
+| Juan Pablo Quintero Gómez | Ingeniería Industrial — UdeA | Programador | Apoyar al programador 1 y responder por las actividades asignadas. |
+| Sebastián Cardona* | Ingeniería Industrial — UdeA | Diseñador e investigador | Buscar información cuando el proyecto lo requiera y apoyar al equipo de diseño. |
 
-Las descripciones individuales de habilidades y fortalezas deben ser confirmadas por cada integrante y se agregarán después.
+\* **Confirmar nombres completos:** en el acta recibida aparecen “Victor Silgado Romero” y “Sebastian Cardona Puerta”; en el README inicial aparecen “Víctor José Salgado Romero” y “Sebastián Cardona”. Se conservan provisionalmente los nombres del README hasta que el equipo confirme la forma oficial.
+
+**Habilidades y fortalezas personales:** el acta describe expectativas y responsabilidades, pero no enumera competencias personales verificadas de cada integrante. No se atribuyen habilidades sin confirmación de sus titulares.
 
 ## Descripción
 

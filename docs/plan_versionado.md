@@ -25,7 +25,7 @@ Tomando provisionalmente el 15 de octubre como día 0, el 7 de noviembre corresp
 | v0.0.1 | 20 oct 2026 | 5 | Primeros ajustes registrados en GitHub sobre el README del proyecto | Evidencia en historial |
 | v0.1.0 | 7 nov 2026 | 23 | Reorganización documental, matriz de rúbrica, plantillas de actas y estructura de carpetas | Incorporado en `desarrollo` |
 | v0.2.0 | 7 nov 2026 | 23 | Implementación inicial de `validaciones.py`, `archivos.py`, `reportes.py` y menú principal | Incorporado en `desarrollo` |
-| v0.2.1 | 7 nov 2026 | 23 | Pruebas automatizadas, prueba de arranque del menú y flujo de GitHub Actions | 11 pruebas aprobadas en Ubuntu y Windows con Python 3.12 |
+| v0.2.1 | 7 nov 2026 | 23 | Pruebas automatizadas, prueba de arranque del menú y flujo de GitHub Actions | 13 pruebas aprobadas en Ubuntu y Windows con Python 3.12 |
 | v1.0.0 | Por definir | — | Versión de entrega después de revisión completa, pruebas en el equipo y aprobación grupal | Pendiente |
 
 No se asignan porcentajes de avance sin un registro real de horas. Cuando el equipo lleve el control de tiempo, el avance porcentual podrá calcularse respecto de las 50 horas estimadas en el plan de proyecto.

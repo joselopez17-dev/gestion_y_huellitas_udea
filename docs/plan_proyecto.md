@@ -79,9 +79,9 @@ Este seguimiento diferencia los documentos y módulos que ya están incorporados
 | A6. Diseño del algoritmo y clases | docs/algoritmo.md y clases c_main, c_validaciones, c_archivos, c_reportes | Implementado; pendiente explicación y revisión del equipo |
 | A7. Validaciones | src/validaciones.py y pruebas de datos válidos e inválidos | Implementado; pruebas automatizadas aprobadas |
 | A8. Archivos | src/archivos.py; prueba de los cuatro archivos y consecutivos independientes | Implementado; pruebas automatizadas aprobadas |
-| A9. Menú, registro y radicado | src/main.py y generación de TXT de 120 caracteres | Implementado; pendiente prueba de aceptación con el equipo |
-| A10. Reportes | src/reportes.py y pruebas de las seis estadísticas; promedio sin datos identificado correctamente | Implementado; pruebas automatizadas aprobadas |
-| A11. Pruebas y correcciones | tests/test_core.py y GitHub Actions; 15 pruebas, incluidas regresiones de promedio sin datos y fallo del radicado | 15 pruebas aprobadas en Ubuntu y Windows, Python 3.12 |
+| A9. Menú, registro y radicado | src/main.py; si falla la generación del TXT después de guardar, se informa que el registro quedó almacenado | Implementado; prueba de regresión aprobada; pendiente aceptación del equipo |
+| A10. Reportes | src/reportes.py y pruebas de las seis estadísticas; promedio sin datos identificado como “Sin datos” | Implementado; pruebas automatizadas aprobadas |
+| A11. Pruebas y correcciones | tests/test_core.py y GitHub Actions; 16 pruebas, incluidas regresiones de promedio sin datos y fallos al generar o actualizar el radicado | 16 pruebas aprobadas en Ubuntu y Windows, Python 3.12 |
 | A12. Manual de usuario | docs/manual_de_usuario.md | Borrador revisado; pendiente prueba paso a paso |
 | A13. Revisión final y sustentación | Aún no hay evidencia de revisión final o ensayo de sustentación | Pendiente |
 

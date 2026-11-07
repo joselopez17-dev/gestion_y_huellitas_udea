@@ -109,9 +109,19 @@ class TestArchivosYReportes(unittest.TestCase):
         primero = self.gestor.guardar_pqrs(self.datos("Petición"))
         segundo = self.gestor.guardar_pqrs(self.datos("Petición"))
         primero_queja = self.gestor.guardar_pqrs(self.datos("Queja"))
-        self.assertEqual((primero, segundo, primero_queja), (1, 2, 1))
-        self.assertTrue((Path(self.temporal.name) / "Peticion.txt").exists())
-        self.assertTrue((Path(self.temporal.name) / "Queja.txt").exists())
+        primero_reclamo = self.gestor.guardar_pqrs(self.datos("Reclamo"))
+        primero_sugerencia = self.gestor.guardar_pqrs(self.datos("Sugerencia"))
+
+        self.assertEqual(
+            (primero, segundo, primero_queja, primero_reclamo, primero_sugerencia),
+            (1, 2, 1, 1, 1),
+        )
+        archivos_esperados = ("Peticion.txt", "Queja.txt", "Reclamo.txt", "Sugerencia.txt")
+        for nombre_archivo in archivos_esperados:
+            self.assertTrue((Path(self.temporal.name) / nombre_archivo).exists())
+
+        # La consulta general reúne los cuatro archivos sin mezclar sus consecutivos.
+        self.assertEqual(len(self.gestor.obtener_todos()), 5)
 
     def test_flujo_de_estado_y_promedio(self):
         fecha = (date.today() - timedelta(days=5)).isoformat()

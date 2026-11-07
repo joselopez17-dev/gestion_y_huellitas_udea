@@ -1,9 +1,12 @@
 # Recursos gráficos
 
-Esta carpeta almacena el logo y los recursos gráficos del proyecto Gestión y Huellitas UdeA.
+Esta carpeta almacena la identidad visual y los recursos gráficos del proyecto.
 
-Pendiente de incorporar:
-- Logo oficial del proyecto.
-- Diagramas o imágenes que se utilicen en la documentación.
+## Logo principal
 
-No se debe enlazar una imagen hasta que el archivo correspondiente esté agregado a esta carpeta.
+- `logo_huellitas.svg`: logo vectorial de Gestión y Huellitas UdeA.
+- **Estado:** incorporado en la rama `desarrollo`; pendiente de aprobación del equipo.
+
+## Recursos pendientes
+
+- Diagramas gráficos adicionales que se requieran para el manual o la presentación.

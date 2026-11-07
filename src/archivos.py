@@ -210,6 +210,7 @@ class c_archivos:
             ("Consecutivo", f"#{int(registro.get('id', 0)):06d}"),
             ("Tipo de solicitud", registro.get("tipo_solicitud")),
             ("Fecha de radicación", registro.get("fecha_radicacion")),
+            ("Fecha/hora de registro en sistema", registro.get("fecha_registro_sistema")),
             ("Fecha máxima de respuesta", registro.get("fecha_maxima_respuesta")),
             ("Estado", registro.get("estado_peticion", "Registrada")),
         ]

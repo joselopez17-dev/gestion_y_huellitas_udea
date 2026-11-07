@@ -1,46 +1,49 @@
-# Plan de versionado: Gestión y Huellitas UdeA
+# Plan de versionado — Gestión y Huellitas UdeA
 
 ## 1. Convención
 
-Se usa versionado semántico `vMAYOR.MENOR.PARCHE`:
+Se utiliza versionado semántico `MAYOR.MENOR.PARCHE`:
 
-- **MAYOR:** versión final entregable (v1.0.0).
-- **MENOR:** se completa un módulo o grupo de documentos.
-- **PARCHE:** correcciones sin funcionalidad nueva.
+- **MAYOR:** versión estable de entrega final.
+- **MENOR:** incorporación de una funcionalidad o módulo completo.
+- **PARCHE:** corrección puntual sin ampliar el alcance.
 
-Cada versión se marca con una etiqueta (tag) en GitHub. Los commits se
-escriben en español y en infinitivo, por ejemplo: `Agregar validación de correo`.
+Los nombres de versión de esta tabla identifican hitos de trabajo. La etiqueta formal de Git (`tag`) se creará cuando el equipo apruebe cada versión estable.
 
-## 2. Versiones y avance
+## 2. Base para contar los días
 
-Inicio: 15 oct 2026 (día 0). Entrega final: 22 nov 2026 (día 38).
-El avance es el porcentaje de las 50 horas del plan de proyecto.
+La versión anterior de este documento consignaba el **15 de octubre de 2026** como día 0. Mantengo esa fecha únicamente como base provisional para conservar la continuidad del plan; el equipo debe confirmar si corresponde al inicio real del proyecto.
 
-| Versión | Día | Fecha | Procedimiento relevante | Avance |
-|---|---|---|---|---|
-| v0.1.0 | 6 | 21 oct | Documentación de la Entrega 1: README, reporte de visión, requisitos, plan de proyecto, plan de versionado y estructura `src/`, `docs/`, `images/`, `data/` | 34 % |
-| v0.2.0 | 10 | 25 oct | Diseño del algoritmo: diagrama de flujo y clases | 44 % |
-| v0.3.0 | 16 | 31 oct | `validaciones.py` y `archivos.py` | 64 % |
-| v0.4.0 | 23 | 7 nov | Menú, registro, radicado de 120 caracteres y `reportes.py` | 84 % |
-| v0.9.0 | 30 | 14 nov | Pruebas y correcciones: programa completo y probado | 92 % |
-| v0.9.1 | 31 | 15 nov | Manual de usuario en `docs/` | 96 % |
-| v1.0.0 | 35 | 19 nov | Revisión final y preparación de la sustentación | 100 % |
-| Entrega 2 | 38 | 22 nov | Entrega oficial | 100 % |
+El historial verificable de GitHub muestra cambios en el repositorio desde el **20 de octubre de 2026**. Esa es la primera evidencia de actividad del repositorio, pero no necesariamente la fecha en que el equipo inició el trabajo.
 
-## 3. Ramas
+Tomando provisionalmente el 15 de octubre como día 0, el 7 de noviembre corresponde al día 23.
 
-- `main`: versión estable, solo recibe código revisado.
-- `desarrollo`: integración del trabajo del equipo.
-- `modulo/<nombre>`: una rama por módulo (por ejemplo `modulo/validaciones`).
+## 3. Hitos y avances comprobables
 
-## 4. Procedimiento para publicar una versión
+| Versión propuesta | Fecha | Día estimado | Procedimiento o avance verificable | Estado |
+|---|---|---:|---|---|
+| v0.0.1 | 20 oct 2026 | 5 | Primeros ajustes registrados en GitHub sobre el README del proyecto | Evidencia en historial |
+| v0.1.0 | 7 nov 2026 | 23 | Reorganización documental, matriz de rúbrica, plantillas de actas y estructura de carpetas | Incorporado en `desarrollo` |
+| v0.2.0 | 7 nov 2026 | 23 | Implementación inicial de `validaciones.py`, `archivos.py`, `reportes.py` y menú principal | Incorporado en `desarrollo` |
+| v0.2.1 | 7 nov 2026 | 23 | Pruebas automatizadas, prueba de arranque del menú y flujo de GitHub Actions | 9 pruebas aprobadas en Python 3.12 |
+| v1.0.0 | Por definir | — | Versión de entrega después de revisión completa, pruebas en el equipo y aprobación grupal | Pendiente |
 
-1. Fusionar la rama del módulo en `desarrollo` y probar.
-2. Fusionar `desarrollo` en `main`.
-3. Crear la etiqueta: `git tag v0.3.0` y luego `git push --tags`.
-4. Registrar la versión y la fecha en este documento.
+No se asignan porcentajes de avance sin un registro real de horas. Cuando el equipo lleve el control de tiempo, el avance porcentual podrá calcularse respecto de las 50 horas estimadas en el plan de proyecto.
 
-## 5. Control de cambios
+## 4. Ramas de trabajo
 
-Cualquier cambio de alcance se acuerda con todo el equipo, queda
-registrado en las actas y se refleja en una nueva versión.
+- `main`: rama principal que conserva la versión original y estable.
+- `desarrollo`: rama de integración donde se están incorporando y probando los cambios de la entrega final.
+- `modulo/<nombre>`: ramas opcionales para trabajar de forma aislada en módulos específicos, por ejemplo `modulo/validaciones`.
+
+## 5. Procedimiento para publicar una versión
+
+1. Integrar el módulo o documento en `desarrollo`.
+2. Ejecutar las pruebas automatizadas y revisar manualmente los cambios.
+3. Corregir los errores encontrados.
+4. Actualizar esta tabla con la fecha y el avance real.
+5. Cuando el equipo apruebe la versión, integrar los cambios a `main` y crear la etiqueta correspondiente.
+
+## 6. Control de cambios
+
+Los cambios de alcance deben ser acordados por el equipo, registrados en las actas y reflejados en una nueva versión. Ningún avance futuro se marcará como realizado hasta que exista evidencia en el repositorio.

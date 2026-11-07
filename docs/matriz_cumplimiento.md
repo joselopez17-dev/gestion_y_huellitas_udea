@@ -61,12 +61,12 @@ La copia pública omite firmas manuscritas y números de identificación persona
 | Comprensión de listas | Utilizada en almacenamiento y reportes | Existe |
 | Modularización | Archivos separados para menú, validaciones, persistencia y reportes | Existe |
 | Comentarios y documentación | Docstrings y comentarios de módulos y métodos | Por validar |
-| Pruebas automatizadas | `tests/test_core.py` y GitHub Actions | 11/11 aprobadas en Ubuntu y Windows, Python 3.12 |
+| Pruebas automatizadas | `tests/test_core.py` y GitHub Actions | 13/13 aprobadas en Ubuntu y Windows, Python 3.12 |
 | Protección de datos generados | `.gitignore` excluye datos y radicados locales | Existe |
 
 ## 5. Evidencia de integración continua
 
-La ejecución del 7 de noviembre de 2026 completó correctamente los once casos de prueba en los entornos `ubuntu-latest` y `windows-latest`, utilizando Python 3.12. Esto valida los casos automatizados incluidos, pero no sustituye la prueba de aceptación ni la revisión funcional por parte de los integrantes.
+La ejecución del 7 de noviembre de 2026 completó correctamente los trece casos de prueba en los entornos `ubuntu-latest` y `windows-latest`, utilizando Python 3.12. Esto valida los casos automatizados incluidos, pero no sustituye la prueba de aceptación ni la revisión funcional por parte de los integrantes.
 
 ## 6. Criterio para el cierre
 

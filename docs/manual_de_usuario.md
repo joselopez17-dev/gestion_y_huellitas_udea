@@ -2,31 +2,39 @@
 
 ![Logo de Gestión y Huellitas UdeA](../images/logo_huellitas.svg)
 
-> **Versión:** borrador de la rama `desarrollo`. Debe comprobarse en el equipo antes de considerarse manual definitivo.
+> **Versión:** borrador actualizado de la rama desarrollo. Debe validarse paso a paso en el computador del equipo antes de considerarse manual definitivo.
 
 ## 1. Propósito
 
-Gestión y Huellitas UdeA es un programa de consola para registrar y hacer seguimiento a Peticiones, Quejas, Reclamos y Sugerencias (PQRS) relacionadas con la atención de perros y gatos en la Universidad de Antioquia.
+Gestión y Huellitas UdeA es un programa de consola para registrar y hacer seguimiento a Peticiones, Quejas, Reclamos y Sugerencias (PQRS) relacionadas con la atención de perros y gatos en el contexto del proyecto académico de la Universidad de Antioquia.
 
 ## 2. Requisitos
 
 - Python 3 instalado.
 - Una copia local del repositorio.
 - No se requieren paquetes externos: el programa utiliza módulos de la biblioteca estándar de Python.
+- Ejecutar los comandos desde la carpeta raíz del repositorio.
 
 ## 3. Ejecutar pruebas y abrir el programa
 
 Desde la carpeta raíz del repositorio, ejecute primero las pruebas:
 
-```bash
+~~~bash
 python -m unittest discover -s tests -v
-```
+~~~
 
 Para abrir el sistema:
 
-```bash
+~~~bash
 python src/main.py
-```
+~~~
+
+En Windows también se puede utilizar el lanzador py si el comando python no está disponible:
+
+~~~powershell
+py -m unittest discover -s tests -v
+py src/main.py
+~~~
 
 ## 4. Menú principal
 
@@ -38,7 +46,7 @@ El menú contiene cinco opciones:
 4. Estadísticas.
 5. Salir.
 
-Escriba el número de la opción y presione Enter.
+Escriba el número de la opción y presione Enter. Una opción incorrecta muestra un mensaje y vuelve a presentar el menú.
 
 ## 5. Registrar una PQRS
 
@@ -63,27 +71,31 @@ Seleccione la opción 1. El programa solicitará los datos del solicitante y de 
 
 Al guardar, el sistema asigna el consecutivo propio del archivo correspondiente, define el estado inicial como Registrada y calcula la fecha máxima de respuesta sumando 30 días calendario a la fecha de radicación.
 
+Si se guarda la PQRS pero ocurre un error al generar el comprobante, el programa informa que el registro sí quedó almacenado. No vuelva a registrar la misma solicitud por ese motivo; consulte el consecutivo asignado.
+
 ## 6. Consultar PQRS
 
 Seleccione la opción 2. Puede escoger un tipo de solicitud para ver su listado o elegir Todas para consultar el resumen general. Para abrir un comprobante específico, indique el tipo y el consecutivo correspondiente.
+
+El consecutivo debe consultarse junto con el tipo de solicitud, porque cada archivo maneja una secuencia independiente.
 
 ## 7. Cambiar el estado
 
 Seleccione la opción 3, indique el tipo de solicitud y su consecutivo. Los únicos cambios permitidos son:
 
-`Registrada → En proceso → Solucionada`
+**Registrada → En proceso → Solucionada**
 
 No se puede pasar directamente de Registrada a Solucionada ni retroceder un estado. Cuando la PQRS cambia a Solucionada, el sistema guarda la fecha de respuesta.
 
 ## 8. Radicado TXT
 
-Al registrar o consultar una solicitud, el programa genera un comprobante dentro de `data/radicados/`. Cada línea tiene exactamente 120 caracteres. El comprobante incluye los datos del radicado, solicitante, clasificación y asunto; no incluye la descripción detallada. Si no hay dirección, aparece N/A.
+Al registrar o consultar una solicitud, el programa intenta generar un comprobante dentro de data/radicados/. Cada línea tiene exactamente 120 caracteres. El comprobante incluye los datos del radicado, solicitante, clasificación y asunto; no incluye la descripción detallada. Si no hay dirección, aparece N/A.
 
 ## 9. Estadísticas
 
 Seleccione la opción 4. Se muestran seis indicadores:
 
-1. Promedio entero de días de respuesta de las PQRS solucionadas.
+1. Promedio entero de días de respuesta de las PQRS solucionadas. Si no hay solicitudes solucionadas con fecha de respuesta, se muestra “Sin datos”.
 2. Cantidad por tipo de solicitud.
 3. Cantidad por tipo de mascota.
 4. Distribución por estado.
@@ -92,16 +104,16 @@ Seleccione la opción 4. Se muestran seis indicadores:
 
 ## 10. Archivos de datos y privacidad
 
-Los registros se guardan en archivos de texto UTF-8 dentro de `data/`, uno por tipo:
+Los registros se guardan en archivos de texto UTF-8 dentro de data/, uno por tipo:
 
-- `Peticion.txt`
-- `Queja.txt`
-- `Reclamo.txt`
-- `Sugerencia.txt`
+- Peticion.txt
+- Queja.txt
+- Reclamo.txt
+- Sugerencia.txt
 
-Cada archivo contiene registros JSON, uno por línea, y mantiene un consecutivo independiente. Los radicados se guardan en `data/radicados/`.
+Cada archivo contiene registros JSON, uno por línea, y mantiene un consecutivo independiente. Los radicados se guardan en data/radicados/.
 
-Los archivos generados se excluyen del control de versiones mediante `.gitignore`. No se deben subir al repositorio público datos personales reales de solicitantes.
+Los archivos generados se excluyen del control de versiones mediante .gitignore. No se deben subir al repositorio público datos personales reales de solicitantes. Esta versión no cifra los archivos ni incluye autenticación; mantenga los datos reales en un equipo con acceso restringido.
 
 ## 11. Cerrar el programa
 

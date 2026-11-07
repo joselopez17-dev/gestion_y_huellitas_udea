@@ -11,7 +11,23 @@ Completar esta información durante la ejecución real. Utilizar únicamente dat
 - **Sistema operativo:** [Registrar]
 - **Resultado general:** [Pendiente / Aprobado / Requiere correcciones]
 
-## 2. Preparación
+## 2. Evidencia de aceptación automatizada
+
+**Resultado: aprobada en GitHub Actions.**
+
+- **Fecha:** 7 de noviembre de 2026.
+- **Rama:** `desarrollo`.
+- **Commit con la suite de aceptación:** `e759cdeb67a6181d927da703a377863c86be9f79`.
+- **Entornos:** Ubuntu y Windows (`ubuntu-latest` y `windows-latest`).
+- **Python:** 3.12.
+- **Resultado total:** 24/24 pruebas aprobadas (16 pruebas generales y 8 pruebas automatizadas de aceptación).
+- **Ejecución:** [GitHub Actions — pruebas del proyecto](https://github.com/joselopez17-dev/gestion_y_huellitas_udea/actions).
+
+Las pruebas automatizadas utilizan entradas simuladas y una carpeta temporal; no crean ni modifican registros dentro de `data/` del proyecto. Cubren el registro de los cuatro tipos, reintento tras datos inválidos, persistencia al reabrir el gestor, consulta general, comprobantes, transiciones de estado, estadísticas y presentación de las cinco opciones del menú.
+
+**Alcance de esta evidencia:** las pruebas automáticas fueron aprobadas. Esto no equivale a una revisión visual y manual realizada por los integrantes en su computador. Los pasos manuales siguientes deben completarse y registrarse antes de declarar la aceptación final.
+
+## 3. Preparación
 
 - [ ] Descargar o actualizar la rama desarrollo.
 - [ ] Abrir una terminal en la carpeta raíz del repositorio.
@@ -19,7 +35,7 @@ Completar esta información durante la ejecución real. Utilizar únicamente dat
 - [ ] Confirmar que las pruebas automatizadas terminan sin errores.
 - [ ] Comprobar que la carpeta data no contiene datos reales o registros antiguos que puedan alterar el ejercicio.
 
-## 3. Prueba de registro
+## 4. Prueba de registro
 
 Registrar una solicitud ficticia de cada tipo: Petición, Queja, Reclamo y Sugerencia.
 
@@ -35,7 +51,7 @@ Registrar una solicitud ficticia de cada tipo: Petición, Queja, Reclamo y Suger
 - [ ] La fecha máxima de respuesta corresponde a 30 días calendario después de la fecha de radicación.
 - [ ] El estado inicial se registra como Registrada.
 
-## 4. Prueba de almacenamiento y persistencia
+## 5. Prueba de almacenamiento y persistencia
 
 - [ ] Se crean Peticion.txt, Queja.txt, Reclamo.txt y Sugerencia.txt dentro de data.
 - [ ] Cada archivo conserva sus propios consecutivos.
@@ -43,7 +59,7 @@ Registrar una solicitud ficticia de cada tipo: Petición, Queja, Reclamo y Suger
 - [ ] La consulta general reúne las solicitudes almacenadas.
 - [ ] Los registros se pueden consultar indicando tipo y consecutivo.
 
-## 5. Prueba de radicado
+## 6. Prueba de radicado
 
 Abrir el comprobante generado para cada tipo de solicitud.
 
@@ -53,7 +69,7 @@ Abrir el comprobante generado para cada tipo de solicitud.
 - [ ] La dirección vacía aparece como N/A.
 - [ ] La descripción detallada no aparece en el comprobante.
 
-## 6. Prueba de cambio de estado
+## 7. Prueba de cambio de estado
 
 - [ ] Una solicitud nueva aparece como Registrada.
 - [ ] Se permite cambiar de Registrada a En proceso.
@@ -62,7 +78,7 @@ Abrir el comprobante generado para cada tipo de solicitud.
 - [ ] Se rechaza retroceder de estado.
 - [ ] Al quedar Solucionada, se registra la fecha de respuesta.
 
-## 7. Prueba de estadísticas
+## 8. Prueba de estadísticas
 
 - [ ] El promedio se calcula con solicitudes solucionadas que tengan fecha de respuesta.
 - [ ] Cuando no hay solicitudes solucionadas, el sistema muestra Sin datos y no un promedio de cero días.
@@ -72,11 +88,11 @@ Abrir el comprobante generado para cada tipo de solicitud.
 - [ ] La PQRS activa más antigua corresponde a la fecha de radicación más antigua entre las no solucionadas.
 - [ ] Las solicitudes vencidas o próximas a vencer se identifican de acuerdo con la fecha máxima de respuesta.
 
-## 8. Resultado y evidencias
+## 9. Resultado y evidencias
 
 | Prueba | Resultado (Aprobada / Fallida / No ejecutada) | Observaciones o evidencia |
 |---|---|---|
-| Preparación | [Registrar] | [Registrar] |
+| Pruebas automatizadas (CI) | Aprobada | 24/24; Ubuntu y Windows; Python 3.12; commit `e759cde` |\n| Preparación manual | [Registrar] | [Registrar] |
 | Registro | [Registrar] | [Registrar] |
 | Almacenamiento y persistencia | [Registrar] | [Registrar] |
 | Radicado | [Registrar] | [Registrar] |

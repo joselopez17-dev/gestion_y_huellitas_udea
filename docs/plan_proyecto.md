@@ -67,7 +67,7 @@ Este seguimiento diferencia los documentos y módulos que ya están incorporados
 | A2. Reporte de visión | `docs/reporte_vision.md` incorporado | Elaborado; pendiente revisión del equipo |
 | A3. Especificación de requisitos | `docs/especificacion_requisitos.md` incorporado y actualizado con las seis estadísticas | Elaborado; pendiente validación final |
 | A4. Plan de proyecto y versionado | `docs/plan_proyecto.md` y `docs/plan_versionado.md` presentes | Elaborado |
-| A5. README, logo y estructura | README actualizado con roles y responsabilidades del acta; logo vectorial `images/logo_huellitas.svg` agregado; faltan confirmar habilidades y fortalezas individuales y validar los nombres que difieren entre README y acta | Parcial |
+| A5. README, logo y estructura | README actualizado con roles y responsabilidades del acta; logo vectorial `images/logo_huellitas.svg` agregado; perfiles redactados a partir de expectativas y tareas del acta; falta que cada integrante confirme fortalezas concretas y se validen los nombres que difieren entre README y acta | Parcial |
 | A6. Diseño del algoritmo y clases | `docs/algoritmo.md` y clases `c_main`, `c_validaciones`, `c_archivos`, `c_reportes` incorporadas | Implementado; pendiente explicación y revisión del equipo |
 | A7. Validaciones | `src/validaciones.py` | Implementado; pruebas automatizadas en curso |
 | A8. Archivos | `src/archivos.py` | Implementado; pruebas automatizadas en curso |

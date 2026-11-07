@@ -10,7 +10,10 @@ import textwrap
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
-from validaciones import c_validaciones
+try:
+    from .validaciones import c_validaciones
+except ImportError:  # Ejecución directa de python src/main.py
+    from validaciones import c_validaciones
 
 
 class c_archivos:

@@ -4,6 +4,8 @@ La clase c_main organiza un menú de consola claro, sencillo y consistente
 para registrar, consultar, actualizar y analizar las solicitudes PQRS.
 """
 
+import sys
+
 try:
     from .archivos import c_archivos
     from .reportes import c_reportes
@@ -318,6 +320,11 @@ class c_main:
 
 def main():
     """Construye y ejecuta el gestor principal de la aplicación."""
+    # La salida UTF-8 evita errores al mostrar tildes y símbolos en Windows.
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
     try:
         c_main().ejecutar()
     except KeyboardInterrupt:

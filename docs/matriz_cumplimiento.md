@@ -38,8 +38,8 @@ La guía solicita acta de entendimiento, acta de colaboración y acta de respons
 | Requisito | Implementación en `desarrollo` | Estado |
 |---|---|---|
 | Menú principal de cinco opciones | `src/main.py` | Por validar |
-| Registro con validaciones | `src/main.py` y `src/validaciones.py` | Por validar |
-| ID independiente por tipo | `src/archivos.py` | Por validar |
+| Registro con validaciones | `src/main.py` y `src/validaciones.py`; cubierto parcialmente por pruebas automatizadas | Pruebas automatizadas aprobadas; falta prueba de aceptación |
+| ID independiente por tipo | `src/archivos.py`; prueba de consecutivos independientes | Pruebas automatizadas aprobadas |
 | Cuatro archivos planos | Se crean al usar cada tipo de solicitud dentro de `data/` | Por validar |
 | Fecha máxima de 30 días | `src/archivos.py` | Por validar |
 | Estado inicial y flujo de estados | `src/archivos.py` | Por validar |
@@ -56,9 +56,13 @@ La guía solicita acta de entendimiento, acta de colaboración y acta de respons
 | Comprensión de listas | Utilizada en almacenamiento y reportes | Existe |
 | Modularización | Archivos separados para menú, validaciones, persistencia y reportes | Existe |
 | Comentarios y documentación | Docstrings y comentarios de módulos y métodos | Por validar |
-| Pruebas automatizadas | `tests/test_core.py` y flujo de GitHub Actions | Por ejecutar |
+| Pruebas automatizadas | `tests/test_core.py` y GitHub Actions | 9/9 aprobadas en Ubuntu y Windows, Python 3.12 |
 | Protección de datos generados | `.gitignore` excluye datos y radicados locales | Existe |
 
-## 5. Criterio para el cierre
+## 5. Evidencia de integración continua
+
+La ejecución del 7 de noviembre de 2026 completó correctamente los nueve casos de prueba en los entornos `ubuntu-latest` y `windows-latest`, utilizando Python 3.12. Esto valida los casos automatizados incluidos, pero no sustituye la prueba de aceptación ni la revisión funcional por parte de los integrantes.
+
+## 6. Criterio para el cierre
 
 No se marcará como completo un requisito funcional hasta ejecutar las pruebas automatizadas y verificar manualmente el registro, consulta, actualización del estado, radicado y estadísticas con datos de prueba. Los documentos deben revisarse con el equipo antes de la entrega.

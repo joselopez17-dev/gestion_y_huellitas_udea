@@ -77,7 +77,7 @@ Estos son beneficios esperados del diseño; no se presentan como resultados medi
 
 - Lenguaje de programación: Python 3.
 - Interacción: consola.
-- Almacenamiento: archivos planos UTF-8 dentro de docs/data.
+- Almacenamiento: archivos planos UTF-8 dentro de data/.
 - El programa se ejecuta localmente y no requiere paquetes externos.
 - Los archivos generados pueden contener datos personales; por eso se excluyen del control de versiones y no deben publicarse.
 - El plazo académico indicado para la Entrega 2 corresponde a la semana 16.

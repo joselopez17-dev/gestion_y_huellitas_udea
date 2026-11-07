@@ -27,17 +27,17 @@ Este cálculo es una valoración académica del tiempo de práctica del equipo, 
 | A13 | Revisión final y preparación de la sustentación | 2 | $16.676 |
 | | **Total** | **50** | **$416.900** |
 
-**Fuentes para la estimación:** [Decreto 1469 de 2025 — SMLMV 2026](https://www.presidencia.gov.co/Documents/251230-Decreto-1469-MinTrabajo.pdf); [Circular 0101 de 2025 — divisor mensual de horas y jornada de 42 horas desde el 15 de julio de 2026](https://normativa.colpensiones.gov.co/compilacion/docs/circular_mintra_0101_2025.htm). El Consejo de Estado revocó el 9 de julio de 2026 la suspensión provisional del Decreto 1469 de 2025; por ello se conserva como referencia el valor de $1.750.905.
+**Fuentes para la estimación:** [Decreto 1469 de 2025 — SMLMV 2026](https://www.presidencia.gov.co/Documents/251230-Decreto-1469-MinTrabajo.pdf); [Circular 0101 de 2025 — divisor mensual de horas y jornada de 42 horas desde el 15 de julio de 2026](https://normativa.colpensiones.gov.co/compilacion/docs/circular_mintra_0101_2025.htm). El Consejo de Estado revocó el 9 de julio de 2026 la suspensión provisional del Decreto 1469 de 2025; por ello se conserva como referencia el valor de $1.750.905. Consulta también la [providencia del 9 de julio de 2026](https://normograma.com/documentospdf/idea/v_ico/compilacion/docs/11001-03-25-000-2026-00004-00%280004-26%29_20260709.htm).
 
 ## 2. Cronograma (Diagrama de Gantt)
 
 ~~~mermaid
 gantt
-    title Gestión y Huellitas UdeA (15 oct - 22 nov 2026)
+    title Gestión y Huellitas UdeA (22 ago - 22 nov 2026)
     dateFormat YYYY-MM-DD
     axisFormat %d/%m
     section Documentación
-    Acta combinada (A1)             :a1, 2026-10-15, 2d
+    Acta combinada (A1)             :a1, 2026-08-22, 1d
     Reporte de visión (A2)          :a2, 2026-10-15, 2d
     README, logo y repo (A5)        :a5, 2026-10-15, 4d
     Requisitos (A3)                 :a3, 2026-10-16, 3d
@@ -59,7 +59,7 @@ gantt
 
 | Fecha | Hito |
 |---|---|
-| 21 oct | Documentos de la Entrega 1 corregidos y subidos |
+| 22 ago | Reunión inicial y elaboración del acta combinada del equipo |\n| 21 oct | Documentos de la Entrega 1 corregidos y subidos |
 | 25 oct | Diseño del algoritmo terminado |
 | 14 nov | Programa completo y probado |
 | 19 nov | Manual y revisión final listos |
@@ -83,7 +83,7 @@ Este seguimiento diferencia los documentos y módulos que ya están incorporados
 | A10. Reportes | src/reportes.py y pruebas de las seis estadísticas; promedio sin datos identificado como “Sin datos” | Implementado; pruebas automatizadas aprobadas |
 | A11. Pruebas y correcciones | tests/test_core.py y GitHub Actions; 16 pruebas, incluidas regresiones de promedio sin datos y fallos al generar o actualizar el radicado | 16 pruebas aprobadas en Ubuntu y Windows, Python 3.12 |
 | A12. Manual de usuario | docs/manual_de_usuario.md | Borrador revisado; pendiente prueba paso a paso |
-| A13. Revisión final y sustentación | Aún no hay evidencia de revisión final o ensayo de sustentación | Pendiente |
+| A13. Revisión final y sustentación | Checklist de aceptación en docs/pruebas_aceptacion.md; faltan ejecución por el equipo, correcciones finales y ensayo de sustentación | Pendiente |
 
 ### Control de horas
 

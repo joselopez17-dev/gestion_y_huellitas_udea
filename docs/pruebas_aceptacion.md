@@ -92,7 +92,8 @@ Abrir el comprobante generado para cada tipo de solicitud.
 
 | Prueba | Resultado (Aprobada / Fallida / No ejecutada) | Observaciones o evidencia |
 |---|---|---|
-| Pruebas automatizadas (CI) | Aprobada | 24/24; Ubuntu y Windows; Python 3.12; commit `e759cde` |\n| Preparación manual | [Registrar] | [Registrar] |
+| Pruebas automatizadas (CI) | Aprobada | 24/24; Ubuntu y Windows; Python 3.12; commit `e759cde` |
+| Preparación manual | [Registrar] | [Registrar] |
 | Registro | [Registrar] | [Registrar] |
 | Almacenamiento y persistencia | [Registrar] | [Registrar] |
 | Radicado | [Registrar] | [Registrar] |

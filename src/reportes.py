@@ -32,7 +32,7 @@ class c_reportes:
             and registro.get("fecha_respuesta")
             and registro.get("fecha_radicacion")
         ]
-        return round(sum(dias) / len(dias)) if dias else 0
+        return round(sum(dias) / len(dias)) if dias else None
 
     def cantidad_por_tipo_solicitud(self):
         """Cuenta cada tipo documental, incluso cuando su cantidad es cero."""

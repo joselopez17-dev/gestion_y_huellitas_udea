@@ -20,8 +20,10 @@ class TestValidaciones(unittest.TestCase):
     def test_documento_y_telefono(self):
         self.assertTrue(c_validaciones.validar_numero_documento("1037654321"))
         self.assertFalse(c_validaciones.validar_numero_documento("10376A321"))
+        self.assertFalse(c_validaciones.validar_numero_documento("１２３"))
         self.assertTrue(c_validaciones.validar_telefono("3001234567", "Celular"))
         self.assertFalse(c_validaciones.validar_telefono("300123456", "Fijo"))
+        self.assertFalse(c_validaciones.validar_telefono("٣٠٠١٢٣٤٥٦٧", "Celular"))
 
     def test_correo_y_direccion(self):
         self.assertTrue(c_validaciones.validar_correo("usuario@correo.com"))
@@ -38,6 +40,7 @@ class TestValidaciones(unittest.TestCase):
         self.assertTrue(c_validaciones.validar_fecha_radicacion(date.today().isoformat()))
         futura = (date.today() + timedelta(days=1)).isoformat()
         self.assertFalse(c_validaciones.validar_fecha_radicacion(futura))
+        self.assertFalse(c_validaciones.validar_fecha_radicacion(date.today().strftime("%Y%m%d")))
 
 
 class TestArchivosYReportes(unittest.TestCase):

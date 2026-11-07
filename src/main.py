@@ -140,14 +140,28 @@ class c_main:
             datos = self._capturar_datos_pqrs()
             nuevo_id = self.archivos.guardar_pqrs(datos)
             registro = self.archivos.buscar_pqrs(nuevo_id, datos["tipo_solicitud"])
+            if registro is None:
+                raise ValueError("El registro se guardó, pero no fue posible recuperarlo.")
+        except (OSError, ValueError) as error:
+            print(f"❌ No fue posible guardar la PQRS: {error}")
+            return
+
+        # El comprobante se genera después de guardar. Un fallo aquí no debe
+        # hacer creer al usuario que el registro se perdió ni inducir duplicados.
+        try:
             ruta = self.archivos.generar_radicado(registro)
-            print("\n✅ PQRS registrada correctamente.")
+        except OSError as error:
+            print("\n✅ La PQRS quedó registrada correctamente.")
             print(f"Consecutivo asignado: {nuevo_id:06d}")
             print(f"Fecha máxima de respuesta: {registro['fecha_maxima_respuesta']}")
-            print(f"Radicado guardado en: {ruta}")
-            print("\n" + self.archivos.construir_radicado(registro))
-        except (OSError, ValueError) as error:
-            print(f"❌ No fue posible registrar la PQRS: {error}")
+            print(f"⚠️ No se pudo guardar el comprobante TXT: {error}")
+            return
+
+        print("\n✅ PQRS registrada correctamente.")
+        print(f"Consecutivo asignado: {nuevo_id:06d}")
+        print(f"Fecha máxima de respuesta: {registro['fecha_maxima_respuesta']}")
+        print(f"Radicado guardado en: {ruta}")
+        print("\n" + self.archivos.construir_radicado(registro))
 
     @staticmethod
     def _mostrar_resumen_registros(registros):
@@ -241,7 +255,10 @@ class c_main:
         print("=" * 56)
 
         promedio = self.reportes.calcular_promedio_dias_respuesta()
-        print(f"1. Promedio de días de respuesta: {promedio} días")
+        if promedio is None:
+            print("1. Promedio de días de respuesta: Sin datos de PQRS solucionadas.")
+        else:
+            print(f"1. Promedio de días de respuesta: {promedio} días")
         print("   (Se calcula con PQRS solucionadas que tienen fecha de respuesta.)")
 
         print("\n2. Cantidad por tipo de solicitud:")

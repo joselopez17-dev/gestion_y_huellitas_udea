@@ -31,6 +31,7 @@ class TestValidaciones(unittest.TestCase):
         self.assertTrue(c_validaciones.validar_direccion(""))
         self.assertTrue(c_validaciones.validar_direccion("Avenida 10 #20-30"))
         self.assertFalse(c_validaciones.validar_direccion("abc"))
+        self.assertFalse(c_validaciones.validar_direccion("Avenida\\\\Norte 10"))
         self.assertTrue(c_validaciones.validar_asunto("Solicitud de consulta veterinaria."))
         self.assertFalse(c_validaciones.validar_asunto("😊😊😊😊😊😊"))
 

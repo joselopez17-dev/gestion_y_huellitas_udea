@@ -42,16 +42,16 @@ La copia pública omite firmas manuscritas y números de identificación persona
 
 | Requisito | Implementación en `desarrollo` | Estado |
 |---|---|---|
-| Menú principal de cinco opciones | `src/main.py` | Por validar |
-| Registro con validaciones | `src/main.py` y `src/validaciones.py`; prueba de registro completo desde el menú | Pruebas automatizadas aprobadas; falta prueba de aceptación |
+| Menú principal de cinco opciones | `src/main.py` y prueba de ejecución del menú | Prueba automatizada aprobada; revisión visual manual pendiente |
+| Registro con validaciones | `src/main.py`, `src/validaciones.py` y pruebas de aceptación con entradas simuladas | Pruebas automatizadas aprobadas; falta recorrido manual del equipo |
 | ID independiente por tipo | `src/archivos.py`; prueba de consecutivos independientes | Pruebas automatizadas aprobadas |
 | Cuatro archivos planos | Prueba automatizada de Petición, Queja, Reclamo y Sugerencia; verifica creación y consecutivos independientes | Pruebas automatizadas aprobadas |
 | Fecha máxima de 30 días | `src/archivos.py`; prueba de cálculo de fecha límite | Pruebas automatizadas aprobadas |
 | Estado inicial y flujo de estados | `src/archivos.py`; prueba de transiciones | Pruebas automatizadas aprobadas |
-| Consulta de PQRS y radicado | `src/main.py` y `src/archivos.py`; prueba desde el menú que genera el radicado | Pruebas automatizadas aprobadas; falta aceptación manual del equipo |
+| Consulta de PQRS y radicado | `src/main.py`, `src/archivos.py` y prueba de consulta general desde el menú | Pruebas automatizadas aprobadas; falta aceptación manual del equipo |
 | Cambio de estado | `src/archivos.py`; prueba de transición desde el menú y de persistencia si falla el TXT actualizado | Pruebas automatizadas aprobadas |
 | Radicado TXT de 120 caracteres | `src/archivos.py`; prueba de ancho, N/A y exclusión de descripción | Pruebas automatizadas aprobadas |
-| Estadística obligatoria y cinco adicionales | `src/reportes.py` y `src/main.py`; pruebas con distintos tipos, estados y fechas; promedio sin datos se presenta como “Sin datos” | Pruebas automatizadas aprobadas; falta validación de aceptación |
+| Estadística obligatoria y cinco adicionales | `src/reportes.py` y `src/main.py`; prueba de los seis indicadores y del caso sin datos | Pruebas automatizadas aprobadas; falta revisión manual del equipo |
 
 ## 4. Programación y pruebas
 
@@ -61,12 +61,12 @@ La copia pública omite firmas manuscritas y números de identificación persona
 | Comprensión de listas | Utilizada en almacenamiento y reportes | Existe |
 | Modularización | Archivos separados para menú, validaciones, persistencia y reportes | Existe |
 | Comentarios y documentación | Docstrings y comentarios de módulos y métodos | Por validar |
-| Pruebas automatizadas | `tests/test_core.py`, `tests/test_aceptacion.py` y GitHub Actions | 23/23 aprobadas en Ubuntu y Windows, Python 3.12; incluye 7 pruebas automatizadas de aceptación |
+| Pruebas automatizadas | `tests/test_core.py`, `tests/test_aceptacion.py` y GitHub Actions | 24/24 aprobadas en Ubuntu y Windows, Python 3.12; incluye 7 pruebas automatizadas de aceptación |
 | Protección de datos generados | `.gitignore` excluye datos y radicados locales | Existe |
 
 ## 5. Evidencia de integración continua
 
-La ejecución del 7 de noviembre de 2026 (commit `31686c6027e831cfc87d10fe6642c32f1c087e79`) completó correctamente las 23 pruebas en `ubuntu-latest` y `windows-latest`, con Python 3.12. La suite incluye siete pruebas de aceptación con entradas simuladas y almacenamiento temporal: registro de los cuatro tipos, rechazo y reintento de datos inválidos, persistencia al reabrir el gestor, consulta general, radicados, transiciones de estado y estadísticas. [Ver ejecución de GitHub Actions](https://github.com/joselopez17-dev/gestion_y_huellitas_udea/actions/runs/42411052950). Esta evidencia automatizada no sustituye la revisión manual en el computador del equipo.
+La ejecución del 7 de noviembre de 2026 (commit `31686c6027e831cfc87d10fe6642c32f1c087e79`) completó correctamente las 23 pruebas en `ubuntu-latest` y `windows-latest`, con Python 3.12. La suite incluye ocho pruebas de aceptación con entradas simuladas y almacenamiento temporal: registro de los cuatro tipos, rechazo y reintento de datos inválidos, persistencia al reabrir el gestor, consulta general, radicados, transiciones de estado y estadísticas. [Ver ejecución de GitHub Actions](https://github.com/joselopez17-dev/gestion_y_huellitas_udea/actions/runs/42411052950). Esta evidencia automatizada no sustituye la revisión manual en el computador del equipo.
 
 ## 6. Prueba de aceptación pendiente
 

@@ -6,7 +6,7 @@ La guía solicita valorar 50 horas de trabajo del equipo a razón de un salario 
 
 - Valor hora sin redondear: $1.750.905 / 210 = **$8.337,64 COP**.
 - Valor hora redondeado para la tabla: **$8.338 COP**.
-- Valor estimado de las 50 horas: 50 × $8.338 = **$416.900 COP**.
+- Costo equivalente sin redondear: 50 × $8.337,642857 = **$416.882,14 COP**. Valor estimado presentado en la tabla con tarifa horaria redondeada: 50 × $8.338 = **$416.900 COP**.
 
 Este cálculo es una valoración académica del tiempo de práctica del equipo, no un registro de pagos ni de horas efectivamente ejecutadas. Las referencias normativas se enlazan al final de este apartado.
 
@@ -80,8 +80,8 @@ Este seguimiento diferencia los documentos y módulos que ya están incorporados
 | A7. Validaciones | src/validaciones.py y pruebas de datos válidos e inválidos | Implementado; pruebas automatizadas aprobadas |
 | A8. Archivos | src/archivos.py; prueba de los cuatro archivos y consecutivos independientes | Implementado; pruebas automatizadas aprobadas |
 | A9. Menú, registro y radicado | src/main.py y generación de TXT de 120 caracteres | Implementado; pendiente prueba de aceptación con el equipo |
-| A10. Reportes | src/reportes.py y pruebas de las seis estadísticas con varios registros; mensaje de ausencia de datos para el promedio | Implementado; pruebas automatizadas en verificación |
-| A11. Pruebas y correcciones | tests/test_core.py y GitHub Actions | En verificación después de las últimas correcciones |
+| A10. Reportes | src/reportes.py y pruebas de las seis estadísticas; promedio sin datos identificado correctamente | Implementado; pruebas automatizadas aprobadas |
+| A11. Pruebas y correcciones | tests/test_core.py y GitHub Actions; 15 pruebas, incluidas regresiones de promedio sin datos y fallo del radicado | 15 pruebas aprobadas en Ubuntu y Windows, Python 3.12 |
 | A12. Manual de usuario | docs/manual_de_usuario.md | Borrador revisado; pendiente prueba paso a paso |
 | A13. Revisión final y sustentación | Aún no hay evidencia de revisión final o ensayo de sustentación | Pendiente |
 

@@ -10,7 +10,7 @@ Esta matriz compara la rúbrica del proyecto integrador con los archivos y funci
 |---:|---|---|---|
 | 1 | Integrantes | Tabla en `README.md` | Parcial |
 | 2 | Programa académico, habilidades y fortalezas | Programas registrados; faltan descripciones individuales | Parcial |
-| 3 | Nombre, descripción e imagen representativa | Nombre y descripción presentes; logo pendiente | Parcial |
+| 3 | Nombre, descripción e imagen representativa | Nombre y descripción presentes; logo vectorial en `images/logo_huellitas.svg`, pendiente de aprobación del equipo | Parcial |
 | 4 | Licencia del software | Archivo `LICENSE` con licencia MIT | Existe |
 | 5 | Reporte de visión | `docs/reporte_vision.md` | Por validar |
 | 6 | Requisitos funcionales y no funcionales | `docs/especificacion_requisitos.md` | Por validar |

@@ -1,68 +1,64 @@
 # Matriz de cumplimiento de la rúbrica
 
-Esta matriz compara los requisitos del proyecto integrador con la evidencia disponible en el repositorio. Los estados se actualizarán cuando exista evidencia comprobable y, para las funciones del programa, cuando hayan sido probadas.
+Esta matriz compara la rúbrica del proyecto integrador con los archivos y funcionalidades presentes en la rama `desarrollo`. Un requisito funcional solo se marca completo cuando se ejecuten las pruebas y se compruebe su funcionamiento.
 
-**Estados:** Existe = evidencia presente; Parcial = borrador o información incompleta; Pendiente = sin evidencia suficiente; Por validar = existe un documento o código que requiere revisión.
+**Estados:** Existe = evidencia presente; Parcial = falta información o pruebas; Pendiente = sin evidencia suficiente; Por validar = el documento o código existe, pero requiere ejecución o revisión.
 
 ## 1. Entregables documentales
 
 | N.º | Requisito | Evidencia actual | Estado |
 |---:|---|---|---|
 | 1 | Integrantes | Tabla en `README.md` | Parcial |
-| 2 | Programa académico, habilidades y fortalezas | Programas académicos registrados; faltan perfiles individuales | Parcial |
-| 3 | Nombre, descripción e imagen representativa | Nombre y descripción presentes; logo pendiente en `images/` | Parcial |
+| 2 | Programa académico, habilidades y fortalezas | Programas registrados; faltan descripciones individuales | Parcial |
+| 3 | Nombre, descripción e imagen representativa | Nombre y descripción presentes; logo pendiente | Parcial |
 | 4 | Licencia del software | Archivo `LICENSE` con licencia MIT | Existe |
 | 5 | Reporte de visión | `docs/reporte_vision.md` | Por validar |
 | 6 | Requisitos funcionales y no funcionales | `docs/especificacion_requisitos.md` | Por validar |
 | 7 | Plan, cronograma/Gantt y presupuesto | `docs/plan_proyecto.md` | Por validar |
 | 8 | Plan de versionado y avance en días | `docs/plan_versionado.md` | Por validar |
-| 9 | Código fuente en `src/` | Actualmente solo se encuentra `src/main.py` | Parcial |
-| 10 | Manual de usuario en `docs/` | `docs/manual_de_usuario.md`, aún provisional | Parcial |
-| 11 | Estructura GitHub `src/`, `docs/`, `images/`, `data/` | `src/` y `docs/` existen; se están incorporando las otras carpetas | Parcial |
-| 12 | Sustentación con software ejecutable y dominio del código | Se prepara cuando el programa esté terminado y probado | Pendiente |
-| 13 | Fechas y documentos de las entregas | Requiere actualizar fechas reales y guardar evidencias | Pendiente |
+| 9 | Código del algoritmo dentro de `src/` | `main.py`, `validaciones.py`, `archivos.py`, `reportes.py` | Por validar |
+| 10 | Manual de usuario dentro de `docs/` | `docs/manual_de_usuario.md` | Parcial; requiere prueba de uso |
+| 11 | Estructura GitHub | `src/`, `docs/`, `images/`, `data/` y `tests/` | Existe |
+| 12 | Sustentación con programa ejecutable y dominio del código | Requiere ejecución final y preparación del equipo | Pendiente |
+| 13 | Fechas y documentos de las entregas | Se debe confirmar el cronograma real y conservar evidencias | Pendiente |
 
 ## 2. Actas de entendimiento y compromiso
 
-La guía solicita acta de entendimiento, acta de colaboración y acta de responsabilidad. Se incorporó una plantilla en `docs/actas/plantillas_actas.md`; debe diligenciarse con acuerdos reales, revisarse y firmarse por el equipo.
+La guía solicita acta de entendimiento, acta de colaboración y acta de responsabilidad. Las plantillas están en `docs/actas/plantillas_actas.md`; falta diligenciarlas con acuerdos reales, revisarlas y obtener las firmas del equipo.
 
 | Documento | Estado |
 |---|---|
 | Acta de entendimiento | Plantilla creada; falta diligenciar y firmar |
 | Acta de colaboración | Plantilla creada; falta acordar normas y firmar |
-| Acta de responsabilidad | Plantilla creada; falta acordar responsables, entregables, plazos y firmas |
+| Acta de responsabilidad | Plantilla creada; falta acordar responsables, entregables, plazos y firmar |
 | Reuniones de seguimiento | Pendiente registrar reuniones reales |
 
-## 3. Requisitos funcionales del programa
+## 3. Funcionalidades del programa
 
-| Requisito | Evidencia esperada | Estado |
+| Requisito | Implementación en `desarrollo` | Estado |
 |---|---|---|
-| Menú principal | Registro, consulta, cambio de estado, estadísticas y salida | Parcial |
-| Registro de PQRS | Captura de datos y validaciones completas | Parcial |
-| Consecutivo independiente | ID automático separado por tipo de solicitud | Pendiente |
-| Cuatro archivos planos | `Peticion.txt`, `Queja.txt`, `Reclamo.txt`, `Sugerencia.txt` | Pendiente |
-| Validaciones | Módulo `validaciones.py` | Pendiente |
-| Gestión de archivos | Módulo `archivos.py` | Pendiente |
-| Fecha límite | Fecha de radicación + 30 días calendario | Pendiente |
-| Estado | Flujo Registrada → En proceso → Solucionada | Pendiente |
-| Consulta de PQRS | Búsqueda y visualización del radicado | Pendiente |
-| Cambio de estado | Actualización con control del flujo | Pendiente |
-| Radicado TXT | Marco ASCII; líneas de exactamente 120 caracteres; sin descripción detallada; dirección N/A si falta | Pendiente |
-| Estadísticas | Promedio entero de días de respuesta y cinco adicionales | Parcial |
-| Reportes | Módulo `reportes.py` | Pendiente |
+| Menú principal de cinco opciones | `src/main.py` | Por validar |
+| Registro con validaciones | `src/main.py` y `src/validaciones.py` | Por validar |
+| ID independiente por tipo | `src/archivos.py` | Por validar |
+| Cuatro archivos planos | Se crean al usar cada tipo de solicitud dentro de `data/` | Por validar |
+| Fecha máxima de 30 días | `src/archivos.py` | Por validar |
+| Estado inicial y flujo de estados | `src/archivos.py` | Por validar |
+| Consulta de PQRS y radicado | `src/main.py` y `src/archivos.py` | Por validar |
+| Cambio de estado | `src/archivos.py` | Por validar |
+| Radicado TXT de 120 caracteres | `src/archivos.py` | Por validar |
+| Estadística obligatoria y cinco adicionales | `src/reportes.py` y `src/main.py` | Por validar |
 
-## 4. Requisitos de programación y organización
+## 4. Programación y pruebas
 
-- [ ] Usar clases y objetos.
-- [ ] Nombrar las clases con el prefijo `c_`, según la convención de la guía.
-- [ ] Incorporar comprensión de listas donde resulte apropiado.
-- [ ] Documentar el código según la indicación de la guía.
-- [ ] Separar validaciones, persistencia y reportes en módulos.
-- [ ] Mantener el código Python dentro de `src/`.
-- [ ] Guardar los archivos planos dentro de `data/`.
-- [ ] Guardar documentos y manual dentro de `docs/`.
-- [ ] Guardar logo y recursos gráficos dentro de `images/`.
+| Criterio | Evidencia | Estado |
+|---|---|---|
+| Clases y objetos | Clases `c_main`, `c_validaciones`, `c_archivos`, `c_reportes` | Existe |
+| Comprensión de listas | Utilizada en almacenamiento y reportes | Existe |
+| Modularización | Archivos separados para menú, validaciones, persistencia y reportes | Existe |
+| Comentarios y documentación | Docstrings y comentarios de módulos y métodos | Por validar |
+| Pruebas automatizadas | `tests/test_core.py` y flujo de GitHub Actions | Por ejecutar |
+| Protección de datos generados | `.gitignore` excluye datos y radicados locales | Existe |
 
-## 5. Criterio para marcar un requisito como completo
+## 5. Criterio para el cierre
 
-Un requisito funcional se marcará como completo únicamente después de implementarlo y probarlo con datos válidos, inválidos y casos límite. La existencia de un archivo o una función no demuestra por sí sola que funcione.
+No se marcará como completo un requisito funcional hasta ejecutar las pruebas automatizadas y verificar manualmente el registro, consulta, actualización del estado, radicado y estadísticas con datos de prueba. Los documentos deben revisarse con el equipo antes de la entrega.

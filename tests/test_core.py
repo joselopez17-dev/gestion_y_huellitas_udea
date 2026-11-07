@@ -1,0 +1,106 @@
+"""Pruebas automatizadas de validación, almacenamiento y reportes."""
+
+import tempfile
+import unittest
+from datetime import date, timedelta
+from pathlib import Path
+
+from src.archivos import c_archivos
+from src.reportes import c_reportes
+from src.validaciones import c_validaciones
+
+
+class TestValidaciones(unittest.TestCase):
+    def test_nombre(self):
+        self.assertTrue(c_validaciones.validar_nombre("Juan David Pérez Gómez"))
+        self.assertTrue(c_validaciones.validar_nombre("María José O'Connor"))
+        self.assertFalse(c_validaciones.validar_nombre("Juan123"))
+        self.assertFalse(c_validaciones.validar_nombre("A"))
+
+    def test_documento_y_telefono(self):
+        self.assertTrue(c_validaciones.validar_numero_documento("1037654321"))
+        self.assertFalse(c_validaciones.validar_numero_documento("10376A321"))
+        self.assertTrue(c_validaciones.validar_telefono("3001234567", "Celular"))
+        self.assertFalse(c_validaciones.validar_telefono("300123456", "Fijo"))
+
+    def test_correo_y_direccion(self):
+        self.assertTrue(c_validaciones.validar_correo("usuario@correo.com"))
+        self.assertFalse(c_validaciones.validar_correo("usuariocorreo.com"))
+        self.assertTrue(c_validaciones.validar_direccion(""))
+        self.assertTrue(c_validaciones.validar_direccion("Avenida 10 #20-30"))
+        self.assertFalse(c_validaciones.validar_direccion("abc"))
+
+    def test_opciones_y_fecha(self):
+        self.assertTrue(c_validaciones.validar_tipo_solicitud("peticion"))
+        self.assertTrue(c_validaciones.validar_campus("campus medellin - ciudad universitaria"))
+        self.assertTrue(c_validaciones.validar_fecha_radicacion(date.today().isoformat()))
+        futura = (date.today() + timedelta(days=1)).isoformat()
+        self.assertFalse(c_validaciones.validar_fecha_radicacion(futura))
+
+
+class TestArchivosYReportes(unittest.TestCase):
+    def setUp(self):
+        self.temporal = tempfile.TemporaryDirectory()
+        self.gestor = c_archivos(Path(self.temporal.name))
+
+    def tearDown(self):
+        self.temporal.cleanup()
+
+    @staticmethod
+    def datos(tipo="Petición", fecha=None):
+        return {
+            "nombre_completo": "Juan David Pérez Gómez",
+            "tipo_documento": "CC",
+            "numero_documento": "1037654321",
+            "tipo_telefono": "Celular",
+            "telefono_contacto": "3001234567",
+            "correo_electronico": "usuario@correo.com",
+            "direccion": "",
+            "tipo_solicitud": tipo,
+            "fecha_radicacion": fecha or date.today().isoformat(),
+            "canal_recepcion": "Presencial",
+            "asunto_titulo": "Atención veterinaria",
+            "descripcion_detallada": "Solicito información sobre la atención veterinaria para mi mascota.",
+            "tipo_mascota": "Perro",
+            "campus_relacionado": "Campus Medellín - Ciudad Universitaria",
+        }
+
+    def test_consecutivos_independientes(self):
+        primero = self.gestor.guardar_pqrs(self.datos("Petición"))
+        segundo = self.gestor.guardar_pqrs(self.datos("Petición"))
+        primero_queja = self.gestor.guardar_pqrs(self.datos("Queja"))
+        self.assertEqual((primero, segundo, primero_queja), (1, 2, 1))
+        self.assertTrue((Path(self.temporal.name) / "Peticion.txt").exists())
+        self.assertTrue((Path(self.temporal.name) / "Queja.txt").exists())
+
+    def test_flujo_de_estado_y_promedio(self):
+        fecha = (date.today() - timedelta(days=5)).isoformat()
+        identificador = self.gestor.guardar_pqrs(self.datos("Petición", fecha))
+        with self.assertRaises(ValueError):
+            self.gestor.cambiar_estado("Petición", identificador, "Solucionada")
+        self.gestor.cambiar_estado("Petición", identificador, "En proceso")
+        registro = self.gestor.cambiar_estado("Petición", identificador, "Solucionada")
+        self.assertEqual(registro["estado_peticion"], "Solucionada")
+        self.assertEqual(registro["fecha_respuesta"], date.today().isoformat())
+        self.assertEqual(c_reportes(self.gestor).calcular_promedio_dias_respuesta(), 5)
+
+    def test_radicado_de_120_caracteres(self):
+        identificador = self.gestor.guardar_pqrs(self.datos())
+        registro = self.gestor.buscar_pqrs(identificador, "Petición")
+        radicado = self.gestor.construir_radicado(registro)
+        lineas = radicado.splitlines()
+        self.assertTrue(lineas)
+        self.assertTrue(all(len(linea) == 120 for linea in lineas))
+        self.assertIn("N/A", radicado)
+        self.assertNotIn(registro["descripcion_detallada"], radicado)
+
+    def test_fecha_maxima_y_reporte_por_tipo(self):
+        identificador = self.gestor.guardar_pqrs(self.datos("Queja"))
+        registro = self.gestor.buscar_pqrs(identificador, "Queja")
+        esperado = (date.fromisoformat(registro["fecha_radicacion"]) + timedelta(days=30)).isoformat()
+        self.assertEqual(registro["fecha_maxima_respuesta"], esperado)
+        self.assertEqual(c_reportes(self.gestor).cantidad_por_tipo_solicitud()["Queja"], 1)
+
+
+if __name__ == "__main__":
+    unittest.main()

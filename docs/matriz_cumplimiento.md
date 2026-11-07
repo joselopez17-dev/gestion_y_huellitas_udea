@@ -51,7 +51,7 @@ La copia pública omite firmas manuscritas y números de identificación persona
 | Consulta de PQRS y radicado | `src/main.py` y `src/archivos.py`; prueba desde el menú que genera el radicado | Pruebas automatizadas aprobadas; falta aceptación manual del equipo |
 | Cambio de estado | `src/archivos.py`; prueba de transiciones | Pruebas automatizadas aprobadas |
 | Radicado TXT de 120 caracteres | `src/archivos.py`; prueba de ancho, N/A y exclusión de descripción | Pruebas automatizadas aprobadas |
-| Estadística obligatoria y cinco adicionales | `src/reportes.py` y `src/main.py`; pruebas con distintos tipos, estados y fechas | Pruebas automatizadas aprobadas; falta validación de aceptación |
+| Estadística obligatoria y cinco adicionales | `src/reportes.py` y `src/main.py`; pruebas con distintos tipos, estados y fechas; promedio sin datos se presenta como “Sin datos” | Pruebas automatizadas aprobadas; falta validación de aceptación |
 
 ## 4. Programación y pruebas
 
@@ -61,12 +61,12 @@ La copia pública omite firmas manuscritas y números de identificación persona
 | Comprensión de listas | Utilizada en almacenamiento y reportes | Existe |
 | Modularización | Archivos separados para menú, validaciones, persistencia y reportes | Existe |
 | Comentarios y documentación | Docstrings y comentarios de módulos y métodos | Por validar |
-| Pruebas automatizadas | `tests/test_core.py` y GitHub Actions | 13/13 aprobadas en Ubuntu y Windows, Python 3.12 |
+| Pruebas automatizadas | `tests/test_core.py` y GitHub Actions | 15/15 aprobadas en Ubuntu y Windows, Python 3.12 |
 | Protección de datos generados | `.gitignore` excluye datos y radicados locales | Existe |
 
 ## 5. Evidencia de integración continua
 
-La ejecución del 7 de noviembre de 2026 completó correctamente los trece casos de prueba en los entornos `ubuntu-latest` y `windows-latest`, utilizando Python 3.12. Esto valida los casos automatizados incluidos, pero no sustituye la prueba de aceptación ni la revisión funcional por parte de los integrantes.
+La ejecución del 7 de noviembre de 2026 completó correctamente los quince casos de prueba en los entornos `ubuntu-latest` y `windows-latest`, utilizando Python 3.12. Esto valida los casos automatizados incluidos, pero no sustituye la prueba de aceptación ni la revisión funcional por parte de los integrantes.
 
 ## 6. Criterio para el cierre
 

@@ -241,7 +241,7 @@ class TestAceptacionSistema(unittest.TestCase):
         raiz = Path(__file__).resolve().parents[1]
         resultado = subprocess.run(
             [sys.executable, str(raiz / "src" / "main.py")],
-            input="5\\n",
+            input="5\n",
             text=True,
             encoding="utf-8",
             errors="replace",

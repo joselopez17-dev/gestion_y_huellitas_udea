@@ -61,16 +61,16 @@ La copia pública omite firmas manuscritas y números de identificación persona
 | Comprensión de listas | Utilizada en almacenamiento y reportes | Existe |
 | Modularización | Archivos separados para menú, validaciones, persistencia y reportes | Existe |
 | Comentarios y documentación | Docstrings y comentarios de módulos y métodos | Por validar |
-| Pruebas automatizadas | `tests/test_core.py` y GitHub Actions | 16/16 aprobadas en Ubuntu y Windows, Python 3.12 |
+| Pruebas automatizadas | `tests/test_core.py`, `tests/test_aceptacion.py` y GitHub Actions | 23/23 aprobadas en Ubuntu y Windows, Python 3.12; incluye 7 pruebas automatizadas de aceptación |
 | Protección de datos generados | `.gitignore` excluye datos y radicados locales | Existe |
 
 ## 5. Evidencia de integración continua
 
-La ejecución más reciente verificada del 7 de noviembre de 2026 completó correctamente los dieciséis casos de prueba en los entornos `ubuntu-latest` y `windows-latest`, utilizando Python 3.12. Los cambios recientes al README también pasaron GitHub Actions. Esto valida los casos automatizados incluidos, pero no sustituye la prueba de aceptación ni la revisión funcional por parte de los integrantes.
+La ejecución del 7 de noviembre de 2026 (commit `31686c6027e831cfc87d10fe6642c32f1c087e79`) completó correctamente las 23 pruebas en `ubuntu-latest` y `windows-latest`, con Python 3.12. La suite incluye siete pruebas de aceptación con entradas simuladas y almacenamiento temporal: registro de los cuatro tipos, rechazo y reintento de datos inválidos, persistencia al reabrir el gestor, consulta general, radicados, transiciones de estado y estadísticas. [Ver ejecución de GitHub Actions](https://github.com/joselopez17-dev/gestion_y_huellitas_udea/actions/runs/42411052950). Esta evidencia automatizada no sustituye la revisión manual en el computador del equipo.
 
 ## 6. Prueba de aceptación pendiente
 
-Se creó `docs/pruebas_aceptacion.md` con una secuencia de verificación manual para registro, almacenamiento, consulta, radicado, cambio de estado y estadísticas. El checklist está preparado, pero debe ejecutarlo el equipo con datos ficticios, registrar fecha, versión y resultado, y documentar cualquier incidencia antes de marcar la aceptación como aprobada.
+Se creó `tests/test_aceptacion.py` y sus siete pruebas automatizadas pasaron en Ubuntu y Windows. El checklist `docs/pruebas_aceptacion.md` conserva los pasos de revisión manual para el equipo; deben ejecutarse con datos ficticios en su computador, registrar fecha, versión y resultado, y documentar cualquier incidencia antes de marcar la aceptación manual como aprobada.
 
 ## 7. Criterio para el cierre
 

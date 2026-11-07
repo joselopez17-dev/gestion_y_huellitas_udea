@@ -217,6 +217,18 @@ class TestArchivosYReportes(unittest.TestCase):
         registro = self.gestor.buscar_pqrs(identificador, "Queja")
         self.assertEqual(registro["estado_peticion"], "En proceso")
 
+    def test_estado_se_conserva_si_falla_actualizacion_del_radicado(self):
+        identificador = self.gestor.guardar_pqrs(self.datos("Queja"))
+        sistema = c_main()
+        sistema.archivos = self.gestor
+        sistema.reportes = c_reportes(self.gestor)
+        with patch("builtins.input", side_effect=["Queja", str(identificador), "En proceso"]):
+            with patch.object(self.gestor, "generar_radicado", side_effect=OSError("disco no disponible")):
+                with patch("builtins.print"):
+                    sistema.cambiar_estado_pqrs()
+
+        registro = self.gestor.buscar_pqrs(identificador, "Queja")
+        self.assertEqual(registro["estado_peticion"], "En proceso")
     def test_promedio_sin_pqrs_solucionadas_devuelve_sin_datos(self):
         self.assertIsNone(c_reportes(self.gestor).calcular_promedio_dias_respuesta())
 

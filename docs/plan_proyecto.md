@@ -69,11 +69,11 @@ Este seguimiento diferencia los documentos y módulos que ya están incorporados
 | A4. Plan de proyecto y versionado | `docs/plan_proyecto.md` y `docs/plan_versionado.md` presentes | Elaborado |
 | A5. README, logo y estructura | README actualizado con roles y responsabilidades del acta; logo vectorial `images/logo_huellitas.svg` agregado; perfiles redactados a partir de expectativas y tareas del acta; falta que cada integrante confirme fortalezas concretas y se validen los nombres que difieren entre README y acta | Parcial |
 | A6. Diseño del algoritmo y clases | `docs/algoritmo.md` y clases `c_main`, `c_validaciones`, `c_archivos`, `c_reportes` incorporadas | Implementado; pendiente explicación y revisión del equipo |
-| A7. Validaciones | `src/validaciones.py` | Implementado; pruebas automatizadas en curso |
-| A8. Archivos | `src/archivos.py` | Implementado; pruebas automatizadas en curso |
+| A7. Validaciones | `src/validaciones.py` y pruebas de datos válidos e inválidos | Implementado; pruebas automatizadas aprobadas |
+| A8. Archivos | `src/archivos.py`; prueba de los cuatro archivos y consecutivos independientes | Implementado; pruebas automatizadas aprobadas |
 | A9. Menú, registro y radicado | `src/main.py` y generación de TXT de 120 caracteres | Implementado; pendiente prueba de aceptación con el equipo |
-| A10. Reportes | `src/reportes.py` y seis indicadores | Implementado; pendiente validación con casos adicionales |
-| A11. Pruebas y correcciones | `tests/test_core.py` y flujo de GitHub Actions; 13 pruebas aprobadas en Ubuntu y Windows con Python 3.12 | En verificación multiplataforma |
+| A10. Reportes | `src/reportes.py` y pruebas de las seis estadísticas con varios registros | Implementado; pruebas automatizadas aprobadas; falta aceptación del equipo |
+| A11. Pruebas y correcciones | `tests/test_core.py` y GitHub Actions; 13 pruebas aprobadas en Ubuntu y Windows con Python 3.12 | Aprobado en CI; falta prueba de aceptación del equipo |
 | A12. Manual de usuario | `docs/manual_de_usuario.md` | Borrador actualizado; pendiente prueba paso a paso |
 | A13. Revisión final y sustentación | Aún no hay evidencia de revisión final o ensayo de sustentación | Pendiente |
 

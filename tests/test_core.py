@@ -217,6 +217,27 @@ class TestArchivosYReportes(unittest.TestCase):
         registro = self.gestor.buscar_pqrs(identificador, "Queja")
         self.assertEqual(registro["estado_peticion"], "En proceso")
 
+    def test_promedio_sin_pqrs_solucionadas_devuelve_sin_datos(self):
+        self.assertIsNone(c_reportes(self.gestor).calcular_promedio_dias_respuesta())
+
+    def test_registro_se_conserva_si_falla_generacion_del_radicado(self):
+        sistema = c_main()
+        sistema.archivos = self.gestor
+        entradas = [
+            "Juan David Pérez Gómez", "CC", "1037654321", "Celular",
+            "3001234567", "usuario@correo.com", "", "Petición",
+            date.today().isoformat(), "Presencial", "Atención veterinaria",
+            "Solicito información sobre la atención veterinaria para mi mascota.",
+            "Perro", "Campus Medellín - Ciudad Universitaria",
+        ]
+        with patch("builtins.input", side_effect=entradas):
+            with patch.object(self.gestor, "generar_radicado", side_effect=OSError("disco no disponible")):
+                with patch("builtins.print"):
+                    sistema.registrar_pqrs()
+
+        registro = self.gestor.buscar_pqrs(1, "Petición")
+        self.assertIsNotNone(registro)
+        self.assertEqual(registro["estado_peticion"], "Registrada")
     def test_fecha_maxima_y_reporte_por_tipo(self):
         identificador = self.gestor.guardar_pqrs(self.datos("Queja"))
         registro = self.gestor.buscar_pqrs(identificador, "Queja")

@@ -8,9 +8,9 @@ Esta matriz compara la rúbrica del proyecto integrador con los archivos y funci
 
 | N.º | Requisito | Evidencia actual | Estado |
 |---:|---|---|---|
-| 1 | Integrantes | Tabla en `README.md` | Parcial |
-| 2 | Programa académico, habilidades y fortalezas | README con programas, roles y responsabilidades según el acta; faltan habilidades y fortalezas confirmadas por cada integrante | Parcial |
-| 3 | Nombre, descripción e imagen representativa | Nombre y descripción presentes; logo vectorial en `images/logo_huellitas.svg`, pendiente de aprobación del equipo | Parcial |
+| 1 | Integrantes | Tabla en `README.md` con los cinco nombres, programas y roles | Existe |
+| 2 | Programa académico, habilidades y fortalezas | README con programas académicos y roles; por decisión del equipo no se publican fortalezas individuales. La rúbrica sí solicita habilidades y fortalezas, por lo que este criterio queda parcial. | Parcial |
+| 3 | Nombre, descripción e imagen representativa | Nombre y descripción en README; logo vectorial e imagen representativa del proyecto en `images/` | Existe |
 | 4 | Licencia del software | Archivo `LICENSE` con licencia MIT | Existe |
 | 5 | Reporte de visión | `docs/reporte_vision.md` | Por validar |
 | 6 | Requisitos funcionales y no funcionales | `docs/especificacion_requisitos.md` | Por validar |
@@ -24,7 +24,7 @@ Esta matriz compara la rúbrica del proyecto integrador con los archivos y funci
 
 ## 2. Acta única del equipo
 
-El equipo decidió conservar un solo documento combinado: `docs/actas/Acta_de_entendimiento_publica.pdf`. El acta, fechada el 22/08/2026, reúne los objetivos comunes, expectativas individuales, acuerdos de colaboración y comunicación, resolución de conflictos y plan de trabajo con responsabilidades.
+El equipo decidió conservar un solo documento combinado: `docs/actas/Acta_de_entendimiento_publica.pdf`. El acta, fechada el 22/08/2026, reúne los objetivos comunes, expectativas individuales, acuerdos de colaboración y comunicación, resolución de conflictos y distribución de responsabilidades. El equipo confirmó que los nombres que deben figurar en el README son Víctor Silgado y Sebastián Cardona.
 
 La copia pública omite firmas manuscritas y números de identificación personal. El original firmado debe mantenerse en un medio privado y remitirse al docente por un canal privado si lo solicita.
 
@@ -32,7 +32,7 @@ La copia pública omite firmas manuscritas y números de identificación persona
 |---|---|---|
 | Entendimiento | Objetivos comunes y expectativas de los cinco integrantes | Incluido |
 | Colaboración | Canales de comunicación, normas de trabajo y resolución de conflictos | Incluido |
-| Responsabilidad | Tabla de ocupaciones y tareas asignadas a los cinco integrantes | Incluido; el acta no especifica plazos ni criterios de evaluación detallados |
+| Responsabilidad | Tabla de ocupaciones y tareas asignadas a los cinco integrantes | Incluido; faltan plazos y criterios de evaluación detallados |
 | Firmas y aceptación | Se encuentran en el original recibido, omitidas de la copia pública | Original privado; entregar al docente si lo solicita |
 | Reuniones de seguimiento | El acta registra la reunión del 22/08/2026 | Falta evidencia de reuniones posteriores si se realizaron |
 
@@ -66,7 +66,7 @@ La copia pública omite firmas manuscritas y números de identificación persona
 
 ## 5. Evidencia de integración continua
 
-La ejecución del 7 de noviembre de 2026 completó correctamente los dieciséis casos de prueba en los entornos `ubuntu-latest` y `windows-latest`, utilizando Python 3.12. Esto valida los casos automatizados incluidos, pero no sustituye la prueba de aceptación ni la revisión funcional por parte de los integrantes.
+La ejecución más reciente verificada del 7 de noviembre de 2026 completó correctamente los dieciséis casos de prueba en los entornos `ubuntu-latest` y `windows-latest`, utilizando Python 3.12. Los cambios recientes al README también pasaron GitHub Actions. Esto valida los casos automatizados incluidos, pero no sustituye la prueba de aceptación ni la revisión funcional por parte de los integrantes.
 
 ## 6. Prueba de aceptación pendiente
 

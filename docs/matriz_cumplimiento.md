@@ -45,10 +45,10 @@ La copia pública omite firmas manuscritas y números de identificación persona
 | Menú principal de cinco opciones | `src/main.py` | Por validar |
 | Registro con validaciones | `src/main.py` y `src/validaciones.py`; cubierto parcialmente por pruebas automatizadas | Pruebas automatizadas aprobadas; falta prueba de aceptación |
 | ID independiente por tipo | `src/archivos.py`; prueba de consecutivos independientes | Pruebas automatizadas aprobadas |
-| Cuatro archivos planos | Se crean al usar cada tipo de solicitud dentro de `data/` | Por validar |
+| Cuatro archivos planos | Prueba automatizada de Petición, Queja, Reclamo y Sugerencia; verifica creación y consecutivos independientes | Pruebas automatizadas aprobadas |
 | Fecha máxima de 30 días | `src/archivos.py`; prueba de cálculo de fecha límite | Pruebas automatizadas aprobadas |
 | Estado inicial y flujo de estados | `src/archivos.py`; prueba de transiciones | Pruebas automatizadas aprobadas |
-| Consulta de PQRS y radicado | `src/main.py` y `src/archivos.py` | Implementada; falta prueba manual de aceptación |
+| Consulta de PQRS y radicado | `src/main.py` y `src/archivos.py`; prueba desde el menú que genera el radicado | Pruebas automatizadas aprobadas; falta aceptación manual del equipo |
 | Cambio de estado | `src/archivos.py`; prueba de transiciones | Pruebas automatizadas aprobadas |
 | Radicado TXT de 120 caracteres | `src/archivos.py`; prueba de ancho, N/A y exclusión de descripción | Pruebas automatizadas aprobadas |
 | Estadística obligatoria y cinco adicionales | `src/reportes.py` y `src/main.py`; pruebas con distintos tipos, estados y fechas | Pruebas automatizadas aprobadas; falta validación de aceptación |

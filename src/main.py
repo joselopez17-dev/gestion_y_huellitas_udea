@@ -4,9 +4,14 @@ La clase c_main organiza un menú de consola claro, sencillo y consistente
 para registrar, consultar, actualizar y analizar las solicitudes PQRS.
 """
 
-from archivos import c_archivos
-from reportes import c_reportes
-from validaciones import c_validaciones
+try:
+    from .archivos import c_archivos
+    from .reportes import c_reportes
+    from .validaciones import c_validaciones
+except ImportError:  # Ejecución directa de python src/main.py
+    from archivos import c_archivos
+    from reportes import c_reportes
+    from validaciones import c_validaciones
 
 
 class c_main:
@@ -168,8 +173,9 @@ class c_main:
         )
 
         if tipo == "Todas":
-            self._mostrar_resumen_registros(self.archivos.obtener_todos())
-            if not self.archivos.obtener_todos():
+            registros = self.archivos.obtener_todos()
+            self._mostrar_resumen_registros(registros)
+            if not registros:
                 return
             tipo = self._pedir_opcion(
                 "Tipo de la PQRS que desea abrir: ",
@@ -292,7 +298,10 @@ class c_main:
             if opcion == "1":
                 self.registrar_pqrs()
             elif opcion == "2":
-                self.consultar_pqrs()
+                try:
+                    self.consultar_pqrs()
+                except (OSError, ValueError, KeyError) as error:
+                    print(f"❌ No fue posible consultar los registros: {error}")
             elif opcion == "3":
                 self.cambiar_estado_pqrs()
             elif opcion == "4":

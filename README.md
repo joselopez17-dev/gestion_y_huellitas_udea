@@ -47,7 +47,7 @@ Estas funcionalidades se encuentran en proceso de prueba y revisión.
 - [Plan de versionado](docs/plan_versionado.md)
 - [Manual de usuario](docs/manual_de_usuario.md)
 - [Matriz de cumplimiento de la rúbrica](docs/matriz_cumplimiento.md)
-- [Acta pública de entendimiento, colaboración y responsabilidades (PDF)](docs/actas/Acta_de_entendimiento_publica.pdf)
+- [Acta pública remaquetada (PDF, 3 páginas; sin firmas ni identificaciones)](docs/actas/Acta_de_entendimiento_publica.pdf)
 - [Transcripción pública del acta (Markdown)](docs/actas/acta_entendimiento_publica.md)
 - [Plantillas para actas adicionales](docs/actas/plantillas_actas.md)
 - [Algoritmo y diagramas de flujo](docs/algoritmo.md)

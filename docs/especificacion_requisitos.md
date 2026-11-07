@@ -34,21 +34,21 @@ El sistema debe administrar cuatro archivos planos independientes, todos con la 
 
 | Archivo | Contenido |
 |---|---|
-| `Peticion.txt` | Registros de peticiones |
-| `Queja.txt` | Registros de quejas |
-| `Reclamo.txt` | Registros de reclamos |
-| `Sugerencia.txt` | Registros de sugerencias |
+| Peticion.txt | Registros de peticiones |
+| Queja.txt | Registros de quejas |
+| Reclamo.txt | Registros de reclamos |
+| Sugerencia.txt | Registros de sugerencias |
 
-Los registros se almacenan como objetos JSON, uno por línea, en archivos de texto UTF-8. Este formato permite conservar descripciones con tildes, saltos de caracteres y signos sin confundir separadores. Cada archivo conserva su propio consecutivo.
+Los registros se almacenan como objetos JSON, uno por línea, en archivos de texto UTF-8. Este formato permite conservar descripciones con tildes y signos sin confundir separadores. Cada archivo conserva su propio consecutivo.
 
 ### 1.4 Consulta, cambio de estado y radicado
 
 | ID | Requisito |
 |---|---|
-| RF-17 | El sistema debe permitir consultar las PQRS por tipo y consecutivo, así como listar los registros disponibles. |
+| RF-17 | El sistema debe permitir listar las PQRS registradas, consultar el listado general y abrir un comprobante indicando el tipo y el consecutivo de la solicitud. |
 | RF-18 | Los cambios de estado deben respetar exclusivamente el flujo Registrada → En proceso → Solucionada. |
 | RF-19 | El sistema debe generar un comprobante TXT delimitado por un marco ASCII. Cada línea debe tener exactamente 120 caracteres horizontales. |
-| RF-20 | El radicado debe mostrar encabezado, consecutivo, fecha y hora de registro, fecha de radicación, estado, fecha máxima de respuesta, datos del solicitante, clasificación y asunto. |
+| RF-20 | El radicado debe mostrar encabezado, consecutivo, fecha y hora de incorporación al sistema, fecha de radicación, estado, fecha máxima de respuesta, datos del solicitante, clasificación y asunto. |
 | RF-21 | El radicado no debe incluir la descripción detallada. Si la dirección está vacía, debe mostrar N/A. |
 
 ### 1.5 Estadísticas
@@ -57,7 +57,7 @@ El sistema debe calcular el indicador obligatorio y cinco estadísticas adiciona
 
 | ID | Estadística | Descripción |
 |---|---|---|
-| RF-22 | Promedio de días de respuesta | Promedio entero de días entre la fecha de radicación y la fecha en que la PQRS pasa a Solucionada. Se calcula con solicitudes que tengan fecha de respuesta. |
+| RF-22 | Promedio de días de respuesta | Promedio entero de días entre la fecha de radicación y la fecha en que la PQRS pasa a Solucionada. Se calcula solo con solicitudes que tengan fecha de respuesta; se redondea al entero más cercano. Si no hay solicitudes solucionadas con fecha de respuesta, el sistema informa que no hay datos, en vez de presentar un promedio de cero días. |
 | RF-23.1 | Cantidad por tipo de solicitud | Número de peticiones, quejas, reclamos y sugerencias. |
 | RF-23.2 | Cantidad por tipo de mascota | Número de registros asociados a perros y gatos. |
 | RF-23.3 | Distribución por estado | Cantidad de PQRS Registradas, En proceso y Solucionadas. |
@@ -69,22 +69,22 @@ El sistema debe calcular el indicador obligatorio y cinco estadísticas adiciona
 | ID | Categoría | Requisito |
 |---|---|---|
 | RNF-01 | Usabilidad | La consola debe ser clara y amigable, con mensajes que indiquen qué dato corregir. |
-| RNF-02 | Fiabilidad | Los registros deben conservarse al cerrar el programa y actualizarse sin dejar archivos parcialmente escritos. |
+| RNF-02 | Fiabilidad | Los registros deben conservarse al cerrar el programa y actualizarse mediante un archivo temporal antes de reemplazar el archivo de datos. |
 | RNF-03 | Integridad | El registro no debe guardarse si los datos obligatorios no pasan las validaciones. |
-| RNF-04 | Rendimiento | Registrar y consultar PQRS debe ser ágil para el volumen académico previsto. |
+| RNF-04 | Rendimiento | El programa está orientado al volumen académico previsto y utiliza archivos locales; no se ha definido ni medido un umbral de rendimiento para grandes volúmenes. |
 | RNF-05 | Compatibilidad | El programa debe ejecutarse con Python 3 y librerías de la biblioteca estándar. |
 | RNF-06 | Mantenibilidad | El código debe estar separado en módulos para validaciones, archivos y reportes, utilizando clases y objetos. |
-| RNF-07 | Privacidad | Los datos personales de prueba no deben publicarse en el repositorio compartido. |
-| RNF-08 | Portabilidad | La información debe almacenarse en archivos de texto plano UTF-8 dentro de `data/`. |
+| RNF-07 | Privacidad | Los datos personales de prueba no deben publicarse en el repositorio compartido. Los archivos locales no cuentan con cifrado ni autenticación dentro de esta versión. |
+| RNF-08 | Portabilidad | La información debe almacenarse en archivos de texto plano UTF-8 dentro de data/. |
 | RNF-09 | Formato | Cada línea del comprobante de radicación debe tener exactamente 120 caracteres. |
 
 ## 3. Organización del código
 
-- `src/main.py`: menú y coordinación de las opciones del programa.
-- `src/validaciones.py`: validación de nombres, documentos, teléfonos, correos, fechas y demás campos.
-- `src/archivos.py`: lectura y escritura de los cuatro archivos, consecutivos, consulta, cambios de estado y radicados.
-- `src/reportes.py`: cálculo de las seis estadísticas.
-- Las clases principales utilizan el prefijo `c_` según la indicación de la guía.
+- src/main.py: menú y coordinación de las opciones del programa.
+- src/validaciones.py: validación de nombres, documentos, teléfonos, correos, fechas y demás campos.
+- src/archivos.py: lectura y escritura de los cuatro archivos, consecutivos, consulta, cambios de estado y radicados.
+- src/reportes.py: cálculo del promedio obligatorio y las cinco estadísticas complementarias.
+- Las clases principales utilizan el prefijo c_ según la indicación de la guía.
 
 ## 4. Verificación
 

@@ -6,6 +6,8 @@ persistencia, radicados, estados y estadísticas sin tocar data/ del proyecto.
 
 import tempfile
 import unittest
+import subprocess
+import sys
 from contextlib import redirect_stdout
 from datetime import date, timedelta
 from io import StringIO
@@ -234,6 +236,28 @@ class TestAceptacionSistema(unittest.TestCase):
             self.sistema.mostrar_estadisticas()
         self.assertIn("Sin datos de PQRS solucionadas", salida.getvalue())
         self.assertNotIn("Promedio de días de respuesta: 0 días", salida.getvalue())
+
+    def test_menu_principal_muestra_las_cinco_opciones(self):
+        raiz = Path(__file__).resolve().parents[1]
+        resultado = subprocess.run(
+            [sys.executable, str(raiz / "src" / "main.py")],
+            input="5\\n",
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            capture_output=True,
+            cwd=raiz,
+            timeout=10,
+        )
+        self.assertEqual(resultado.returncode, 0, resultado.stderr)
+        for opcion in (
+            "1. Registrar PQRS",
+            "2. Consultar PQRS",
+            "3. Registrar cambio en PQRS",
+            "4. Estadísticas",
+            "5. Salir",
+        ):
+            self.assertIn(opcion, resultado.stdout)
 
 
 if __name__ == "__main__":

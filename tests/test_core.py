@@ -53,7 +53,7 @@ class TestArchivosYReportes(unittest.TestCase):
         self.temporal.cleanup()
 
     @staticmethod
-    def datos(tipo="Petición", fecha=None):
+    def datos(tipo="Petición", fecha=None, mascota="Perro"):
         return {
             "nombre_completo": "Juan David Pérez Gómez",
             "tipo_documento": "CC",
@@ -67,7 +67,7 @@ class TestArchivosYReportes(unittest.TestCase):
             "canal_recepcion": "Presencial",
             "asunto_titulo": "Atención veterinaria",
             "descripcion_detallada": "Solicito información sobre la atención veterinaria para mi mascota.",
-            "tipo_mascota": "Perro",
+            "tipo_mascota": mascota,
             "campus_relacionado": "Campus Medellín - Ciudad Universitaria",
         }
 
@@ -116,17 +116,15 @@ class TestArchivosYReportes(unittest.TestCase):
         self.gestor.cambiar_estado("Petición", id_peticion, "En proceso")
         self.gestor.cambiar_estado("Petición", id_peticion, "Solucionada")
 
-        self.gestor.guardar_pqrs(self.datos("Queja", fecha_queja_vencida))
-        self.gestor.guardar_pqrs(self.datos("Queja", fecha_queja_proxima))
-        self.gestor.guardar_pqrs(self.datos("Reclamo", fecha_reclamo_antiguo))
-
-        # Cambiar la especie de algunos registros para revisar ambos conteos.
-        quejas = self.gestor.listar_por_tipo("Queja")
-        quejas[0]["tipo_mascota"] = "Gato"
-        self.gestor._guardar_archivo("Queja", quejas)
-        reclamos = self.gestor.listar_por_tipo("Reclamo")
-        reclamos[0]["tipo_mascota"] = "Gato"
-        self.gestor._guardar_archivo("Reclamo", reclamos)
+        self.gestor.guardar_pqrs(
+            self.datos("Queja", fecha_queja_vencida, "Gato")
+        )
+        self.gestor.guardar_pqrs(
+            self.datos("Queja", fecha_queja_proxima, "Perro")
+        )
+        self.gestor.guardar_pqrs(
+            self.datos("Reclamo", fecha_reclamo_antiguo, "Gato")
+        )
 
         reportes = c_reportes(self.gestor)
 

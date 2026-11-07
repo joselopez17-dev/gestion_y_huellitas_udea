@@ -12,17 +12,15 @@ Proyecto integrador del curso Algoritmia y Programación, período 2026-2, desar
 
 ## Equipo de trabajo
 
-| Integrante | Programa académico | Rol del acta | Perfil, interés declarado y aporte al proyecto |
-|---|---|---|---|
-| José Miguel López Doria | Ingeniería Industrial — UdeA | Programador 1 | Expresa interés en analítica de datos y procesamiento de información. Tiene asignada la entrega de los códigos del proyecto dentro de los tiempos acordados. |
-| Juliana Rivera Sarge | Ingeniería Industrial — UdeA | Diseñadora 1 | Expresa interés en aplicar la teoría del semestre y utilizar herramientas de programación para resolver problemas. Tiene a cargo la organización y el diseño de los aspectos visuales. |
-| Víctor José Salgado Romero* | Ingeniería Industrial — UdeA | Diseñador | Su expectativa se centra en fortalecer los conceptos de programación y el uso de herramientas. En el proyecto coordina el apoyo relacionado con la arquitectura. |
-| Juan Pablo Quintero Gómez | Ingeniería Industrial — UdeA | Programador | Expresa interés en la programación y la automatización de procesos. Apoya al programador 1 y responde por las actividades asignadas. |
-| Sebastián Cardona* | Ingeniería Industrial — UdeA | Diseñador e investigador | Su expectativa es fortalecer los conocimientos de programación y el uso de herramientas. Tiene asignada la búsqueda de información y el apoyo al equipo de diseño. |
+| Integrante | Programa académico | Rol según el acta |
+|---|---|---|
+| José Miguel López Doria | Ingeniería Industrial — UdeA | Programador 1 |
+| Juliana Rivera Sarge | Ingeniería Industrial — UdeA | Diseñadora 1 |
+| Víctor José Salgado Romero* | Ingeniería Industrial — UdeA | Diseñador |
+| Juan Pablo Quintero Gómez | Ingeniería Industrial — UdeA | Programador |
+| Sebastián Cardona* | Ingeniería Industrial — UdeA | Diseñador e investigador |
 
-\* **Confirmar nombres completos:** en el acta recibida aparecen “Victor Silgado Romero” y “Sebastian Cardona Puerta”; en el README inicial aparecen “Víctor José Salgado Romero” y “Sebastián Cardona”. Se conservan provisionalmente los nombres del README hasta que el equipo confirme la forma oficial.
-
-Los perfiles anteriores se elaboraron a partir de las expectativas y responsabilidades consignadas en el acta. No se presentan como certificación de habilidades técnicas ya dominadas; cada integrante puede añadir fortalezas concretas que haya confirmado.
+* **Confirmar nombres completos:** en el acta recibida aparecen “Victor Silgado Romero” y “Sebastian Cardona Puerta”; en el README inicial aparecen “Víctor José Salgado Romero” y “Sebastián Cardona”. Se conservan provisionalmente los nombres del README hasta que el equipo confirme la forma oficial.
 
 ## Descripción
 
@@ -52,6 +50,7 @@ Estas funcionalidades se encuentran en proceso de prueba y revisión.
 - [Acta única del equipo (PDF público, sin firmas ni identificaciones)](docs/actas/Acta_de_entendimiento_publica.pdf)
 - [Algoritmo y diagramas de flujo](docs/algoritmo.md)
 - [Checklist de pruebas de aceptación](docs/pruebas_aceptacion.md)
+- [Guía de sustentación técnica y preguntas sobre el código](docs/guia_sustentacion_tecnica.md)
 
 ## Estructura del repositorio
 

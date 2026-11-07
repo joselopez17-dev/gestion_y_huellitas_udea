@@ -57,7 +57,39 @@ gantt
 | 19 nov | Manual y revisión final listos |
 | 22 nov | Entrega 2 |
 
-## 4. Riesgos
+## 4. Seguimiento del avance real (corte: 7 de noviembre de 2026)
+
+Este seguimiento diferencia los documentos y módulos que ya están incorporados en la rama `desarrollo` de las actividades que aún requieren revisión del equipo. No equivale a un porcentaje de horas ejecutadas: las horas reales deben registrarse con el equipo.
+
+| Actividad | Evidencia actual | Estado al 7 nov |
+|---|---|---|
+| A1. Actas de entendimiento, colaboración y responsabilidad | Plantillas incorporadas en `docs/actas/plantillas_actas.md`; faltan acuerdos reales, revisión y firmas | Parcial |
+| A2. Reporte de visión | `docs/reporte_vision.md` incorporado | Elaborado; pendiente revisión del equipo |
+| A3. Especificación de requisitos | `docs/especificacion_requisitos.md` incorporado y actualizado con las seis estadísticas | Elaborado; pendiente validación final |
+| A4. Plan de proyecto y versionado | `docs/plan_proyecto.md` y `docs/plan_versionado.md` presentes | Elaborado |
+| A5. README, logo y estructura | README actualizado; carpetas `src/`, `docs/`, `images/` y `data/` creadas; logo pendiente y faltan perfiles individuales de habilidades | Parcial |
+| A6. Diseño del algoritmo y clases | `docs/algoritmo.md` y clases `c_main`, `c_validaciones`, `c_archivos`, `c_reportes` incorporadas | Implementado; pendiente explicación y revisión del equipo |
+| A7. Validaciones | `src/validaciones.py` | Implementado; pruebas automatizadas en curso |
+| A8. Archivos | `src/archivos.py` | Implementado; pruebas automatizadas en curso |
+| A9. Menú, registro y radicado | `src/main.py` y generación de TXT de 120 caracteres | Implementado; pendiente prueba de aceptación con el equipo |
+| A10. Reportes | `src/reportes.py` y seis indicadores | Implementado; pendiente validación con casos adicionales |
+| A11. Pruebas y correcciones | `tests/test_core.py` y flujo de GitHub Actions; nueve pruebas habían pasado en Ubuntu antes de añadir matriz Windows | En verificación multiplataforma |
+| A12. Manual de usuario | `docs/manual_de_usuario.md` | Borrador actualizado; pendiente prueba paso a paso |
+| A13. Revisión final y sustentación | Aún no hay evidencia de revisión final o ensayo de sustentación | Pendiente |
+
+### Control de horas
+
+Registrar las horas reales por integrante y actividad en las reuniones del equipo. La estimación total de 50 horas es la referencia del proyecto y no debe confundirse con horas ya ejecutadas.
+
+| Integrante | Horas estimadas según distribución del equipo | Horas reales registradas |
+|---|---:|---:|
+| José Miguel López Doria | [Acordar] | [Registrar] |
+| Juliana Rivera Sarge | [Acordar] | [Registrar] |
+| Víctor José Salgado Romero | [Acordar] | [Registrar] |
+| Juan Pablo Quintero Gómez | [Acordar] | [Registrar] |
+| Sebastián Cardona | [Acordar] | [Registrar] |
+
+## 5. Riesgos
 
 | Riesgo | Mitigación |
 |---|---|

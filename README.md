@@ -51,6 +51,7 @@ Estas funcionalidades se encuentran en proceso de prueba y revisión.
 - [Matriz de cumplimiento de la rúbrica](docs/matriz_cumplimiento.md)
 - [Acta única del equipo (PDF público, sin firmas ni identificaciones)](docs/actas/Acta_de_entendimiento_publica.pdf)
 - [Algoritmo y diagramas de flujo](docs/algoritmo.md)
+- [Checklist de pruebas de aceptación](docs/pruebas_aceptacion.md)
 
 ## Estructura del repositorio
 

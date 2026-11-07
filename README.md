@@ -2,9 +2,9 @@
 
 **Gestor de PQRS para la atención veterinaria de perros y gatos en la Universidad de Antioquia.**
 
-Proyecto integrador del curso Algoritmia y Programación, período 2026-2, desarrollado en Python para apoyar el registro, consulta y seguimiento de Peticiones, Quejas, Reclamos y Sugerencias (PQRS) relacionadas con la atención de perros y gatos.
+Proyecto integrador del curso Algoritmia y Programación, período 2026-2, desarrollado en Python para apoyar el registro, consulta y seguimiento de Peticiones, Quejas, Reclamos y Sugerencias (PQRS).
 
-> **Estado del proyecto: en desarrollo.** Este repositorio contiene los documentos base de la primera entrega y un primer borrador del programa. La implementación de los módulos, las pruebas y la documentación final están pendientes de completar y validar.
+> **Estado: desarrollo en curso en la rama `desarrollo`.** Ya se incorporaron los módulos base de validaciones, archivos, reportes y menú principal, además de pruebas automatizadas. La ejecución y los casos de prueba deben verificarse en el entorno del equipo antes de integrar los cambios a `main`.
 
 ## Equipo de trabajo
 
@@ -16,13 +16,24 @@ Proyecto integrador del curso Algoritmia y Programación, período 2026-2, desar
 | Juan Pablo Quintero Gómez | Ingeniería Industrial — UdeA | Programación |
 | Sebastián Cardona | Ingeniería Industrial — UdeA | Programación |
 
-Las descripciones individuales de habilidades y fortalezas se incorporarán cuando sean confirmadas por cada integrante.
+Las descripciones individuales de habilidades y fortalezas deben ser confirmadas por cada integrante y se agregarán después.
 
-## Descripción del proyecto
+## Descripción
 
-El sistema busca facilitar la gestión de PQRS recibidas por distintos canales. Cada solicitud tendrá un consecutivo independiente según su tipo, información del solicitante, datos de la solicitud, clasificación de la mascota, campus relacionado, fecha máxima de respuesta y estado de atención.
+El sistema gestiona PQRS recibidas por distintos canales. Cada tipo de solicitud mantiene un consecutivo independiente y almacena la información del solicitante, la petición, la mascota, el campus, el estado y las fechas de gestión.
 
-El proyecto contempla almacenamiento en archivos planos independientes para Peticiones, Quejas, Reclamos y Sugerencias, así como la generación de radicados de texto y reportes estadísticos.
+El programa utiliza cuatro archivos planos independientes, genera comprobantes TXT y calcula indicadores de seguimiento.
+
+## Funcionalidades desarrolladas en la rama `desarrollo`
+
+- Registro de PQRS con validaciones de datos.
+- Consecutivo independiente para Peticiones, Quejas, Reclamos y Sugerencias.
+- Consulta por tipo y consecutivo, además de listado general.
+- Cambio de estado con el flujo Registrada → En proceso → Solucionada.
+- Generación de radicados TXT con marco de 120 caracteres por línea.
+- Promedio de días de respuesta y cinco estadísticas complementarias.
+
+Estas funcionalidades se encuentran en proceso de prueba y revisión.
 
 ## Documentación
 
@@ -39,12 +50,24 @@ El proyecto contempla almacenamiento en archivos planos independientes para Peti
 ```text
 gestion_y_huellitas_udea/
 ├── src/       # Código fuente Python
+├── tests/     # Pruebas automatizadas
 ├── docs/      # Documentación, actas y manual
 ├── images/    # Logo y recursos gráficos
-├── data/      # Archivos planos de las PQRS
+├── data/      # Archivos planos generados localmente
 ├── README.md
 └── LICENSE
 ```
+
+## Ejecución y pruebas
+
+Desde la carpeta raíz del repositorio:
+
+```bash
+python -m unittest discover -s tests -v
+python src/main.py
+```
+
+La primera ejecución crea los cuatro archivos de datos si no existen. Los archivos de datos y radicados generados se excluyen del control de versiones para evitar publicar datos personales.
 
 ## Licencia
 

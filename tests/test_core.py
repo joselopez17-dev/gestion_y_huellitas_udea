@@ -120,6 +120,8 @@ class TestMenuAplicacion(unittest.TestCase):
             [__import__("sys").executable, str(raiz / "src" / "main.py")],
             input="5\n",
             text=True,
+            encoding="utf-8",
+            errors="replace",
             capture_output=True,
             cwd=raiz,
             timeout=10,

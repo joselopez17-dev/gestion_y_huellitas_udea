@@ -1,6 +1,6 @@
 # Matriz de cumplimiento de la rúbrica
 
-Esta matriz compara la rúbrica del proyecto integrador con los archivos y funcionalidades presentes en la rama `desarrollo`. Un requisito funcional solo se marca completo cuando se ejecuten las pruebas y se compruebe su funcionamiento.
+Esta matriz compara la rúbrica del proyecto integrador con los archivos y funcionalidades presentes en la rama `desarrollo`. Un requisito funcional solo se marca completo cuando se ejecutan las pruebas y se comprueba su funcionamiento.
 
 **Estados:** Existe = evidencia presente; Parcial = falta información o pruebas; Pendiente = sin evidencia suficiente; Por validar = el documento o código existe, pero requiere ejecución o revisión.
 
@@ -24,14 +24,19 @@ Esta matriz compara la rúbrica del proyecto integrador con los archivos y funci
 
 ## 2. Actas de entendimiento y compromiso
 
-La guía solicita acta de entendimiento, acta de colaboración y acta de responsabilidad. Las plantillas están en `docs/actas/plantillas_actas.md`; falta diligenciarlas con acuerdos reales, revisarlas y obtener las firmas del equipo.
+El equipo entregó un acta combinada fechada el 22/08/2026. El documento incluye los objetivos comunes, las expectativas individuales de los cinco integrantes, los acuerdos de colaboración y comunicación, la resolución de conflictos y el plan de trabajo con responsabilidades.
 
-| Documento | Estado |
-|---|---|
-| Acta de entendimiento | Plantilla creada; falta diligenciar y firmar |
-| Acta de colaboración | Plantilla creada; falta acordar normas y firmar |
-| Acta de responsabilidad | Plantilla creada; falta acordar responsables, entregables, plazos y firmar |
-| Reuniones de seguimiento | Pendiente registrar reuniones reales |
+Se incorporó una **copia pública en PDF** en `docs/actas/Acta_de_entendimiento_publica.pdf` y una transcripción en Markdown. La copia pública omite las firmas manuscritas y los números de identificación personal. El documento original firmado debe conservarse en un medio privado y entregarse al docente por el canal indicado si se requiere verificar las firmas.
+
+| Documento o componente | Evidencia | Estado |
+|---|---|---|
+| Acta de entendimiento | PDF público y transcripción en `docs/actas/` | Existe copia pública; firma original se conserva fuera del repositorio público |
+| Acta de colaboración | Acuerdos de comunicación, trabajo y resolución de conflictos incluidos en el acta combinada | Incluida en documento combinado; confirmar si la rúbrica exige archivo independiente |
+| Acta de responsabilidad | Plan de trabajo con ocupación y tareas para los cinco integrantes | Incluida en documento combinado; confirmar si la rúbrica exige archivo independiente |
+| Firmas y aceptación | Están en el original recibido, pero se omitieron de la copia pública | Validar entrega privada al docente |
+| Reuniones de seguimiento | El acta registra la reunión del 22/08/2026; faltan actas posteriores si hubo más reuniones | Parcial |
+
+Las plantillas en `docs/actas/plantillas_actas.md` quedan como apoyo por si el docente solicita separar las actas o registrar reuniones y acuerdos posteriores.
 
 ## 3. Funcionalidades del programa
 
@@ -41,12 +46,12 @@ La guía solicita acta de entendimiento, acta de colaboración y acta de respons
 | Registro con validaciones | `src/main.py` y `src/validaciones.py`; cubierto parcialmente por pruebas automatizadas | Pruebas automatizadas aprobadas; falta prueba de aceptación |
 | ID independiente por tipo | `src/archivos.py`; prueba de consecutivos independientes | Pruebas automatizadas aprobadas |
 | Cuatro archivos planos | Se crean al usar cada tipo de solicitud dentro de `data/` | Por validar |
-| Fecha máxima de 30 días | `src/archivos.py` | Por validar |
-| Estado inicial y flujo de estados | `src/archivos.py` | Por validar |
-| Consulta de PQRS y radicado | `src/main.py` y `src/archivos.py` | Por validar |
-| Cambio de estado | `src/archivos.py` | Por validar |
-| Radicado TXT de 120 caracteres | `src/archivos.py` | Por validar |
-| Estadística obligatoria y cinco adicionales | `src/reportes.py` y `src/main.py` | Por validar |
+| Fecha máxima de 30 días | `src/archivos.py`; prueba de cálculo de fecha límite | Pruebas automatizadas aprobadas |
+| Estado inicial y flujo de estados | `src/archivos.py`; prueba de transiciones | Pruebas automatizadas aprobadas |
+| Consulta de PQRS y radicado | `src/main.py` y `src/archivos.py` | Implementada; falta prueba manual de aceptación |
+| Cambio de estado | `src/archivos.py`; prueba de transiciones | Pruebas automatizadas aprobadas |
+| Radicado TXT de 120 caracteres | `src/archivos.py`; prueba de ancho, N/A y exclusión de descripción | Pruebas automatizadas aprobadas |
+| Estadística obligatoria y cinco adicionales | `src/reportes.py` y `src/main.py`; pruebas con distintos tipos, estados y fechas | Pruebas automatizadas aprobadas; falta validación de aceptación |
 
 ## 4. Programación y pruebas
 

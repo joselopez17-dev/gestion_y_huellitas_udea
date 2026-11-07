@@ -8,7 +8,7 @@
 
 Proyecto integrador del curso Algoritmia y Programación, período 2026-2, desarrollado en Python para apoyar el registro, consulta y seguimiento de Peticiones, Quejas, Reclamos y Sugerencias (PQRS).
 
-> **Estado: desarrollo en curso en la rama `desarrollo`.** Ya se incorporaron los módulos de validaciones, archivos, reportes y menú principal. Las 23 pruebas automatizadas (incluidas 7 pruebas de aceptación) pasan en Ubuntu y Windows con Python 3.12. También se corrigieron los mensajes cuando un registro o cambio de estado se guarda y falla la generación del TXT. Está pendiente la revisión manual del equipo en su computador antes de integrar los cambios a `main`.
+> **Estado: desarrollo en curso en la rama `desarrollo`.** Ya se incorporaron los módulos de validaciones, archivos, reportes y menú principal. Las 24 pruebas automatizadas (incluidas 8 pruebas de aceptación) pasan en Ubuntu y Windows con Python 3.12. También se corrigieron los mensajes cuando un registro o cambio de estado se guarda y falla la generación del TXT. Está pendiente la revisión manual del equipo en su computador antes de integrar los cambios a `main`.
 
 ## Equipo de trabajo
 

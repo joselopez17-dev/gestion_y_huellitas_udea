@@ -1,5 +1,7 @@
 # Plantillas de actas del equipo
 
+> **Acta recibida:** ya existe una copia pública del acta combinada del equipo en [PDF](Acta_de_entendimiento_publica.pdf) y una [transcripción pública](acta_entendimiento_publica.md). El PDF público omite firmas manuscritas y números de identificación. Conserva las plantillas siguientes por si se requiere separar los documentos o registrar nuevos acuerdos.
+
 La guía solicita tres actas: entendimiento, colaboración y responsabilidad. Estas plantillas deben diligenciarse con acuerdos reales durante una reunión, revisarse y firmarse por los integrantes. No deben registrarse acuerdos ni firmas que no hayan ocurrido.
 
 ## Datos generales de la reunión

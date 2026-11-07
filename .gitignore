@@ -1,0 +1,11 @@
+# Archivos temporales de Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Datos generados localmente: contienen información personal de solicitantes
+data/*.txt
+data/radicados/
+data/*.tmp

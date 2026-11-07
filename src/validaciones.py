@@ -66,7 +66,7 @@ class c_validaciones:
     @staticmethod
     def validar_numero_documento(numero):
         numero = str(numero or "").strip()
-        return 3 <= len(numero) <= 15 and numero.isdigit()
+        return re.fullmatch(r"[0-9]{3,15}", numero) is not None
 
     @classmethod
     def validar_tipo_telefono(cls, tipo):
@@ -76,7 +76,7 @@ class c_validaciones:
     def validar_telefono(telefono, tipo=None):
         """Exige diez dígitos para todos los tipos, de acuerdo con la rúbrica."""
         telefono = str(telefono or "").strip()
-        return len(telefono) == 10 and telefono.isdigit()
+        return re.fullmatch(r"[0-9]{10}", telefono) is not None
 
     @staticmethod
     def validar_correo(correo):
@@ -116,6 +116,8 @@ class c_validaciones:
     @classmethod
     def validar_fecha_radicacion(cls, fecha):
         """Acepta ISO AAAA-MM-DD y rechaza fechas futuras o imposibles."""
+        if isinstance(fecha, str) and re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", fecha.strip()) is None:
+            return False
         try:
             fecha_valida = fecha.date() if isinstance(fecha, datetime) else (
                 fecha if isinstance(fecha, date) else date.fromisoformat(str(fecha).strip())

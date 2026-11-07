@@ -95,6 +95,8 @@ class TestArchivosYReportes(unittest.TestCase):
         self.assertTrue(all(len(linea) == 120 for linea in lineas))
         self.assertIn("N/A", radicado)
         self.assertNotIn(registro["descripcion_detallada"], radicado)
+        ruta = self.gestor.generar_radicado(registro)
+        self.assertTrue(ruta.exists())
 
     def test_fecha_maxima_y_reporte_por_tipo(self):
         identificador = self.gestor.guardar_pqrs(self.datos("Queja"))
@@ -106,3 +108,18 @@ class TestArchivosYReportes(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestMenuAplicacion(unittest.TestCase):
+    def test_menu_principal_abre_y_cierra(self):
+        raiz = Path(__file__).resolve().parents[1]
+        resultado = __import__("subprocess").run(
+            [__import__("sys").executable, str(raiz / "src" / "main.py")],
+            input="5\n",
+            text=True,
+            capture_output=True,
+            cwd=raiz,
+            timeout=10,
+        )
+        self.assertEqual(resultado.returncode, 0, resultado.stderr)
+        self.assertIn("Gracias por utilizar Gestión y Huellitas UdeA", resultado.stdout)

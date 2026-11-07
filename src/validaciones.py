@@ -134,7 +134,7 @@ class c_validaciones:
         if not isinstance(asunto, str):
             return False
         asunto = asunto.strip()
-        patron = r"[A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9 .,;:!?¡¿()'""#/-]+"
+        patron = r"""[A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9 .,;:!?¡¿()'"#/-]+"""
         return 5 <= len(asunto) <= 150 and re.fullmatch(patron, asunto) is not None
 
     @staticmethod

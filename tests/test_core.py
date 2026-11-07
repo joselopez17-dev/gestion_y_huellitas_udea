@@ -181,6 +181,32 @@ class TestArchivosYReportes(unittest.TestCase):
         self.assertEqual(vencidas[0]["tipo_solicitud"], "Reclamo")
         self.assertLess(vencidas[0]["dias_restantes"], 0)
 
+
+    def test_consulta_y_generacion_de_radicado_desde_menu(self):
+        identificador = self.gestor.guardar_pqrs(self.datos("Petición"))
+        sistema = c_main()
+        sistema.archivos = self.gestor
+        sistema.reportes = c_reportes(self.gestor)
+
+        with patch("builtins.input", side_effect=["Petición", str(identificador)]), patch("builtins.print"):
+            sistema.consultar_pqrs()
+
+        ruta = self.gestor.carpeta_radicados / "Peticion_000001.txt"
+        self.assertTrue(ruta.exists())
+        self.assertIn("Juan David Pérez Gómez", ruta.read_text(encoding="utf-8"))
+
+    def test_cambio_de_estado_desde_menu(self):
+        identificador = self.gestor.guardar_pqrs(self.datos("Queja"))
+        sistema = c_main()
+        sistema.archivos = self.gestor
+        sistema.reportes = c_reportes(self.gestor)
+
+        with patch("builtins.input", side_effect=["Queja", str(identificador), "En proceso"]), patch("builtins.print"):
+            sistema.cambiar_estado_pqrs()
+
+        registro = self.gestor.buscar_pqrs(identificador, "Queja")
+        self.assertEqual(registro["estado_peticion"], "En proceso")
+
     def test_fecha_maxima_y_reporte_por_tipo(self):
         identificador = self.gestor.guardar_pqrs(self.datos("Queja"))
         registro = self.gestor.buscar_pqrs(identificador, "Queja")

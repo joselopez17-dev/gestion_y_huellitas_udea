@@ -130,8 +130,12 @@ class c_validaciones:
 
     @staticmethod
     def validar_asunto(asunto):
-        asunto = str(asunto or "").strip()
-        return 5 <= len(asunto) <= 150
+        """Acepta un asunto breve y descriptivo con puntuación básica."""
+        if not isinstance(asunto, str):
+            return False
+        asunto = asunto.strip()
+        patron = r"[A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9 .,;:!?¡¿()'""#/-]+"
+        return 5 <= len(asunto) <= 150 and re.fullmatch(patron, asunto) is not None
 
     @staticmethod
     def validar_descripcion(descripcion):

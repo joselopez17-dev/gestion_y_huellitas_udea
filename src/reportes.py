@@ -6,7 +6,10 @@ analizar el volumen, el estado y los tiempos de respuesta de las PQRS.
 
 from datetime import date
 
-from archivos import c_archivos
+try:
+    from .archivos import c_archivos
+except ImportError:  # Ejecución directa de python src/main.py
+    from archivos import c_archivos
 
 
 class c_reportes:

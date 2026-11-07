@@ -8,7 +8,11 @@ on:
 
 jobs:
   pruebas:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.sistema }}
+    strategy:
+      fail-fast: false
+      matrix:
+        sistema: [ubuntu-latest, windows-latest]
     steps:
       - name: Obtener el repositorio
         uses: actions/checkout@v4

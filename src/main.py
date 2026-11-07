@@ -219,7 +219,7 @@ class c_main:
             print(f"❌ No fue posible generar el radicado: {error}")
 
     def cambiar_estado_pqrs(self):
-        """Actualiza el estado mediante la secuencia estricta definida en la guía."""
+        """Actualiza el estado y diferencia el cambio del refresco del radicado."""
         tipo = self._pedir_opcion(
             "\nTipo de PQRS (Petición, Queja, Reclamo, Sugerencia): ",
             c_archivos.ARCHIVOS.keys(),
@@ -242,12 +242,20 @@ class c_main:
         )
         try:
             actualizado = self.archivos.cambiar_estado(tipo, identificador, nuevo_estado)
-            print(f"✅ Estado actualizado a: {actualizado['estado_peticion']}")
-            if actualizado.get("fecha_respuesta"):
-                print(f"Fecha de respuesta registrada: {actualizado['fecha_respuesta']}")
-            self.archivos.generar_radicado(actualizado)
         except (OSError, ValueError) as error:
             print(f"⚠️ No se pudo cambiar el estado: {error}")
+            return
+
+        print(f"✅ Estado actualizado a: {actualizado['estado_peticion']}")
+        if actualizado.get("fecha_respuesta"):
+            print(f"Fecha de respuesta registrada: {actualizado['fecha_respuesta']}")
+
+        # Si no se puede regenerar el comprobante, el cambio de estado ya quedó guardado.
+        try:
+            ruta = self.archivos.generar_radicado(actualizado)
+            print(f"Radicado actualizado: {ruta}")
+        except OSError as error:
+            print(f"⚠️ El estado sí se actualizó, pero no se pudo actualizar el radicado: {error}")
 
     def mostrar_estadisticas(self):
         """Muestra el indicador obligatorio y cinco estadísticas complementarias."""

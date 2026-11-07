@@ -26,7 +26,7 @@ Esta matriz compara la rúbrica del proyecto integrador con los archivos y funci
 
 El equipo entregó un acta combinada fechada el 22/08/2026. El documento incluye los objetivos comunes, las expectativas individuales de los cinco integrantes, los acuerdos de colaboración y comunicación, la resolución de conflictos y el plan de trabajo con responsabilidades.
 
-Se incorporó una **copia pública en PDF** en `docs/actas/Acta_de_entendimiento_publica.pdf` y una transcripción en Markdown. La copia pública omite las firmas manuscritas y los números de identificación personal. El documento original firmado debe conservarse en un medio privado y entregarse al docente por el canal indicado si se requiere verificar las firmas.
+Se incorporó una **copia pública remaquetada en PDF de tres páginas** en `docs/actas/Acta_de_entendimiento_publica.pdf` y una transcripción en Markdown. Mantiene el contenido académico del acta original, pero no reproduce su diseño manuscrito. La copia pública omite las firmas manuscritas y los números de identificación personal. El documento original firmado debe conservarse en un medio privado y entregarse al docente por el canal indicado si se requiere verificar las firmas.
 
 | Documento o componente | Evidencia | Estado |
 |---|---|---|

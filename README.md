@@ -12,17 +12,17 @@ Proyecto integrador del curso Algoritmia y Programación, período 2026-2, desar
 
 ## Equipo de trabajo
 
-| Integrante | Programa académico | Rol consignado en el acta | Descripción de la responsabilidad |
+| Integrante | Programa académico | Rol del acta | Perfil, interés declarado y aporte al proyecto |
 |---|---|---|---|
-| José Miguel López Doria | Ingeniería Industrial — UdeA | Programador 1 | Entregar los códigos del proyecto dentro de los tiempos acordados. |
-| Juliana Rivera Sarge | Ingeniería Industrial — UdeA | Diseñadora 1 | Organizar y diseñar los aspectos visuales, manteniendo una línea gráfica ordenada y coherente. |
-| Víctor José Salgado Romero* | Ingeniería Industrial — UdeA | Diseñador | Coordinar el apoyo para lograr una buena arquitectura del proyecto. |
-| Juan Pablo Quintero Gómez | Ingeniería Industrial — UdeA | Programador | Apoyar al programador 1 y responder por las actividades asignadas. |
-| Sebastián Cardona* | Ingeniería Industrial — UdeA | Diseñador e investigador | Buscar información cuando el proyecto lo requiera y apoyar al equipo de diseño. |
+| José Miguel López Doria | Ingeniería Industrial — UdeA | Programador 1 | Expresa interés en analítica de datos y procesamiento de información. Tiene asignada la entrega de los códigos del proyecto dentro de los tiempos acordados. |
+| Juliana Rivera Sarge | Ingeniería Industrial — UdeA | Diseñadora 1 | Expresa interés en aplicar la teoría del semestre y utilizar herramientas de programación para resolver problemas. Tiene a cargo la organización y el diseño de los aspectos visuales. |
+| Víctor José Salgado Romero* | Ingeniería Industrial — UdeA | Diseñador | Su expectativa se centra en fortalecer los conceptos de programación y el uso de herramientas. En el proyecto coordina el apoyo relacionado con la arquitectura. |
+| Juan Pablo Quintero Gómez | Ingeniería Industrial — UdeA | Programador | Expresa interés en la programación y la automatización de procesos. Apoya al programador 1 y responde por las actividades asignadas. |
+| Sebastián Cardona* | Ingeniería Industrial — UdeA | Diseñador e investigador | Su expectativa es fortalecer los conocimientos de programación y el uso de herramientas. Tiene asignada la búsqueda de información y el apoyo al equipo de diseño. |
 
 \* **Confirmar nombres completos:** en el acta recibida aparecen “Victor Silgado Romero” y “Sebastian Cardona Puerta”; en el README inicial aparecen “Víctor José Salgado Romero” y “Sebastián Cardona”. Se conservan provisionalmente los nombres del README hasta que el equipo confirme la forma oficial.
 
-**Habilidades y fortalezas personales:** el acta describe expectativas y responsabilidades, pero no enumera competencias personales verificadas de cada integrante. No se atribuyen habilidades sin confirmación de sus titulares.
+Los perfiles anteriores se elaboraron a partir de las expectativas y responsabilidades consignadas en el acta. No se presentan como certificación de habilidades técnicas ya dominadas; cada integrante puede añadir fortalezas concretas que haya confirmado.
 
 ## Descripción
 

@@ -25,7 +25,7 @@ class c_main:
             valor = input(mensaje).strip()
             if validador(valor):
                 return transformar(valor) if transformar else valor
-            print(f"⚠️ {error}")
+            print(f" {error}")
 
     @staticmethod
     def _pedir_opcion(mensaje, opciones, error="Seleccione una opción de la lista."):
@@ -35,11 +35,11 @@ class c_main:
             opcion = c_reglas.obtener_opcion(valor, opciones)
             if opcion is not None:
                 return opcion
-            print(f"⚠️ {error}")
+            print(f" {error}")
 
     def _capturar_datos_pqrs(self):
         """Recopila datos personales y datos completos de la solicitud."""
-        print("\n📝 REGISTRO DE NUEVA PQRS")
+        print("\n REGISTRO DE NUEVA PQRS")
         print("-" * 48)
 
         nombre = self._pedir_validado(
@@ -77,7 +77,7 @@ class c_main:
             direccion = input("Dirección (opcional, Enter para omitir): ").strip()
             if c_reglas.validar_direccion(direccion):
                 break
-            print("⚠️ La dirección debe tener entre 5 y 200 caracteres permitidos.")
+            print(" La dirección debe tener entre 5 y 200 caracteres permitidos.")
 
         tipo_solicitud = self._pedir_opcion(
             "Tipo de solicitud (Petición, Queja, Reclamo, Sugerencia): ",
@@ -146,13 +146,13 @@ class c_main:
         try:
             ruta = self.archivos.generar_radicado(registro)
         except OSError as error:
-            print("\n✅ La PQRS quedó registrada correctamente.")
+            print("\n La PQRS quedó registrada correctamente.")
             print(f"Consecutivo asignado: {nuevo_id:06d}")
             print(f"Fecha máxima de respuesta: {registro['fecha_maxima_respuesta']}")
-            print(f"⚠️ No se pudo guardar el comprobante TXT: {error}")
+            print(f" No se pudo guardar el comprobante TXT: {error}")
             return
 
-        print("\n✅ PQRS registrada correctamente.")
+        print("\n PQRS registrada correctamente.")
         print(f"Consecutivo asignado: {nuevo_id:06d}")
         print(f"Fecha máxima de respuesta: {registro['fecha_maxima_respuesta']}")
         print(f"Radicado guardado en: {ruta}")
@@ -203,7 +203,7 @@ class c_main:
         )
         registro = self.archivos.buscar_pqrs(identificador, tipo)
         if registro is None:
-            print("⚠️ No se encontró una PQRS con ese tipo y consecutivo.")
+            print(" No se encontró una PQRS con ese tipo y consecutivo.")
             return
 
         try:
@@ -211,7 +211,7 @@ class c_main:
             print("\n" + self.archivos.construir_radicado(registro))
             print(f"Comprobante disponible en: {ruta}")
         except OSError as error:
-            print(f"❌ No fue posible generar el radicado: {error}")
+            print(f" No fue posible generar el radicado: {error}")
 
     def cambiar_estado_pqrs(self):
         """Actualiza el estado y diferencia el cambio del refresco del radicado."""
@@ -227,7 +227,7 @@ class c_main:
         )
         registro = self.archivos.buscar_pqrs(identificador, tipo)
         if registro is None:
-            print("⚠️ No se encontró una PQRS con ese consecutivo.")
+            print(" No se encontró una PQRS con ese consecutivo.")
             return
 
         print(f"Estado actual: {registro.get('estado_peticion', 'Registrada')}")
@@ -238,10 +238,10 @@ class c_main:
         try:
             actualizado = self.archivos.cambiar_estado(tipo, identificador, nuevo_estado)
         except (OSError, ValueError) as error:
-            print(f"⚠️ No se pudo cambiar el estado: {error}")
+            print(f" No se pudo cambiar el estado: {error}")
             return
 
-        print(f"✅ Estado actualizado a: {actualizado['estado_peticion']}")
+        print(f" Estado actualizado a: {actualizado['estado_peticion']}")
         if actualizado.get("fecha_respuesta"):
             print(f"Fecha de respuesta registrada: {actualizado['fecha_respuesta']}")
 
@@ -250,11 +250,11 @@ class c_main:
             ruta = self.archivos.generar_radicado(actualizado)
             print(f"Radicado actualizado: {ruta}")
         except OSError as error:
-            print(f"⚠️ El estado sí se actualizó, pero no se pudo actualizar el radicado: {error}")
+            print(f" El estado sí se actualizó, pero no se pudo actualizar el radicado: {error}")
 
     def mostrar_estadisticas(self):
         """Muestra el indicador obligatorio y cinco estadísticas complementarias."""
-        print("\n📊 ESTADÍSTICAS DE GESTIÓN")
+        print("\n ESTADÍSTICAS DE GESTIÓN")
         print("=" * 56)
 
         promedio = self.reportes.calcular_promedio_dias_respuesta()
@@ -323,19 +323,19 @@ class c_main:
                 try:
                     self.consultar_pqrs()
                 except (OSError, ValueError, KeyError) as error:
-                    print(f"❌ No fue posible consultar los registros: {error}")
+                    print(f" No fue posible consultar los registros: {error}")
             elif opcion == "3":
                 self.cambiar_estado_pqrs()
             elif opcion == "4":
                 try:
                     self.mostrar_estadisticas()
                 except (OSError, ValueError, KeyError) as error:
-                    print(f"❌ No fue posible calcular los reportes: {error}")
+                    print(f" No fue posible calcular los reportes: {error}")
             elif opcion == "5":
                 print("\n¡Gracias por utilizar Gestión y Huellitas UdeA! 🐾")
                 break
             else:
-                print("⚠️ Opción inválida. Ingrese un número entre 1 y 5.")
+                print(" Opción inválida. Ingrese un número entre 1 y 5.")
 
 
 def main():

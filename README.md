@@ -16,8 +16,8 @@ Proyecto integrador del curso Algoritmia y Programación, período 2026-2, desar
 |---|---|---|
 | José Miguel López Doria | Ingeniería Industrial — UdeA | Programador 1 |
 | Juliana Rivera Sarge | Ingeniería Industrial — UdeA | Diseñadora 1 |
-| Víctor Silgado | Ingeniería Industrial — UdeA | Diseñador |
-| Juan Pablo Quintero Gómez | Ingeniería Industrial — UdeA | Programador |
+| Víctor Silgado | Ingeniería Industrial — UdeA | Diseñador 2 |
+| Juan Pablo Quintero Gómez | Ingeniería Industrial — UdeA | Programador 2 |
 | Sebastián Cardona | Ingeniería Industrial — UdeA | Diseñador e investigador |
 
 ## Descripción

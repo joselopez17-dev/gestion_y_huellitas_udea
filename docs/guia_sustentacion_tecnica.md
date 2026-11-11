@@ -9,7 +9,7 @@ El programa está dividido en cuatro módulos para separar responsabilidades:
 | Archivo | Clase | Qué hace |
 |---|---|---|
 | `src/main.py` | `c_main` | Controla el menú, solicita datos, llama las reglas y coordina las operaciones. |
-| `src/reglas.py` | `c_reglas` | Centraliza las reglas de validación y la normalización de opciones. |
+| `src/validaciones.py` | `c_validaciones` | Centraliza las reglas de validación y la normalización de opciones. |
 | `src/archivos.py` | `c_archivos` | Administra los cuatro archivos de datos: lectura, escritura, consecutivos, búsquedas, estados y radicados. |
 | `src/reportes.py` | `c_reportes` | Calcula los seis indicadores a partir de los registros almacenados. |
 
@@ -18,7 +18,7 @@ El programa está dividido en cuatro módulos para separar responsabilidades:
 ### Recorrido de una operación
 
 1. El usuario selecciona una opción en el método `ejecutar()` de `c_main`.
-2. `c_main` solicita los datos y utiliza `c_reglas` para comprobarlos.
+2. `c_main` solicita los datos y utiliza `c_validaciones` para comprobarlos.
 3. Para guardar o consultar, `c_main` llama a los métodos de `c_archivos`.
 4. Para mostrar indicadores, llama a `c_reportes`, que obtiene los registros mediante `c_archivos`.
 5. El menú vuelve a mostrarse hasta que el usuario elige salir.
@@ -34,7 +34,7 @@ El bloque `if __name__ == "__main__":` comprueba si el archivo se está ejecutan
 **2. ¿Qué responsabilidad tiene cada clase?**
 
 - `c_main`: interacción con el usuario y coordinación del flujo.
-- `c_reglas`: reglas para aceptar o rechazar entradas.
+- `c_validaciones`: reglas para aceptar o rechazar entradas.
 - `c_archivos`: persistencia de datos y generación de comprobantes.
 - `c_reportes`: cálculos estadísticos y consultas de seguimiento.
 
@@ -211,7 +211,7 @@ Usen datos ficticios durante la demostración. No publiquen ni proyecten documen
 |---|---|
 | ¿Dónde inicia? | `src/main.py` → `main()`, `c_main.ejecutar()` |
 | ¿Dónde se controla la captura? | `src/main.py` → `_pedir_validado()`, `_pedir_opcion()`, `_capturar_datos_pqrs()` |
-| ¿Dónde se valida el correo o la fecha? | `src/reglas.py` → `validar_correo()`, `validar_fecha_radicacion()` |
+| ¿Dónde se valida el correo o la fecha? | `src/validaciones.py` → `validar_correo()`, `validar_fecha_radicacion()` |
 | ¿Dónde se asigna el ID? | `src/archivos.py` → `guardar_pqrs()` |
 | ¿Dónde se lee JSONL? | `src/archivos.py` → `_leer_archivo()` |
 | ¿Dónde se actualiza el estado? | `src/archivos.py` → `cambiar_estado()` |

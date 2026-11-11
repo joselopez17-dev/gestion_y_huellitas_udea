@@ -40,6 +40,10 @@ class TestValidaciones(unittest.TestCase):
     def test_opciones_y_fecha(self):
         self.assertTrue(c_validaciones.validar_tipo_solicitud("peticion"))
         self.assertTrue(c_validaciones.validar_campus("campus medellin - ciudad universitaria"))
+        self.assertTrue(c_validaciones.validar_campus("Campus central"))
+        self.assertTrue(c_validaciones.validar_campus("Ciudad Universitaria"))
+        self.assertTrue(c_validaciones.validar_campus("Robledo"))
+        self.assertFalse(c_validaciones.validar_campus("Campus Medellín"))
         self.assertTrue(c_validaciones.validar_fecha_radicacion(date.today().isoformat()))
         futura = (date.today() + timedelta(days=1)).isoformat()
         self.assertFalse(c_validaciones.validar_fecha_radicacion(futura))

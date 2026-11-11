@@ -28,7 +28,9 @@ class c_main:
             print(f" {error}")
 
     @staticmethod
-    def _pedir_opcion(mensaje, opciones, error="Seleccione una opción de la lista."):
+    def _pedir_opcion(
+        mensaje, opciones, error="Seleccione una opción de la lista.", mostrar_opciones=False
+    ):
         """Convierte entradas flexibles en opciones oficiales y uniformes."""
         while True:
             valor = input(mensaje).strip()
@@ -36,6 +38,10 @@ class c_main:
             if opcion is not None:
                 return opcion
             print(f" {error}")
+            if mostrar_opciones:
+                print(" Opciones permitidas:")
+                for indice, opcion_valida in enumerate(opciones, start=1):
+                    print(f"   {indice}. {opcion_valida}")
 
     def _capturar_datos_pqrs(self):
         """Recopila datos personales y datos completos de la solicitud."""
@@ -109,7 +115,9 @@ class c_main:
         campus = self._pedir_opcion(
             "Campus relacionado (escriba el nombre completo): ",
             c_validaciones.CAMPUS,
-            "El campus debe coincidir con uno de los nueve campus permitidos.",
+            "El campus no se reconoció. También puede escribir un nombre corto como "
+            "'Ciudad Universitaria', 'Campus central' o 'Robledo'.",
+            mostrar_opciones=True,
         )
 
         return {

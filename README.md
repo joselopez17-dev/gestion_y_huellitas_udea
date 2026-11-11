@@ -8,7 +8,7 @@
 
 Proyecto integrador del curso Algoritmia y Programación, período 2026-2, desarrollado en Python para apoyar el registro, consulta y seguimiento de Peticiones, Quejas, Reclamos y Sugerencias (PQRS).
 
-> **Estado: desarrollo en curso en la rama `desarrollo`.** Ya se incorporaron los módulos de validaciones, archivos, reportes y menú principal. Las 24 pruebas automatizadas (incluidas 8 pruebas de aceptación) pasan en Ubuntu y Windows con Python 3.12. También se corrigieron los mensajes cuando un registro o cambio de estado se guarda y falla la generación del TXT. Está pendiente la revisión manual del equipo en su computador antes de integrar los cambios a `main`.
+> **Estado: desarrollo en curso en la rama `desarrollo`.** El código está organizado en módulos de reglas, menú principal, archivos y reportes. Las 24 pruebas automatizadas (incluidas 8 pruebas de aceptación) pasan en Ubuntu y Windows con Python 3.12. También se corrigieron los mensajes cuando un registro o cambio de estado se guarda y falla la generación del TXT. Está pendiente la revisión manual del equipo en su computador antes de integrar los cambios a `main`.
 
 ## Equipo de trabajo
 
@@ -54,7 +54,7 @@ Estas funcionalidades se encuentran en proceso de prueba y revisión.
 
 ```text
 gestion_y_huellitas_udea/
-├── src/       # Código fuente Python
+├── src/       # Código fuente Python (main.py, reglas.py, archivos.py y reportes.py)
 ├── tests/     # Pruebas automatizadas
 ├── docs/      # Documentación, actas y manual
 ├── images/    # Logo y recursos gráficos
@@ -69,7 +69,7 @@ Desde la carpeta raíz del repositorio:
 
 ```bash
 python -m unittest discover -s tests -v
-python src/main.py
+python -m src.main
 ```
 
 La primera ejecución crea los cuatro archivos de datos si no existen. Los archivos de datos y radicados generados se excluyen del control de versiones para evitar publicar datos personales.

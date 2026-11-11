@@ -8,8 +8,8 @@ El programa está dividido en cuatro módulos para separar responsabilidades:
 
 | Archivo | Clase | Qué hace |
 |---|---|---|
-| `src/main.py` | `c_main` | Controla el menú, solicita datos, llama las validaciones y coordina las operaciones. |
-| `src/validaciones.py` | `c_validaciones` | Centraliza las reglas de validación y la normalización de opciones. |
+| `src/main.py` | `c_main` | Controla el menú, solicita datos, llama las reglas y coordina las operaciones. |
+| `src/reglas.py` | `c_reglas` | Centraliza las reglas de validación y la normalización de opciones. |
 | `src/archivos.py` | `c_archivos` | Administra los cuatro archivos de datos: lectura, escritura, consecutivos, búsquedas, estados y radicados. |
 | `src/reportes.py` | `c_reportes` | Calcula los seis indicadores a partir de los registros almacenados. |
 
@@ -18,7 +18,7 @@ El programa está dividido en cuatro módulos para separar responsabilidades:
 ### Recorrido de una operación
 
 1. El usuario selecciona una opción en el método `ejecutar()` de `c_main`.
-2. `c_main` solicita los datos y utiliza `c_validaciones` para comprobarlos.
+2. `c_main` solicita los datos y utiliza `c_reglas` para comprobarlos.
 3. Para guardar o consultar, `c_main` llama a los métodos de `c_archivos`.
 4. Para mostrar indicadores, llama a `c_reportes`, que obtiene los registros mediante `c_archivos`.
 5. El menú vuelve a mostrarse hasta que el usuario elige salir.
@@ -29,12 +29,12 @@ El programa está dividido en cuatro módulos para separar responsabilidades:
 
 **1. ¿Cuál es el punto de entrada del programa?**
 
-El bloque `if __name__ == "__main__":` llama a `main()`. Esa función configura la salida de texto en UTF-8 cuando el entorno lo permite, crea un objeto `c_main` y ejecuta su método `ejecutar()`.
+El bloque `if __name__ == "__main__":` comprueba si el archivo se está ejecutando como programa principal. Si es así, llama a `main()`, que configura la salida UTF-8, crea `c_main` y ejecuta el menú. Al iniciar con `python -m src.main`, Python asigna a `__name__` el valor `"__main__"`, por eso se ejecuta el bloque.
 
 **2. ¿Qué responsabilidad tiene cada clase?**
 
 - `c_main`: interacción con el usuario y coordinación del flujo.
-- `c_validaciones`: reglas para aceptar o rechazar entradas.
+- `c_reglas`: reglas para aceptar o rechazar entradas.
 - `c_archivos`: persistencia de datos y generación de comprobantes.
 - `c_reportes`: cálculos estadísticos y consultas de seguimiento.
 
@@ -54,7 +54,7 @@ Un método normal recibe `self` porque trabaja con el estado de un objeto. Un `@
 
 **6. ¿Para qué sirve el bloque `try/except ImportError` en los módulos?**
 
-Permite intentar primero importaciones relativas, apropiadas cuando el código se ejecuta como paquete, y usar importaciones directas como alternativa al ejecutar `python src/main.py`.
+Permite intentar primero importaciones relativas, apropiadas cuando el código se ejecuta como paquete, y usar importaciones directas como alternativa al ejecutar `python -m src.main`.
 
 ### Validaciones y captura de datos
 
@@ -66,7 +66,7 @@ El método `obtener_opcion()` normaliza el texto y lo compara con una lista de o
 
 Validar comprueba si el dato cumple una regla, por ejemplo, que el teléfono tenga diez dígitos. Normalizar permite comparar una entrada con una lista oficial y devolver el valor escrito de forma uniforme, por ejemplo, `Petición`.
 
-**9. ¿Por qué se usa `re.fullmatch()` en varias validaciones?**
+**9. ¿Por qué se usa `re.fullmatch()` en varias reglas?**
 
 Porque exige que toda la entrada cumpla el patrón. No basta con que una parte del texto coincida. Por ejemplo, el número de documento debe contener únicamente entre 3 y 15 dígitos.
 
@@ -168,7 +168,7 @@ Porque no existe una muestra para calcular el promedio. Devolver cero podría in
 
 **32. ¿Qué hacen las pruebas automatizadas?**
 
-El archivo `tests/test_core.py` usa `unittest`. Comprueba validaciones, almacenamiento, consecutivos independientes, cambios de estado, promedio, fechas límite, radicados de 120 caracteres y flujos del menú. Usa `tempfile.TemporaryDirectory()` para guardar datos temporales y no alterar los datos reales del proyecto; también usa `unittest.mock.patch` para simular entradas y salidas.
+El archivo `tests/test_core.py` usa `unittest`. Comprueba reglas, almacenamiento, consecutivos independientes, cambios de estado, promedio, fechas límite, radicados de 120 caracteres y flujos del menú. Usa `tempfile.TemporaryDirectory()` para guardar datos temporales y no alterar los datos reales del proyecto; también usa `unittest.mock.patch` para simular entradas y salidas.
 
 **33. ¿Cómo se prueba un error sin provocar un fallo real del disco?**
 
@@ -194,7 +194,7 @@ Reconocer una limitación no significa que el programa esté mal; significa expl
 
 Para una demostración corta, preparen una carpeta de datos de prueba y sigan esta secuencia:
 
-1. Ejecutar `python src/main.py` y explicar el punto de entrada.
+1. Ejecutar `python -m src.main` y explicar el punto de entrada.
 2. Registrar una PQRS de prueba. Ingresar primero un nombre inválido para mostrar el ciclo de validación.
 3. Mostrar el archivo correspondiente dentro de `data/` y explicar que cada línea es un JSON.
 4. Consultar el registro usando el tipo y el consecutivo.
@@ -211,7 +211,7 @@ Usen datos ficticios durante la demostración. No publiquen ni proyecten documen
 |---|---|
 | ¿Dónde inicia? | `src/main.py` → `main()`, `c_main.ejecutar()` |
 | ¿Dónde se controla la captura? | `src/main.py` → `_pedir_validado()`, `_pedir_opcion()`, `_capturar_datos_pqrs()` |
-| ¿Dónde se valida el correo o la fecha? | `src/validaciones.py` → `validar_correo()`, `validar_fecha_radicacion()` |
+| ¿Dónde se valida el correo o la fecha? | `src/reglas.py` → `validar_correo()`, `validar_fecha_radicacion()` |
 | ¿Dónde se asigna el ID? | `src/archivos.py` → `guardar_pqrs()` |
 | ¿Dónde se lee JSONL? | `src/archivos.py` → `_leer_archivo()` |
 | ¿Dónde se actualiza el estado? | `src/archivos.py` → `cambiar_estado()` |

@@ -48,7 +48,34 @@ class c_validaciones:
     def obtener_opcion(cls, valor, opciones):
         """Devuelve la opción oficial equivalente o None cuando no existe."""
         clave = cls._clave(valor)
-        return next((opcion for opcion in opciones if cls._clave(opcion) == clave), None)
+        coincidencia = next((opcion for opcion in opciones if cls._clave(opcion) == clave), None)
+        if coincidencia is not None:
+            return coincidencia
+
+        # Alias sencillos para que el usuario no tenga que memorizar el nombre
+        # institucional completo del campus en el formulario.
+        if tuple(opciones) == cls.CAMPUS:
+            alias_campus = {
+                "campus central": cls.CAMPUS[0],
+                "campus principal": cls.CAMPUS[0],
+                "ciudad universitaria": cls.CAMPUS[0],
+                "medellin ciudad universitaria": cls.CAMPUS[0],
+                "campus medellin ciudad universitaria": cls.CAMPUS[0],
+                "robledo": cls.CAMPUS[1],
+                "ciudadela robledo": cls.CAMPUS[1],
+                "campus robledo": cls.CAMPUS[1],
+                "area de la salud": cls.CAMPUS[2],
+                "campus area de la salud": cls.CAMPUS[2],
+                "sede de posgrado": cls.CAMPUS[3],
+                "san ignacio": cls.CAMPUS[4],
+                "edificio san ignacio": cls.CAMPUS[4],
+                "antigua escuela de derecho": cls.CAMPUS[5],
+                "edificio antioquia": cls.CAMPUS[6],
+                "casas patrimoniales": cls.CAMPUS[7],
+                "edificio de extension": cls.CAMPUS[8],
+            }
+            return alias_campus.get(clave)
+        return None
 
     @classmethod
     def validar_nombre(cls, nombre):

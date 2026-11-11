@@ -26,14 +26,14 @@ python -m unittest discover -s tests -v
 Para abrir el sistema:
 
 ~~~bash
-python src/main.py
+python -m src.main
 ~~~
 
 En Windows también se puede utilizar el lanzador py si el comando python no está disponible:
 
 ~~~powershell
 py -m unittest discover -s tests -v
-py src/main.py
+py -m src.main
 ~~~
 
 ## 4. Menú principal

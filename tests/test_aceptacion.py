@@ -240,7 +240,7 @@ class TestAceptacionSistema(unittest.TestCase):
     def test_menu_principal_muestra_las_cinco_opciones(self):
         raiz = Path(__file__).resolve().parents[1]
         resultado = subprocess.run(
-            [sys.executable, str(raiz / "src" / "main.py")],
+            [sys.executable, "-m", "src.main"],
             input="5\n",
             text=True,
             encoding="utf-8",

@@ -6,14 +6,9 @@ para registrar, consultar, actualizar y analizar las solicitudes PQRS.
 
 import sys
 
-try:
-    from .archivos import c_archivos
-    from .reportes import c_reportes
-    from .validaciones import c_validaciones
-except ImportError:  # Ejecución directa de python src/main.py
-    from archivos import c_archivos
-    from reportes import c_reportes
-    from validaciones import c_validaciones
+from .archivos import c_archivos
+from .reportes import c_reportes
+from .reglas import c_reglas
 
 
 class c_main:
@@ -37,7 +32,7 @@ class c_main:
         """Convierte entradas flexibles en opciones oficiales y uniformes."""
         while True:
             valor = input(mensaje).strip()
-            opcion = c_validaciones.obtener_opcion(valor, opciones)
+            opcion = c_reglas.obtener_opcion(valor, opciones)
             if opcion is not None:
                 return opcion
             print(f"⚠️ {error}")
@@ -49,71 +44,71 @@ class c_main:
 
         nombre = self._pedir_validado(
             "Nombre completo: ",
-            c_validaciones.validar_nombre,
+            c_reglas.validar_nombre,
             "Use de 3 a 100 letras; se permiten tildes, espacios, apóstrofes y guiones.",
         )
         tipo_documento = self._pedir_validado(
             "Tipo de documento (CC, TI, CE, PP, NIT): ",
-            c_validaciones.validar_tipo_documento,
+            c_reglas.validar_tipo_documento,
             "Tipo de documento no válido.",
             transformar=lambda valor: valor.upper(),
         )
         numero_documento = self._pedir_validado(
             "Número de documento (3 a 15 dígitos): ",
-            c_validaciones.validar_numero_documento,
+            c_reglas.validar_numero_documento,
             "Ingrese únicamente entre 3 y 15 dígitos.",
         )
         tipo_telefono = self._pedir_opcion(
             "Tipo de teléfono (Celular, Fijo, Corporativo, Otro): ",
-            c_validaciones.TIPOS_TELEFONO,
+            c_reglas.TIPOS_TELEFONO,
         )
         telefono = self._pedir_validado(
             "Teléfono de contacto (10 dígitos): ",
-            c_validaciones.validar_telefono,
+            c_reglas.validar_telefono,
             "Ingrese exactamente 10 dígitos numéricos.",
         )
         correo = self._pedir_validado(
             "Correo electrónico: ",
-            c_validaciones.validar_correo,
+            c_reglas.validar_correo,
             "Ingrese un correo válido, por ejemplo usuario@correo.com.",
         )
 
         while True:
             direccion = input("Dirección (opcional, Enter para omitir): ").strip()
-            if c_validaciones.validar_direccion(direccion):
+            if c_reglas.validar_direccion(direccion):
                 break
             print("⚠️ La dirección debe tener entre 5 y 200 caracteres permitidos.")
 
         tipo_solicitud = self._pedir_opcion(
             "Tipo de solicitud (Petición, Queja, Reclamo, Sugerencia): ",
-            c_validaciones.TIPOS_SOLICITUD,
+            c_reglas.TIPOS_SOLICITUD,
         )
         fecha_radicacion = self._pedir_validado(
             "Fecha de radicación (AAAA-MM-DD): ",
-            c_validaciones.validar_fecha_radicacion,
+            c_reglas.validar_fecha_radicacion,
             "Use una fecha válida en formato AAAA-MM-DD que no sea futura.",
         )
         canal = self._pedir_opcion(
             "Canal (Presencial, Correo electrónico, Página web, Teléfono, Redes sociales, Otro): ",
-            c_validaciones.CANALES_RECEPCION,
+            c_reglas.CANALES_RECEPCION,
         )
         asunto = self._pedir_validado(
             "Asunto (5 a 150 caracteres): ",
-            c_validaciones.validar_asunto,
+            c_reglas.validar_asunto,
             "El asunto debe tener entre 5 y 150 caracteres.",
         )
         descripcion = self._pedir_validado(
             "Descripción detallada (20 a 2000 caracteres): ",
-            c_validaciones.validar_descripcion,
+            c_reglas.validar_descripcion,
             "La descripción debe tener entre 20 y 2000 caracteres.",
         )
         mascota = self._pedir_opcion(
             "Tipo de mascota (Perro o Gato): ",
-            c_validaciones.TIPOS_MASCOTA,
+            c_reglas.TIPOS_MASCOTA,
         )
         campus = self._pedir_opcion(
             "Campus relacionado (escriba el nombre completo): ",
-            c_validaciones.CAMPUS,
+            c_reglas.CAMPUS,
             "El campus debe coincidir con uno de los nueve campus permitidos.",
         )
 

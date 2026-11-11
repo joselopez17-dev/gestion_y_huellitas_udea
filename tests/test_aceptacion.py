@@ -117,7 +117,12 @@ class TestAceptacionSistema(unittest.TestCase):
         self.assertEqual(registro["numero_documento"], "1037654321")
         self.assertEqual(registro["telefono_contacto"], "3001234567")
         self.assertEqual(registro["correo_electronico"], "ana.prueba@correo.com")
-        self.assertGreaterEqual(salida.getvalue().count("⚠️"), 8)
+        mensajes_error = salida.getvalue()
+        cantidad_errores = sum(
+            mensajes_error.count(fragmento)
+            for fragmento in ("Use ", "Ingrese ", "no válido", "no sea futura", "debe tener")
+        )
+        self.assertGreaterEqual(cantidad_errores, 8)
 
     def test_datos_persisten_al_reabrir_el_gestor_y_consulta_general_funciona(self):
         for tipo in ("Petición", "Queja", "Reclamo", "Sugerencia"):

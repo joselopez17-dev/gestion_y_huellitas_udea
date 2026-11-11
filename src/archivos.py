@@ -10,7 +10,7 @@ import textwrap
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
-from .reglas import c_reglas
+from .validaciones import c_validaciones
 
 
 class c_archivos:
@@ -36,7 +36,7 @@ class c_archivos:
 
     def _tipo_oficial(self, tipo):
         """Normaliza el tipo de solicitud y evita nombres de archivo arbitrarios."""
-        opcion = c_reglas.obtener_opcion(tipo, self.ARCHIVOS.keys())
+        opcion = c_validaciones.obtener_opcion(tipo, self.ARCHIVOS.keys())
         if opcion is None:
             raise ValueError("Tipo de solicitud no válido.")
         return opcion
@@ -143,8 +143,8 @@ class c_archivos:
     def cambiar_estado(self, tipo, identificador, nuevo_estado):
         """Permite únicamente la transición consecutiva y registra la fecha de solución."""
         tipo = self._tipo_oficial(tipo)
-        estado_oficial = c_reglas.obtener_opcion(
-            nuevo_estado, c_reglas.ESTADOS
+        estado_oficial = c_validaciones.obtener_opcion(
+            nuevo_estado, c_validaciones.ESTADOS
         )
         if estado_oficial is None:
             raise ValueError("El estado indicado no es válido.")
@@ -157,8 +157,8 @@ class c_archivos:
         if registro is None:
             raise ValueError("No se encontró una PQRS con ese consecutivo y tipo.")
 
-        estado_actual = c_reglas.obtener_opcion(
-            registro.get("estado_peticion", "Registrada"), c_reglas.ESTADOS
+        estado_actual = c_validaciones.obtener_opcion(
+            registro.get("estado_peticion", "Registrada"), c_validaciones.ESTADOS
         ) or "Registrada"
         estado_siguiente = self.TRANSICIONES.get(estado_actual)
         if estado_siguiente != estado_oficial:

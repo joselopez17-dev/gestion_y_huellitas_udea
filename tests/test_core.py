@@ -9,41 +9,41 @@ from pathlib import Path
 from src.archivos import c_archivos
 from src.reportes import c_reportes
 from src.main import c_main
-from src.reglas import c_reglas
+from src.validaciones import c_validaciones
 
 
 class TestValidaciones(unittest.TestCase):
     def test_nombre(self):
-        self.assertTrue(c_reglas.validar_nombre("Juan David Pérez Gómez"))
-        self.assertTrue(c_reglas.validar_nombre("María José O'Connor"))
-        self.assertFalse(c_reglas.validar_nombre("Juan123"))
-        self.assertFalse(c_reglas.validar_nombre("A"))
+        self.assertTrue(c_validaciones.validar_nombre("Juan David Pérez Gómez"))
+        self.assertTrue(c_validaciones.validar_nombre("María José O'Connor"))
+        self.assertFalse(c_validaciones.validar_nombre("Juan123"))
+        self.assertFalse(c_validaciones.validar_nombre("A"))
 
     def test_documento_y_telefono(self):
-        self.assertTrue(c_reglas.validar_numero_documento("1037654321"))
-        self.assertFalse(c_reglas.validar_numero_documento("10376A321"))
-        self.assertFalse(c_reglas.validar_numero_documento("１２３"))
-        self.assertTrue(c_reglas.validar_telefono("3001234567", "Celular"))
-        self.assertFalse(c_reglas.validar_telefono("300123456", "Fijo"))
-        self.assertFalse(c_reglas.validar_telefono("٣٠٠١٢٣٤٥٦٧", "Celular"))
+        self.assertTrue(c_validaciones.validar_numero_documento("1037654321"))
+        self.assertFalse(c_validaciones.validar_numero_documento("10376A321"))
+        self.assertFalse(c_validaciones.validar_numero_documento("１２３"))
+        self.assertTrue(c_validaciones.validar_telefono("3001234567", "Celular"))
+        self.assertFalse(c_validaciones.validar_telefono("300123456", "Fijo"))
+        self.assertFalse(c_validaciones.validar_telefono("٣٠٠١٢٣٤٥٦٧", "Celular"))
 
     def test_correo_y_direccion(self):
-        self.assertTrue(c_reglas.validar_correo("usuario@correo.com"))
-        self.assertFalse(c_reglas.validar_correo("usuariocorreo.com"))
-        self.assertTrue(c_reglas.validar_direccion(""))
-        self.assertTrue(c_reglas.validar_direccion("Avenida 10 #20-30"))
-        self.assertFalse(c_reglas.validar_direccion("abc"))
-        self.assertFalse(c_reglas.validar_direccion("Avenida\\\\Norte 10"))
-        self.assertTrue(c_reglas.validar_asunto("Solicitud de consulta veterinaria."))
-        self.assertFalse(c_reglas.validar_asunto("😊😊😊😊😊😊"))
+        self.assertTrue(c_validaciones.validar_correo("usuario@correo.com"))
+        self.assertFalse(c_validaciones.validar_correo("usuariocorreo.com"))
+        self.assertTrue(c_validaciones.validar_direccion(""))
+        self.assertTrue(c_validaciones.validar_direccion("Avenida 10 #20-30"))
+        self.assertFalse(c_validaciones.validar_direccion("abc"))
+        self.assertFalse(c_validaciones.validar_direccion("Avenida\\\\Norte 10"))
+        self.assertTrue(c_validaciones.validar_asunto("Solicitud de consulta veterinaria."))
+        self.assertFalse(c_validaciones.validar_asunto("😊😊😊😊😊😊"))
 
     def test_opciones_y_fecha(self):
-        self.assertTrue(c_reglas.validar_tipo_solicitud("peticion"))
-        self.assertTrue(c_reglas.validar_campus("campus medellin - ciudad universitaria"))
-        self.assertTrue(c_reglas.validar_fecha_radicacion(date.today().isoformat()))
+        self.assertTrue(c_validaciones.validar_tipo_solicitud("peticion"))
+        self.assertTrue(c_validaciones.validar_campus("campus medellin - ciudad universitaria"))
+        self.assertTrue(c_validaciones.validar_fecha_radicacion(date.today().isoformat()))
         futura = (date.today() + timedelta(days=1)).isoformat()
-        self.assertFalse(c_reglas.validar_fecha_radicacion(futura))
-        self.assertFalse(c_reglas.validar_fecha_radicacion(date.today().strftime("%Y%m%d")))
+        self.assertFalse(c_validaciones.validar_fecha_radicacion(futura))
+        self.assertFalse(c_validaciones.validar_fecha_radicacion(date.today().strftime("%Y%m%d")))
 
 
 class TestArchivosYReportes(unittest.TestCase):

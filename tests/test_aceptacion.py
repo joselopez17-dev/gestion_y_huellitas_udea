@@ -26,7 +26,7 @@ class TestAceptacionSistema(unittest.TestCase):
         self.temporal = tempfile.TemporaryDirectory()
         self.ruta_datos = Path(self.temporal.name)
         self.archivos = c_archivos(self.ruta_datos)
-        self.sistema = c_sistema()
+        self.sistema = c_sistema(self.archivos, c_reportes(self.archivos))
         # Sustituye el almacenamiento normal por uno temporal y aislado.
         self.sistema.archivos = self.archivos
         self.sistema.reportes = c_reportes(self.archivos)
@@ -132,7 +132,7 @@ class TestAceptacionSistema(unittest.TestCase):
         gestor_reabierto = c_archivos(self.ruta_datos)
         self.assertEqual(len(gestor_reabierto.obtener_todos()), 4)
 
-        sistema_reabierto = c_sistema()
+        sistema_reabierto = c_sistema(gestor_reabierto, c_reportes(gestor_reabierto))
         sistema_reabierto.archivos = gestor_reabierto
         sistema_reabierto.reportes = c_reportes(gestor_reabierto)
         salida = StringIO()

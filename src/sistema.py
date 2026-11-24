@@ -6,9 +6,9 @@ from .validaciones import c_validaciones
 
 
 class c_sistema:
-    def __init__(self):
-        self.archivos = c_archivos()
-        self.reportes = c_reportes(self.archivos)
+    def __init__(self, archivos, reportes):
+        self.archivos = archivos
+        self.reportes = reportes
 
     @staticmethod
     def _pedir_validado(mensaje, validador, error, transformar=None):

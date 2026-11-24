@@ -4,7 +4,7 @@ from datetime import date
 
 try:
     from .archivos import c_archivos
-except ImportError:  # Ejecución directa de python src/main.py
+except ImportError:
     from archivos import c_archivos
 
 class c_reportes:

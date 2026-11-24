@@ -48,13 +48,12 @@ Estas funcionalidades se encuentran en proceso de prueba y revisión.
 - [Acta única del equipo (PDF público, sin firmas ni identificaciones)](docs/actas/Acta_de_entendimiento_publica.pdf)
 - [Algoritmo y diagramas de flujo](docs/algoritmo.md)
 - [Checklist de pruebas de aceptación](docs/pruebas_aceptacion.md)
-- [Guía de sustentación técnica y preguntas sobre el código](docs/guia_sustentacion_tecnica.md)
 
 ## Estructura del repositorio
 
 ```text
 gestion_y_huellitas_udea/
-├── src/       # Código fuente Python (main.py, validaciones.py, archivos.py y reportes.py)
+├── src/       # Código fuente Python (main.py, sistema.py, validaciones.py, archivos.py y reportes.py)
 ├── tests/     # Pruebas automatizadas
 ├── docs/      # Documentación, actas y manual
 ├── images/    # Logo y recursos gráficos

@@ -1,13 +1,8 @@
-"""Validaciones centralizadas para Gestión y Huellitas UdeA.
-
-La clase c_validaciones reúne validaciones claras, estrictas y reutilizables para
-los datos del solicitante, la PQRS, la mascota y el campus relacionado.
-"""
+# Validaciones de los datos.
 
 import re
 import unicodedata
 from datetime import date, datetime
-
 
 class c_validaciones:
     """Conjunto organizado de validaciones sencillas y consistentes."""
@@ -39,21 +34,12 @@ class c_validaciones:
 
     @staticmethod
     def _clave(valor):
-        """Genera una clave uniforme, legible y sin tildes para comparar opciones."""
-        texto = unicodedata.normalize("NFD", str(valor or "").strip())
-        sin_tildes = "".join(caracter for caracter in texto if unicodedata.category(caracter) != "Mn")
-        return " ".join(sin_tildes.casefold().split())
-
-    @classmethod
-    def obtener_opcion(cls, valor, opciones):
-        """Devuelve la opción oficial equivalente o None cuando no existe."""
+Devuelve la opción oficial equivalente o None cuando no existe."""
         clave = cls._clave(valor)
         coincidencia = next((opcion for opcion in opciones if cls._clave(opcion) == clave), None)
         if coincidencia is not None:
             return coincidencia
 
-        # Alias sencillos para que el usuario no tenga que memorizar el nombre
-        # institucional completo del campus en el formulario.
         if tuple(opciones) == cls.CAMPUS:
             alias_campus = {
                 "campus central": cls.CAMPUS[0],
@@ -79,57 +65,13 @@ class c_validaciones:
 
     @classmethod
     def validar_nombre(cls, nombre):
-        """Comprueba un nombre completo obligatorio, claro y sin dígitos."""
-        if not isinstance(nombre, str):
-            return False
-        nombre = nombre.strip()
-        patron = r"[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+(?:[ '\-][A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+)*"
-        return 3 <= len(nombre) <= 100 and re.fullmatch(patron, nombre) is not None
-
-    @classmethod
-    def validar_tipo_documento(cls, tipo):
-        return cls.obtener_opcion(str(tipo).upper(), cls.TIPOS_DOCUMENTO) is not None
-
-    @staticmethod
-    def validar_numero_documento(numero):
-        numero = str(numero or "").strip()
-        return re.fullmatch(r"[0-9]{3,15}", numero) is not None
-
-    @classmethod
-    def validar_tipo_telefono(cls, tipo):
-        return cls.obtener_opcion(tipo, cls.TIPOS_TELEFONO) is not None
-
-    @staticmethod
-    def validar_telefono(telefono, tipo=None):
-        """Exige diez dígitos para todos los tipos, de acuerdo con la rúbrica."""
+Exige diez dígitos para todos los tipos, de acuerdo con la rúbrica."""
         telefono = str(telefono or "").strip()
         return re.fullmatch(r"[0-9]{10}", telefono) is not None
 
     @staticmethod
     def validar_correo(correo):
-        """Verifica una dirección de correo sencilla, completa y de longitud válida."""
-        if not isinstance(correo, str):
-            return False
-        correo = correo.strip()
-        if len(correo) > 254 or correo.count("@") != 1 or " " in correo:
-            return False
-        local, dominio = correo.split("@")
-        if not local or len(local) > 64 or not dominio or "." not in dominio:
-            return False
-        if local.startswith(".") or local.endswith(".") or ".." in correo:
-            return False
-        patron_local = r"[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+"
-        if re.fullmatch(patron_local, local) is None:
-            return False
-        etiquetas = dominio.split(".")
-        if len(etiquetas) < 2:
-            return False
-        patron_etiqueta = r"[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?"
-        return all(re.fullmatch(patron_etiqueta, etiqueta) for etiqueta in etiquetas) and len(etiquetas[-1]) >= 2
-
-    @classmethod
-    def validar_direccion(cls, direccion):
-        """Permite dirección opcional y comprueba longitud y caracteres permitidos."""
+Permite dirección opcional y comprueba longitud y caracteres permitidos."""
         if direccion is None or not str(direccion).strip():
             return True
         direccion = str(direccion).strip()
@@ -142,24 +84,7 @@ class c_validaciones:
 
     @classmethod
     def validar_fecha_radicacion(cls, fecha):
-        """Acepta ISO AAAA-MM-DD y rechaza fechas futuras o imposibles."""
-        if isinstance(fecha, str) and re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", fecha.strip()) is None:
-            return False
-        try:
-            fecha_valida = fecha.date() if isinstance(fecha, datetime) else (
-                fecha if isinstance(fecha, date) else date.fromisoformat(str(fecha).strip())
-            )
-            return fecha_valida <= date.today()
-        except (TypeError, ValueError):
-            return False
-
-    @classmethod
-    def validar_canal(cls, canal):
-        return cls.obtener_opcion(canal, cls.CANALES_RECEPCION) is not None
-
-    @staticmethod
-    def validar_asunto(asunto):
-        """Acepta un asunto breve y descriptivo con puntuación básica."""
+Acepta un asunto breve y descriptivo con puntuación básica."""
         if not isinstance(asunto, str):
             return False
         asunto = asunto.strip()
@@ -183,8 +108,6 @@ class c_validaciones:
     def validar_estado(cls, estado):
         return cls.obtener_opcion(estado, cls.ESTADOS) is not None
 
-
-# Funciones públicas de compatibilidad para módulos que prefieran importar funciones.
 validar_nombre = c_validaciones.validar_nombre
 validar_tipo_documento = c_validaciones.validar_tipo_documento
 validar_numero_documento = c_validaciones.validar_numero_documento

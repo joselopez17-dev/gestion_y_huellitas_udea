@@ -80,7 +80,8 @@ El sistema debe calcular el indicador obligatorio y cinco estadísticas adiciona
 
 ## 3. Organización del código
 
-- src/main.py: menú y coordinación de las opciones del programa.
+- src/main.py: punto de entrada del programa.
+- src/sistema.py: menú e interacción con el usuario.
 - src/validaciones.py: validación de nombres, documentos, teléfonos, correos, fechas y demás campos.
 - src/archivos.py: lectura y escritura de los cuatro archivos, consecutivos, consulta, cambios de estado y radicados.
 - src/reportes.py: cálculo del promedio obligatorio y las cinco estadísticas complementarias.

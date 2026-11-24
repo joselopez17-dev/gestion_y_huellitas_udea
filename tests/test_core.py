@@ -79,7 +79,7 @@ class TestArchivosYReportes(unittest.TestCase):
 
 
     def test_registro_completo_desde_el_menu(self):
-        sistema = c_sistema()
+        sistema = c_sistema(self.gestor, c_reportes(self.gestor))
         sistema.archivos = self.gestor
         entradas = [
             "Juan123",  # Debe rechazarse y volver a solicitar el nombre.
@@ -198,7 +198,7 @@ class TestArchivosYReportes(unittest.TestCase):
 
     def test_consulta_y_generacion_de_radicado_desde_menu(self):
         identificador = self.gestor.guardar_pqrs(self.datos("Petición"))
-        sistema = c_sistema()
+        sistema = c_sistema(self.gestor, c_reportes(self.gestor))
         sistema.archivos = self.gestor
         sistema.reportes = c_reportes(self.gestor)
 
@@ -211,7 +211,7 @@ class TestArchivosYReportes(unittest.TestCase):
 
     def test_cambio_de_estado_desde_menu(self):
         identificador = self.gestor.guardar_pqrs(self.datos("Queja"))
-        sistema = c_sistema()
+        sistema = c_sistema(self.gestor, c_reportes(self.gestor))
         sistema.archivos = self.gestor
         sistema.reportes = c_reportes(self.gestor)
 
@@ -223,7 +223,7 @@ class TestArchivosYReportes(unittest.TestCase):
 
     def test_estado_se_conserva_si_falla_actualizacion_del_radicado(self):
         identificador = self.gestor.guardar_pqrs(self.datos("Queja"))
-        sistema = c_sistema()
+        sistema = c_sistema(self.gestor, c_reportes(self.gestor))
         sistema.archivos = self.gestor
         sistema.reportes = c_reportes(self.gestor)
         with patch("builtins.input", side_effect=["Queja", str(identificador), "En proceso"]):
@@ -237,7 +237,7 @@ class TestArchivosYReportes(unittest.TestCase):
         self.assertIsNone(c_reportes(self.gestor).calcular_promedio_dias_respuesta())
 
     def test_registro_se_conserva_si_falla_generacion_del_radicado(self):
-        sistema = c_sistema()
+        sistema = c_sistema(self.gestor, c_reportes(self.gestor))
         sistema.archivos = self.gestor
         entradas = [
             "Juan David Pérez Gómez", "CC", "1037654321", "Celular",

@@ -1,9 +1,10 @@
+# Inicio del programa.
+
 import sys
 
 from .archivos import c_archivos
 from .reportes import c_reportes
 from .sistema import c_sistema
-
 
 def main():
     if hasattr(sys.stdout, "reconfigure"):
@@ -22,7 +23,6 @@ def main():
         print(f"Error al ejecutar el programa: {error}")
     except KeyboardInterrupt:
         print("\nEjecución interrumpida por el usuario.")
-
 
 if __name__ == "__main__":
     main()

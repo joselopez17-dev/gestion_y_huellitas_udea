@@ -5,11 +5,6 @@ from .reportes import c_reportes
 from .validaciones import c_validaciones
 
 
-from .archivos import c_archivos
-from .reportes import c_reportes
-from .validaciones import c_validaciones
-
-
 class c_sistema:
     def __init__(self):
         self.archivos = c_archivos()
@@ -17,7 +12,8 @@ class c_sistema:
 
     @staticmethod
     def _pedir_validado(mensaje, validador, error, transformar=None):
-        """Solicita un dato hasta obtener una entrada válida y limpia."""
+
+
         while True:
             valor = input(mensaje).strip()
             if validador(valor):
@@ -28,7 +24,8 @@ class c_sistema:
     def _pedir_opcion(
         mensaje, opciones, error="Seleccione una opción de la lista.", mostrar_opciones=False
     ):
-        """Convierte entradas flexibles en opciones oficiales y uniformes."""
+
+
         while True:
             valor = input(mensaje).strip()
             opcion = c_validaciones.obtener_opcion(valor, opciones)
@@ -41,7 +38,8 @@ class c_sistema:
                     print(f"   {indice}. {opcion_valida}")
 
     def _capturar_datos_pqrs(self):
-        """Recopila datos personales y datos completos de la solicitud."""
+
+
         print("\n REGISTRO DE NUEVA PQRS")
         print("-" * 48)
 
@@ -135,7 +133,8 @@ class c_sistema:
         }
 
     def registrar_pqrs(self):
-        """Guarda una solicitud nueva y genera su comprobante TXT."""
+
+
         try:
             datos = self._capturar_datos_pqrs()
             nuevo_id = self.archivos.guardar_pqrs(datos)
@@ -163,7 +162,8 @@ class c_sistema:
 
     @staticmethod
     def _mostrar_resumen_registros(registros):
-        """Presenta una lista compacta y legible de las solicitudes existentes."""
+
+
         if not registros:
             print("No hay PQRS registradas.")
             return
@@ -179,7 +179,8 @@ class c_sistema:
             )
 
     def consultar_pqrs(self):
-        """Lista registros o localiza un radicado individual por tipo e ID."""
+
+
         opciones = (*c_archivos.ARCHIVOS.keys(), "Todas")
         tipo = self._pedir_opcion(
             "\nTipo de PQRS (Petición, Queja, Reclamo, Sugerencia o Todas): ",
@@ -217,7 +218,8 @@ class c_sistema:
             print(f" No fue posible generar el radicado: {error}")
 
     def cambiar_estado_pqrs(self):
-        """Actualiza el estado y diferencia el cambio del refresco del radicado."""
+
+
         tipo = self._pedir_opcion(
             "\nTipo de PQRS (Petición, Queja, Reclamo, Sugerencia): ",
             c_archivos.ARCHIVOS.keys(),
@@ -255,7 +257,8 @@ class c_sistema:
             print(f" El estado sí se actualizó, pero no se pudo actualizar el radicado: {error}")
 
     def mostrar_estadisticas(self):
-        """Muestra el indicador obligatorio y cinco estadísticas complementarias."""
+
+
         print("\n ESTADÍSTICAS DE GESTIÓN")
         print("=" * 56)
 

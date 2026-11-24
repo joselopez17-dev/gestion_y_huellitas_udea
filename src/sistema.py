@@ -142,7 +142,7 @@ class c_sistema:
             if registro is None:
                 raise ValueError("El registro se guardó, pero no fue posible recuperarlo.")
         except (OSError, ValueError) as error:
-            print(f"❌ No fue posible guardar la PQRS: {error}")
+            print(f"No fue posible guardar la PQRS: {error}")
             return
 
         try:

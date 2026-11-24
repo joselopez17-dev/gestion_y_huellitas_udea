@@ -1,9 +1,10 @@
+# Opciones y funcionamiento del sistema.
+
 import sys
 
 from .archivos import c_archivos
 from .reportes import c_reportes
 from .validaciones import c_validaciones
-
 
 class c_sistema:
     def __init__(self, archivos, reportes):
@@ -12,7 +13,6 @@ class c_sistema:
 
     @staticmethod
     def _pedir_validado(mensaje, validador, error, transformar=None):
-
 
         while True:
             valor = input(mensaje).strip()
@@ -24,7 +24,6 @@ class c_sistema:
     def _pedir_opcion(
         mensaje, opciones, error="Seleccione una opción de la lista.", mostrar_opciones=False
     ):
-
 
         while True:
             valor = input(mensaje).strip()
@@ -38,7 +37,6 @@ class c_sistema:
                     print(f"   {indice}. {opcion_valida}")
 
     def _capturar_datos_pqrs(self):
-
 
         print("\n REGISTRO DE NUEVA PQRS")
         print("-" * 48)
@@ -134,7 +132,6 @@ class c_sistema:
 
     def registrar_pqrs(self):
 
-
         try:
             datos = self._capturar_datos_pqrs()
             nuevo_id = self.archivos.guardar_pqrs(datos)
@@ -163,7 +160,6 @@ class c_sistema:
     @staticmethod
     def _mostrar_resumen_registros(registros):
 
-
         if not registros:
             print("No hay PQRS registradas.")
             return
@@ -179,7 +175,6 @@ class c_sistema:
             )
 
     def consultar_pqrs(self):
-
 
         opciones = (*c_archivos.ARCHIVOS.keys(), "Todas")
         tipo = self._pedir_opcion(
@@ -219,7 +214,6 @@ class c_sistema:
 
     def cambiar_estado_pqrs(self):
 
-
         tipo = self._pedir_opcion(
             "\nTipo de PQRS (Petición, Queja, Reclamo, Sugerencia): ",
             c_archivos.ARCHIVOS.keys(),
@@ -257,7 +251,6 @@ class c_sistema:
             print(f" El estado sí se actualizó, pero no se pudo actualizar el radicado: {error}")
 
     def mostrar_estadisticas(self):
-
 
         print("\n ESTADÍSTICAS DE GESTIÓN")
         print("=" * 56)
@@ -350,4 +343,3 @@ class c_sistema:
                 break
             else:
                 print(" Opción inválida. Ingrese un número entre 1 y 5.")
-

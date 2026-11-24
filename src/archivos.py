@@ -9,7 +9,6 @@ from pathlib import Path
 from .validaciones import c_validaciones
 
 class c_archivos:
-    """Administra la lectura, escritura, búsqueda y actualización de las PQRS."""
 
     ARCHIVOS = {
         "Petición": "Peticion.txt",
@@ -24,14 +23,24 @@ class c_archivos:
     ANCHO_RADICADO = 120
 
     def __init__(self, carpeta_datos=None):
-Normaliza el tipo de solicitud y evita nombres de archivo arbitrarios."""
+        raiz = Path(__file__).resolve().parent.parent
+        self.carpeta_datos = Path(carpeta_datos) if carpeta_datos else raiz / "data"
+        self.carpeta_radicados = self.carpeta_datos / "radicados"
+
+    def _tipo_oficial(self, tipo):
         opcion = c_validaciones.obtener_opcion(tipo, self.ARCHIVOS.keys())
         if opcion is None:
             raise ValueError("Tipo de solicitud no válido.")
         return opcion
 
     def _ruta_archivo(self, tipo):
-Lee registros JSON por línea y señala datos dañados con ubicación precisa."""
+        tipo = self._tipo_oficial(tipo)
+        self.carpeta_datos.mkdir(parents=True, exist_ok=True)
+        ruta = self.carpeta_datos / self.ARCHIVOS[tipo]
+        ruta.touch(exist_ok=True)
+        return ruta
+
+    def _leer_archivo(self, tipo):
         ruta = self._ruta_archivo(tipo)
         registros = []
         with ruta.open("r", encoding="utf-8") as archivo:
@@ -50,11 +59,32 @@ Lee registros JSON por línea y señala datos dañados con ubicación precisa.""
         return registros
 
     def _guardar_archivo(self, tipo, registros):
-Entrega una lista ordenada y completa de un tipo de solicitud."""
+        ruta = self._ruta_archivo(tipo)
+        temporal = ruta.with_name(ruta.name + ".tmp")
+        with temporal.open("w", encoding="utf-8", newline="\n") as archivo:
+            for registro in registros:
+                archivo.write(json.dumps(registro, ensure_ascii=False) + "\n")
+        os.replace(temporal, ruta)
+
+    def listar_por_tipo(self, tipo):
         return sorted(self._leer_archivo(tipo), key=lambda registro: int(registro.get("id", 0)))
 
     def obtener_todos(self):
-Asigna un consecutivo independiente y guarda una PQRS validada."""
+        registros = [
+            registro
+            for tipo in self.ARCHIVOS
+            for registro in self._leer_archivo(tipo)
+        ]
+        return sorted(
+            registros,
+            key=lambda registro: (
+                registro.get("fecha_radicacion", ""),
+                registro.get("tipo_solicitud", ""),
+                int(registro.get("id", 0)),
+            ),
+        )
+
+    def guardar_pqrs(self, datos):
         registro = dict(datos)
         tipo = self._tipo_oficial(registro.get("tipo_solicitud", ""))
         fecha_texto = str(registro.get("fecha_radicacion", "")).strip()
@@ -79,7 +109,23 @@ Asigna un consecutivo independiente y guarda una PQRS validada."""
         return nuevo_id
 
     def buscar_pqrs(self, identificador, tipo=None):
-Permite únicamente la transición consecutiva y registra la fecha de solución."""
+        try:
+            identificador = int(identificador)
+        except (TypeError, ValueError):
+            return None
+
+        tipos = [self._tipo_oficial(tipo)] if tipo else list(self.ARCHIVOS)
+        for tipo_actual in tipos:
+            encontrado = next(
+                (registro for registro in self._leer_archivo(tipo_actual)
+                 if int(registro.get("id", -1)) == identificador),
+                None,
+            )
+            if encontrado is not None:
+                return encontrado
+        return None
+
+    def cambiar_estado(self, tipo, identificador, nuevo_estado):
         tipo = self._tipo_oficial(tipo)
         estado_oficial = c_validaciones.obtener_opcion(
             nuevo_estado, c_validaciones.ESTADOS
@@ -113,7 +159,11 @@ Permite únicamente la transición consecutiva y registra la fecha de solución.
 
     @classmethod
     def _linea_centrada(cls, texto=""):
-Ajusta campos largos en líneas legibles sin romper el marco ASCII."""
+        interior = str(texto)[: cls.ANCHO_RADICADO - 2].center(cls.ANCHO_RADICADO - 2)
+        return "|" + interior + "|"
+
+    @classmethod
+    def _lineas_campo(cls, etiqueta, valor):
         texto = f"{etiqueta}: {valor if valor not in (None, '') else 'N/A'}"
         fragmentos = textwrap.wrap(
             texto,
@@ -125,7 +175,57 @@ Ajusta campos largos en líneas legibles sin romper el marco ASCII."""
 
     @classmethod
     def construir_radicado(cls, registro):
-Guarda el radicado TXT en una carpeta dedicada dentro de data/."""
+        borde = "+" + "-" * (cls.ANCHO_RADICADO - 2) + "+"
+        lineas = [
+            borde,
+            cls._linea_centrada("GESTIÓN Y HUELLITAS UDEA"),
+            cls._linea_centrada("COMPROBANTE DE RADICACIÓN DE PQRS"),
+            borde,
+            cls._linea_centrada("DATOS DEL RADICADO"),
+        ]
+
+        campos_radicado = [
+            ("Consecutivo", f"#{int(registro.get('id', 0)):06d}"),
+            ("Tipo de solicitud", registro.get("tipo_solicitud")),
+            ("Fecha de radicación", registro.get("fecha_radicacion")),
+            ("Fecha/hora de registro en sistema", registro.get("fecha_registro_sistema")),
+            ("Fecha máxima de respuesta", registro.get("fecha_maxima_respuesta")),
+            ("Estado", registro.get("estado_peticion", "Registrada")),
+        ]
+        for etiqueta, valor in campos_radicado:
+            lineas.extend(cls._lineas_campo(etiqueta, valor))
+
+        lineas.extend([borde, cls._linea_centrada("DATOS DEL SOLICITANTE")])
+        campos_solicitante = [
+            ("Nombre completo", registro.get("nombre_completo")),
+            ("Documento", f"{registro.get('tipo_documento', '')} {registro.get('numero_documento', '')}".strip()),
+            ("Teléfono", f"{registro.get('telefono_contacto', '')} ({registro.get('tipo_telefono', '')})".strip()),
+            ("Correo electrónico", registro.get("correo_electronico")),
+            ("Dirección", registro.get("direccion") or "N/A"),
+        ]
+        for etiqueta, valor in campos_solicitante:
+            lineas.extend(cls._lineas_campo(etiqueta, valor))
+
+        lineas.extend([borde, cls._linea_centrada("CLASIFICACIÓN DE LA SOLICITUD")])
+        campos_clasificacion = [
+            ("Canal de recepción", registro.get("canal_recepcion")),
+            ("Tipo de mascota", registro.get("tipo_mascota")),
+            ("Campus relacionado", registro.get("campus_relacionado")),
+            ("Asunto", registro.get("asunto_titulo")),
+        ]
+        for etiqueta, valor in campos_clasificacion:
+            lineas.extend(cls._lineas_campo(etiqueta, valor))
+
+        lineas.extend([
+            borde,
+            cls._linea_centrada("Conserve este comprobante para consultar el estado de su solicitud."),
+            borde,
+        ])
+        if any(len(linea) != cls.ANCHO_RADICADO for linea in lineas):
+            raise AssertionError("El radicado contiene una línea con ancho diferente de 120.")
+        return "\n".join(lineas) + "\n"
+
+    def generar_radicado(self, registro):
         self.carpeta_radicados.mkdir(parents=True, exist_ok=True)
         tipo = self._tipo_oficial(registro.get("tipo_solicitud", ""))
         nombre = f"{self.ARCHIVOS[tipo][:-4]}_{int(registro.get('id', 0)):06d}.txt"

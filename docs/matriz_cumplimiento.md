@@ -16,7 +16,7 @@ Esta matriz compara la rúbrica del proyecto integrador con los archivos y funci
 | 6 | Requisitos funcionales y no funcionales | `docs/especificacion_requisitos.md` | Por validar |
 | 7 | Plan, cronograma/Gantt y presupuesto | `docs/plan_proyecto.md` | Por validar |
 | 8 | Plan de versionado y avance en días | `docs/plan_versionado.md` | Por validar |
-| 9 | Código del algoritmo dentro de `src/` | `main.py`, `validaciones.py`, `archivos.py`, `reportes.py` | Por validar |
+| 9 | Código del algoritmo dentro de `src/` | `main.py`, `sistema.py`, `validaciones.py`, `archivos.py`, `reportes.py` | Por validar |
 | 10 | Manual de usuario dentro de `docs/` | `docs/manual_de_usuario.md` y checklist `docs/pruebas_aceptacion.md` | Parcial; falta ejecutar la revisión paso a paso |
 | 11 | Estructura GitHub | `src/`, `docs/`, `images/`, `data/` y `tests/` | Existe |
 | 12 | Sustentación con programa ejecutable y dominio del código | Requiere ejecución final y preparación del equipo | Pendiente |
@@ -42,22 +42,22 @@ La copia pública omite firmas manuscritas y números de identificación persona
 
 | Requisito | Implementación en `desarrollo` | Estado |
 |---|---|---|
-| Menú principal de cinco opciones | `src/main.py` y prueba de ejecución del menú | Prueba automatizada aprobada; revisión visual manual pendiente |
-| Registro con validaciones | `src/main.py`, `src/validaciones.py` y pruebas de aceptación con entradas simuladas | Pruebas automatizadas aprobadas; falta recorrido manual del equipo |
+| Menú principal de cinco opciones | `src/main.py`, `src/sistema.py` y prueba de ejecución del menú | Prueba automatizada aprobada; revisión visual manual pendiente |
+| Registro con validaciones | `src/sistema.py`, `src/validaciones.py` y pruebas de aceptación con entradas simuladas | Pruebas automatizadas aprobadas; falta recorrido manual del equipo |
 | ID independiente por tipo | `src/archivos.py`; prueba de consecutivos independientes | Pruebas automatizadas aprobadas |
 | Cuatro archivos planos | Prueba automatizada de Petición, Queja, Reclamo y Sugerencia; verifica creación y consecutivos independientes | Pruebas automatizadas aprobadas |
 | Fecha máxima de 30 días | `src/archivos.py`; prueba de cálculo de fecha límite | Pruebas automatizadas aprobadas |
 | Estado inicial y flujo de estados | `src/archivos.py`; prueba de transiciones | Pruebas automatizadas aprobadas |
-| Consulta de PQRS y radicado | `src/main.py`, `src/archivos.py` y prueba de consulta general desde el menú | Pruebas automatizadas aprobadas; falta aceptación manual del equipo |
+| Consulta de PQRS y radicado | `src/sistema.py`, `src/archivos.py` y prueba de consulta general desde el menú | Pruebas automatizadas aprobadas; falta aceptación manual del equipo |
 | Cambio de estado | `src/archivos.py`; prueba de transición desde el menú y de persistencia si falla el TXT actualizado | Pruebas automatizadas aprobadas |
 | Radicado TXT de 120 caracteres | `src/archivos.py`; prueba de ancho, N/A y exclusión de descripción | Pruebas automatizadas aprobadas |
-| Estadística obligatoria y cinco adicionales | `src/reportes.py` y `src/main.py`; prueba de los seis indicadores y del caso sin datos | Pruebas automatizadas aprobadas; falta revisión manual del equipo |
+| Estadística obligatoria y cinco adicionales | `src/reportes.py` y `src/sistema.py`; prueba de los seis indicadores y del caso sin datos | Pruebas automatizadas aprobadas; falta revisión manual del equipo |
 
 ## 4. Programación y pruebas
 
 | Criterio | Evidencia | Estado |
 |---|---|---|
-| Clases y objetos | Clases `c_main`, `c_validaciones`, `c_archivos`, `c_reportes` | Existe |
+| Clases y objetos | Clases `c_sistema`, `c_validaciones`, `c_archivos`, `c_reportes` | Existe |
 | Comprensión de listas | Utilizada en almacenamiento y reportes | Existe |
 | Modularización | Archivos separados para menú, validaciones, persistencia y reportes | Existe |
 | Comentarios y documentación | Docstrings y comentarios de módulos y métodos | Por validar |

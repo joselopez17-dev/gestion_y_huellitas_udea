@@ -112,7 +112,8 @@ El módulo c_reportes calcula:
 
 | Archivo | Clase | Responsabilidad |
 |---|---|---|
-| src/main.py | c_main | Menú, captura de datos e interacción con el administrador |
+| src/main.py | Punto de entrada que inicia `c_sistema` | Sin lógica de negocio ni funciones de captura |
+| src/sistema.py | c_sistema | Menú, captura de datos e interacción con el usuario |
 | src/validaciones.py | c_validaciones | Validaciones de campos y normalización de opciones |
 | src/archivos.py | c_archivos | Consecutivos, lectura, escritura, consulta, estados y radicados |
 | src/reportes.py | c_reportes | Cálculo de estadísticas |
